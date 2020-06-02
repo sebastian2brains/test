@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ExampleComponent, Button, Icon } from 'library-1'
+import { ExampleComponent, Button, Icon } from 'library-1';
 // import { Button } from 'library-1/buttons';
 import 'library-1/dist/index.css';
 
@@ -42,8 +42,7 @@ const App = () => {
       <ButtonColumn size="large" arr={['primary', 'secondary-green', 'secondary-blue', 'secondary-purple']} variant="outline" disabled={true} />
     </div>
 
-    <Icon name="larm" />
-
+    <Icon name="alarm" />
 
     <Button color="primary" size="large" > label button </Button>
     <Button onClick={() => {
