@@ -4,10 +4,8 @@ import iconss from '../out/css/sprite.css'
 
 
 const Icon = ({ name = 'alarm' }) => {
-  const file = path.resolve(`./${name}.svg`);
+  const file = path.resolve(`library/dist/icons/${name}.svg`);
   console.log(file);
-  // console.log(iconss);
-
 
   // const imagex = require(`./${name}.svg`);
   return <>
