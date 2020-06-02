@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --format modern,cjs && cp ./src/fonts",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -45,7 +45,9 @@
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "node-sass": "^4.14.1",
+    "bootstrap": "^4.5.0"
   },
   "files": [
     "dist"
