@@ -1,17 +1,8 @@
 import React, { Fragment } from 'react';
-import path from 'path';
-import iconss from '../out/css/sprite.css'
-
+import icons from '../scss/_coopeuch-icon.scss';
 
 const Icon = ({ name = 'alarm' }) => {
-  const file = path.resolve(`library/dist/icons/${name}.svg`);
-  console.log(file);
-
-  // const imagex = require(`./${name}.svg`);
-  return <>
-    <div style={{ height: '32px', width: '32px' }} width="25" className={iconss[`svg-${name}`]} />
-    <img width="25" src={file} />
-  </>
+  return <div width="25" className={icons[`icon-${name}`]} />
 }
 
 export default Icon;

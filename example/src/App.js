@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { ExampleComponent, Button, Icon } from 'library-1';
-// import { Button } from 'library-1/buttons';
 import 'library-1/dist/index.css';
 
 const ButtonColumn = ({ arr, variant = '', disabled = false, size = "" }) => {

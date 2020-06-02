@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../scss/_buttons.scss';
-// import '../scss/fonts/'
 
 const Button = ({ children, size, color, variant, disabled }) => {
   const btnSize = size === 'large' ? 'large' : 'regular';
