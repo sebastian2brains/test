@@ -61,11 +61,11 @@ $UbuntuFontsPath: "./fonts" !default;
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('#{$UbuntuFontsPath}/icomoon.eot?vup4cb');
-    src:  url('#{$UbuntuFontsPath}/icomoon.eot?vup4cb#iefix') format('embedded-opentype'),
-      url('#{$UbuntuFontsPath}/icomoon.ttf?vup4cb') format('truetype'),
-      url('#{$UbuntuFontsPath}/icomoon.woff?vup4cb') format('woff'),
-      url('#{$UbuntuFontsPath}/icomoon.svg?vup4cb#icomoon') format('svg');
+    src:  url('#{$icommonFontsPath}/icomoon.eot?vup4cb');
+    src:  url('#{$icommonFontsPath}/icomoon.eot?vup4cb#iefix') format('embedded-opentype'),
+      url('#{$icommonFontsPath}/icomoon.ttf?vup4cb') format('truetype'),
+      url('#{$icommonFontsPath}/icomoon.woff?vup4cb') format('woff'),
+      url('#{$icommonFontsPath}/icomoon.svg?vup4cb#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;

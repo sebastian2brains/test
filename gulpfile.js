@@ -1,10 +1,11 @@
-var gulp = require('gulp'), sass = require('gulp-sass');
+var gulp = require('gulp'), sass = require('gulp-sass'), autoprefixer = require('gulp-autoprefixer');
 
 sass.compiler = require('node-sass');
 
 gulp.task('sass', function () {
   return gulp.src('./src/scss/custom.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(gulp.dest('./dist/css'));
 });
 

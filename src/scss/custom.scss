@@ -1,4 +1,5 @@
 @import "node_modules/bootstrap/scss/functions";
+$icommonFontsPath: "../fonts" !default;
 @import './fonts';
 @import './variables';
 @import "node_modules/bootstrap/scss/mixins";
@@ -41,14 +42,3 @@
 // @import "node_modules/bootstrap/scss/spinners";
 @import "node_modules/bootstrap/scss/utilities";
 // @import "node_modules/bootstrap/scss/print";
-
-
-body {
-  margin: 0;
-}
-
-.fill{
-  background: #f2cece;
-  width: 100%;
-  height: 100vh;
-}
