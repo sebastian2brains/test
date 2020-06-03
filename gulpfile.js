@@ -1,22 +1,15 @@
-var gulp = require('gulp'),
-  svgSprite = require('gulp-svg-sprite');
+var gulp = require('gulp'), sass = require('gulp-sass');
 
-var config = {
-  mode: {
-    css: { // Activate the «css» mode
-      render: {
-        css: true // Activate CSS output (with default options)
-      }
-    }
-  }
-};
+sass.compiler = require('node-sass');
 
-gulp.task('svg', function (next) {
-  console.log('entrando');
-  gulp.src('./src/icons/*.svg')
-    .pipe(svgSprite(config))
-    .pipe(gulp.dest('./src/out'));
-  next();
+gulp.task('sass', function () {
+  return gulp.src('./src/scss/custom.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('default', gulp.series('svg'));
+gulp.task('sass:watch', function () {
+  gulp.watch('./sass/**/*.scss', ['sass']);
+});
+
+gulp.task('default', gulp.series('sass'));
