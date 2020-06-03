@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ExampleComponent, Button, Icon } from 'library-1';
+import { ExampleComponent, Button, Icon, Grid } from 'library-1';
 import 'library-1/dist/index.css';
 
 const ButtonColumn = ({ arr, variant = '', disabled = false, size = "" }) => {
@@ -45,8 +45,20 @@ const App = () => {
     <Icon name="home" size="3" />
     <Icon name="alarm" size="5" />
     <Icon name="alarm" size="55" />
-    <Icon name="alarm" size="x" />
-    <Icon name="alarm" size={6} />
+
+    <Grid container>
+      <Grid>
+        <Icon name="alarm" size="5" />
+      </Grid>
+
+      <Grid>
+        <Icon name="alarm" size="x" />
+      </Grid>
+
+      <Grid>
+        <Icon name="alarm" size={6} />
+      </Grid>
+    </Grid>
 
     <Button color="primary" size="large" > label button </Button>
     <Button onClick={() => {
