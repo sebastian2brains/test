@@ -45,10 +45,33 @@ var gridStyles = {"container":"__grid__container__14kEn","container-fluid":"__gr
 
 const Grid = ({
   variant: _variant = 'div',
-  children
-}) => React.createElement(_variant, {
-  className: gridStyles.row
-}, children);
+  container,
+  children,
+  ...props
+}) => {
+  console.log(gridStyles);
+  let styles = container ? [gridStyles.row] : [gridStyles.col];
+
+  if (props.sm) {
+    styles = styles.concat(gridStyles[`col-sm-${props.sm}`]);
+  }
+
+  if (props.md) {
+    styles = styles.concat(gridStyles[`col-md-${props.md}`]);
+  }
+
+  if (props.lg) {
+    styles = styles.concat(gridStyles[`col-lg-${props.lg}`]);
+  }
+
+  if (props.xl) {
+    styles = styles.concat(gridStyles[`col-xl-${props.xl}`]);
+  }
+
+  return React.createElement(_variant, { ...props,
+    className: styles.concat(props.className || '').join(' ')
+  }, children);
+};
 
 const ExampleComponent = ({
   text

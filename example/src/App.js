@@ -46,18 +46,10 @@ const App = () => {
     <Icon name="alarm" size="5" />
     <Icon name="alarm" size="55" />
 
-    <Grid container>
-      <Grid>
-        <Icon name="alarm" size="5" />
-      </Grid>
-
-      <Grid>
-        <Icon name="alarm" size="x" />
-      </Grid>
-
-      <Grid>
-        <Icon name="alarm" size={6} />
-      </Grid>
+    <Grid container >
+      <Grid sm="2" md="8" variant="span" className="hola mundo">col</Grid>
+      <Grid sm="8" md="2">col</Grid>
+      <Grid sm="2" md="2">col</Grid>
     </Grid>
 
     <Button color="primary" size="large" > label button </Button>

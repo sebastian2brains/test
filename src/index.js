@@ -4,7 +4,7 @@ import Button from './buttons';
 import Icon from './icons';
 import Grid from './grid';
 
-import './scss/custom.scss';
+// import './scss/custom.scss';
 
 export const ExampleComponent = ({ text }) => {
   return <div className="container">

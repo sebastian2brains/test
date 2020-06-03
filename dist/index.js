@@ -84,10 +84,32 @@ var gridStyles = {"container":"__grid__container__14kEn","container-fluid":"__gr
 var Grid = function Grid(_ref) {
   var _ref$variant = _ref.variant,
       variant = _ref$variant === void 0 ? 'div' : _ref$variant,
-      children = _ref.children;
-  return React.createElement(variant, {
-    className: gridStyles.row
-  }, children);
+      container = _ref.container,
+      children = _ref.children,
+      props = _objectWithoutPropertiesLoose(_ref, ["variant", "container", "children"]);
+
+  console.log(gridStyles);
+  var styles = container ? [gridStyles.row] : [gridStyles.col];
+
+  if (props.sm) {
+    styles = styles.concat(gridStyles["col-sm-" + props.sm]);
+  }
+
+  if (props.md) {
+    styles = styles.concat(gridStyles["col-md-" + props.md]);
+  }
+
+  if (props.lg) {
+    styles = styles.concat(gridStyles["col-lg-" + props.lg]);
+  }
+
+  if (props.xl) {
+    styles = styles.concat(gridStyles["col-xl-" + props.xl]);
+  }
+
+  return React.createElement(variant, _extends({}, props, {
+    className: styles.concat(props.className || '').join(' ')
+  }), children);
 };
 
 var ExampleComponent = function ExampleComponent(_ref) {
