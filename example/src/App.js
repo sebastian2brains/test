@@ -42,6 +42,11 @@ const App = () => {
     </div>
 
     <Icon name="alarm" />
+    <Icon name="home" size="3" />
+    <Icon name="alarm" size="5" />
+    <Icon name="alarm" size="55" />
+    <Icon name="alarm" size="x" />
+    <Icon name="alarm" size={6} />
 
     <Button color="primary" size="large" > label button </Button>
     <Button onClick={() => {

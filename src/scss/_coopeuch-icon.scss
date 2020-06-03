@@ -1,5 +1,16 @@
 @import 'fonts';
 
+$availableFonts: (
+  16,
+  20,
+  24,
+  32,
+  40,
+  48,
+  56,
+  64
+);
+
 [class^="__coopeuch-icon__icon-"], [class*=" __coopeuch-icon__icon-"], 
 [class^="coopeuch-icon"], [class*=" coopeuch-icon"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -11,10 +22,16 @@
   text-transform: none;
   line-height: 1;
   display: inline-flex;
+  vertical-align: middle;
   
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @for $i from 1 through length($availableFonts) {
+      &.size-#{$i} {
+        font-size: nth($availableFonts, $i) + px;
+      }
+    }
   }
   
   .icon-alarm:before {

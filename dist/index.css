@@ -1,6 +1,6 @@
 /* add css module styles here (optional) */
 
-._3ybTi {
+._styles-module__test__3ybTi {
   margin: 2em;
   padding: 0.5em;
   border: 2px solid #000;
@@ -54,34 +54,34 @@
   font-style: normal;
   font-display: block; }
 
-._5h7nw {
+.__buttons__elevation-1__5h7nw {
   box-shadow: 0 2px 4px 0 rgba(31, 30, 30, 0.1); }
 
-._3d4Cf {
+.__buttons__elevation-2__3d4Cf {
   box-shadow: 0 4px 6px 0 rgba(31, 30, 30, 0.1); }
 
-._2q8Nc {
+.__buttons__elevation-3__2q8Nc {
   box-shadow: 0 6px 8px 0 rgba(31, 30, 30, 0.1); }
 
-._32nCN {
+.__buttons__elevation-4__32nCN {
   box-shadow: 0 8px 10px 0 rgba(31, 30, 30, 0.1); }
 
-._rhvLq {
+.__buttons__elevation-5__rhvLq {
   box-shadow: 0 10px 12px 0 rgba(31, 30, 30, 0.1); }
 
-._MupO8 {
+.__buttons__elevation-element-1__MupO8 {
   box-shadow: 0 1px 2px 0 rgba(31, 30, 30, 0.35); }
 
-._3-v1q, ._1rTjI {
+.__buttons__elevation-element-2__3-v1q, .__buttons__btn__1rTjI {
   box-shadow: 0 2px 4px 0 rgba(31, 30, 30, 0.35); }
 
-._3wyMt {
+.__buttons__elevation-element-3__3wyMt {
   box-shadow: 0 4px 6px 0 rgba(31, 30, 30, 0.35); }
 
-._1_HsB {
+.__buttons__elevation-element-4__1_HsB {
   box-shadow: 0 6px 8px 0 rgba(31, 30, 30, 0.35); }
 
-._1rTjI {
+.__buttons__btn__1rTjI {
   border: none;
   border-radius: 4px;
   padding: 8px 16px;
@@ -89,81 +89,81 @@
   cursor: pointer;
   font-family: 'Ubuntu';
   font-size: 1rem; }
-  ._1rTjI:active {
+  .__buttons__btn__1rTjI:active {
     box-shadow: none; }
-  ._1rTjI._1oHO9 {
+  .__buttons__btn__1rTjI.__buttons__btn-secondary-green__1oHO9 {
     color: white;
     background-color: #04584C; }
-    ._1rTjI._1oHO9:hover, ._1rTjI._1oHO9:active {
+    .__buttons__btn__1rTjI.__buttons__btn-secondary-green__1oHO9:hover, .__buttons__btn__1rTjI.__buttons__btn-secondary-green__1oHO9:active {
       background-color: #004030; }
-  ._1rTjI._2wUjt {
+  .__buttons__btn__1rTjI.__buttons__btn-secondary-green-outline__2wUjt {
     background-color: white;
     border: 1px solid #04584C;
     color: #04584C; }
-    ._1rTjI._2wUjt:hover, ._1rTjI._2wUjt:active {
+    .__buttons__btn__1rTjI.__buttons__btn-secondary-green-outline__2wUjt:hover, .__buttons__btn__1rTjI.__buttons__btn-secondary-green-outline__2wUjt:active {
       border-color: #004030;
       color: #004030; }
-    ._1rTjI._2wUjt:disabled {
+    .__buttons__btn__1rTjI.__buttons__btn-secondary-green-outline__2wUjt:disabled {
       border: 1px solid #D5D0D5;
       background-color: white;
       color: #D5D0D5;
       box-shadow: none; }
-  ._1rTjI._18s3n {
+  .__buttons__btn__1rTjI.__buttons__btn-secondary-blue__18s3n {
     color: white;
     background-color: #131F6B; }
-    ._1rTjI._18s3n:hover, ._1rTjI._18s3n:active {
+    .__buttons__btn__1rTjI.__buttons__btn-secondary-blue__18s3n:hover, .__buttons__btn__1rTjI.__buttons__btn-secondary-blue__18s3n:active {
       background-color: #001140; }
-  ._1rTjI._10sZo {
+  .__buttons__btn__1rTjI.__buttons__btn-secondary-blue-outline__10sZo {
     background-color: white;
     border: 1px solid #131F6B;
     color: #131F6B; }
-    ._1rTjI._10sZo:hover, ._1rTjI._10sZo:active {
+    .__buttons__btn__1rTjI.__buttons__btn-secondary-blue-outline__10sZo:hover, .__buttons__btn__1rTjI.__buttons__btn-secondary-blue-outline__10sZo:active {
       border-color: #001140;
       color: #001140; }
-    ._1rTjI._10sZo:disabled {
+    .__buttons__btn__1rTjI.__buttons__btn-secondary-blue-outline__10sZo:disabled {
       border: 1px solid #D5D0D5;
       background-color: white;
       color: #D5D0D5;
       box-shadow: none; }
-  ._1rTjI._1w9Pd {
+  .__buttons__btn__1rTjI.__buttons__btn-secondary-purple__1w9Pd {
     color: white;
     background-color: #420456; }
-    ._1rTjI._1w9Pd:hover, ._1rTjI._1w9Pd:active {
+    .__buttons__btn__1rTjI.__buttons__btn-secondary-purple__1w9Pd:hover, .__buttons__btn__1rTjI.__buttons__btn-secondary-purple__1w9Pd:active {
       background-color: #2B0040; }
-  ._1rTjI._1ebxm {
+  .__buttons__btn__1rTjI.__buttons__btn-secondary-purple-outline__1ebxm {
     background-color: white;
     border: 1px solid #420456;
     color: #420456; }
-    ._1rTjI._1ebxm:hover, ._1rTjI._1ebxm:active {
+    .__buttons__btn__1rTjI.__buttons__btn-secondary-purple-outline__1ebxm:hover, .__buttons__btn__1rTjI.__buttons__btn-secondary-purple-outline__1ebxm:active {
       border-color: #2B0040;
       color: #2B0040; }
-    ._1rTjI._1ebxm:disabled {
+    .__buttons__btn__1rTjI.__buttons__btn-secondary-purple-outline__1ebxm:disabled {
       border: 1px solid #D5D0D5;
       background-color: white;
       color: #D5D0D5;
       box-shadow: none; }
-  ._1rTjI._388da {
+  .__buttons__btn__1rTjI.__buttons__btn-primary-outline__388da {
     background-color: white;
     border: 1px solid #E81E2B;
     color: #E81E2B; }
-    ._1rTjI._388da:hover, ._1rTjI._388da:active {
+    .__buttons__btn__1rTjI.__buttons__btn-primary-outline__388da:hover, .__buttons__btn__1rTjI.__buttons__btn-primary-outline__388da:active {
       border-color: #B00009;
       color: #B00009; }
-    ._1rTjI._388da:disabled {
+    .__buttons__btn__1rTjI.__buttons__btn-primary-outline__388da:disabled {
       border: 1px solid #D5D0D5;
       background-color: white;
       color: #D5D0D5;
       box-shadow: none; }
-  ._1rTjI._qR-dP {
+  .__buttons__btn__1rTjI.__buttons__btn-primary__qR-dP {
     background-color: #E81E2B;
     color: white; }
-    ._1rTjI._qR-dP:hover, ._1rTjI._qR-dP:active {
+    .__buttons__btn__1rTjI.__buttons__btn-primary__qR-dP:hover, .__buttons__btn__1rTjI.__buttons__btn-primary__qR-dP:active {
       background-color: #B00009; }
-  ._1rTjI._2Yjez {
+  .__buttons__btn__1rTjI.__buttons__large__2Yjez {
     padding: 12px 24px;
     font-size: 1rem;
     line-height: 2rem; }
-  ._1rTjI:disabled {
+  .__buttons__btn__1rTjI:disabled {
     background-color: #D5D0D5;
     pointer-events: none;
     border: none;
@@ -227,346 +227,371 @@
   text-transform: none;
   line-height: 1;
   display: inline-flex;
+  vertical-align: middle;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+  [class^="__coopeuch-icon__icon-"].__coopeuch-icon__size-1__E20oA, [class*=" __coopeuch-icon__icon-"].__coopeuch-icon__size-1__E20oA,
+  [class^="coopeuch-icon"].__coopeuch-icon__size-1__E20oA, [class*=" coopeuch-icon"].__coopeuch-icon__size-1__E20oA {
+    font-size: 16px; }
+  [class^="__coopeuch-icon__icon-"].__coopeuch-icon__size-2__1LAUs, [class*=" __coopeuch-icon__icon-"].__coopeuch-icon__size-2__1LAUs,
+  [class^="coopeuch-icon"].__coopeuch-icon__size-2__1LAUs, [class*=" coopeuch-icon"].__coopeuch-icon__size-2__1LAUs {
+    font-size: 20px; }
+  [class^="__coopeuch-icon__icon-"].__coopeuch-icon__size-3__3tmzu, [class*=" __coopeuch-icon__icon-"].__coopeuch-icon__size-3__3tmzu,
+  [class^="coopeuch-icon"].__coopeuch-icon__size-3__3tmzu, [class*=" coopeuch-icon"].__coopeuch-icon__size-3__3tmzu {
+    font-size: 24px; }
+  [class^="__coopeuch-icon__icon-"].__coopeuch-icon__size-4__f8f2b, [class*=" __coopeuch-icon__icon-"].__coopeuch-icon__size-4__f8f2b,
+  [class^="coopeuch-icon"].__coopeuch-icon__size-4__f8f2b, [class*=" coopeuch-icon"].__coopeuch-icon__size-4__f8f2b {
+    font-size: 32px; }
+  [class^="__coopeuch-icon__icon-"].__coopeuch-icon__size-5__3WQf-, [class*=" __coopeuch-icon__icon-"].__coopeuch-icon__size-5__3WQf-,
+  [class^="coopeuch-icon"].__coopeuch-icon__size-5__3WQf-, [class*=" coopeuch-icon"].__coopeuch-icon__size-5__3WQf- {
+    font-size: 40px; }
+  [class^="__coopeuch-icon__icon-"].__coopeuch-icon__size-6__325my, [class*=" __coopeuch-icon__icon-"].__coopeuch-icon__size-6__325my,
+  [class^="coopeuch-icon"].__coopeuch-icon__size-6__325my, [class*=" coopeuch-icon"].__coopeuch-icon__size-6__325my {
+    font-size: 48px; }
+  [class^="__coopeuch-icon__icon-"].__coopeuch-icon__size-7__vbJDw, [class*=" __coopeuch-icon__icon-"].__coopeuch-icon__size-7__vbJDw,
+  [class^="coopeuch-icon"].__coopeuch-icon__size-7__vbJDw, [class*=" coopeuch-icon"].__coopeuch-icon__size-7__vbJDw {
+    font-size: 56px; }
+  [class^="__coopeuch-icon__icon-"].__coopeuch-icon__size-8__HfeIC, [class*=" __coopeuch-icon__icon-"].__coopeuch-icon__size-8__HfeIC,
+  [class^="coopeuch-icon"].__coopeuch-icon__size-8__HfeIC, [class*=" coopeuch-icon"].__coopeuch-icon__size-8__HfeIC {
+    font-size: 64px; }
 
-._1UfCs:before {
+.__coopeuch-icon__icon-alarm__1UfCs:before {
   content: "\E900";
   color: #364f6b; }
 
-._1sBsM:before {
+.__coopeuch-icon__icon-alert__1sBsM:before {
   content: "\E901";
   color: #364f6b; }
 
-._k6COO:before {
+.__coopeuch-icon__icon-app-notification__k6COO:before {
   content: "\E902";
   color: #364f6b; }
 
-._2FJt0:before {
+.__coopeuch-icon__icon-block__2FJt0:before {
   content: "\E903";
   color: #364f6b; }
 
-._2Gg_H:before {
+.__coopeuch-icon__icon-bookmark__2Gg_H:before {
   content: "\E904";
   color: #364f6b; }
 
-._1oFzp:before {
+.__coopeuch-icon__icon-bug__1oFzp:before {
   content: "\E905";
   color: #364f6b; }
 
-._2pvnG:before {
+.__coopeuch-icon__icon-check-double__2pvnG:before {
   content: "\E906";
   color: #364f6b; }
 
-._Wb2XK:before {
+.__coopeuch-icon__icon-check__Wb2XK:before {
   content: "\E907";
   color: #364f6b; }
 
-._j_7gN:before {
+.__coopeuch-icon__icon-cloud-disable__j_7gN:before {
   content: "\E908";
   color: #364f6b; }
 
-._1dzy1:before {
+.__coopeuch-icon__icon-cloud-download__1dzy1:before {
   content: "\E909";
   color: #364f6b; }
 
-._2jnFK:before {
+.__coopeuch-icon__icon-cloud-upload__2jnFK:before {
   content: "\E90A";
   color: #364f6b; }
 
-._XL8Xi:before {
+.__coopeuch-icon__icon-cloud__XL8Xi:before {
   content: "\E90B";
   color: #364f6b; }
 
-._3mCNb:before {
+.__coopeuch-icon__icon-cogwheel__3mCNb:before {
   content: "\E90C";
   color: #364f6b; }
 
-._1fOSF:before {
+.__coopeuch-icon__icon-copy__1fOSF:before {
   content: "\E90D";
   color: #364f6b; }
 
-._10QIh:before {
+.__coopeuch-icon__icon-cross__10QIh:before {
   content: "\E90E";
   color: #364f6b; }
 
-._3fs14:before {
+.__coopeuch-icon__icon-cut__3fs14:before {
   content: "\E90F";
   color: #364f6b; }
 
-._QRta1:before {
+.__coopeuch-icon__icon-dashboard__QRta1:before {
   content: "\E910";
   color: #364f6b; }
 
-._HXmn3:before {
+.__coopeuch-icon__icon-down__HXmn3:before {
   content: "\E911";
   color: #364f6b; }
 
-._3ICli:before {
+.__coopeuch-icon__icon-download-queue__3ICli:before {
   content: "\E912";
   color: #364f6b; }
 
-._2SdS4:before {
+.__coopeuch-icon__icon-download__2SdS4:before {
   content: "\E913";
   color: #364f6b; }
 
-._P7At8:before {
+.__coopeuch-icon__icon-draft__P7At8:before {
   content: "\E914";
   color: #364f6b; }
 
-._Mh01S:before {
+.__coopeuch-icon__icon-exit-fullscreen__Mh01S:before {
   content: "\E915";
   color: #364f6b; }
 
-._1KjPQ:before {
+.__coopeuch-icon__icon-eye-close__1KjPQ:before {
   content: "\E916";
   color: #364f6b; }
 
-._3ATsw:before {
+.__coopeuch-icon__icon-eye-open__3ATsw:before {
   content: "\E917";
   color: #364f6b; }
 
-._2Dfx_:before {
+.__coopeuch-icon__icon-female-user__2Dfx_:before {
   content: "\E918";
   color: #364f6b; }
 
-._3bdqj:before {
+.__coopeuch-icon__icon-file__3bdqj:before {
   content: "\E919";
   color: #364f6b; }
 
-._295_z:before {
+.__coopeuch-icon__icon-filter__295_z:before {
   content: "\E91A";
   color: #364f6b; }
 
-._1TXC1:before {
+.__coopeuch-icon__icon-flag__1TXC1:before {
   content: "\E91B";
   color: #364f6b; }
 
-._FIx0R:before {
+.__coopeuch-icon__icon-fullscreen__FIx0R:before {
   content: "\E91C";
   color: #364f6b; }
 
-._2g-zt:before {
+.__coopeuch-icon__icon-heart__2g-zt:before {
   content: "\E91D";
   color: #364f6b; }
 
-._1qlUa:before {
+.__coopeuch-icon__icon-help__1qlUa:before {
   content: "\E91E";
   color: #364f6b; }
 
-._2JGHi:before {
+.__coopeuch-icon__icon-home__2JGHi:before {
   content: "\E91F";
   color: #364f6b; }
 
-._2iZcp:before {
+.__coopeuch-icon__icon-information__2iZcp:before {
   content: "\E920";
   color: #364f6b; }
 
-._1WSQ-:before {
+.__coopeuch-icon__icon-left__1WSQ-:before {
   content: "\E921";
   color: #364f6b; }
 
-._1SMNH:before {
+.__coopeuch-icon__icon-lifebuoy__1SMNH:before {
   content: "\E922";
   color: #364f6b; }
 
-._ZRgfq:before {
+.__coopeuch-icon__icon-list__ZRgfq:before {
   content: "\E923";
   color: #364f6b; }
 
-._3CMbC:before {
+.__coopeuch-icon__icon-loading__3CMbC:before {
   content: "\E924";
   color: #364f6b; }
 
-._163V5:before {
+.__coopeuch-icon__icon-lock__163V5:before {
   content: "\E925";
   color: #364f6b; }
 
-._2ii93:before {
+.__coopeuch-icon__icon-login__2ii93:before {
   content: "\E926";
   color: #364f6b; }
 
-._1Z960:before {
+.__coopeuch-icon__icon-logout__1Z960:before {
   content: "\E927";
   color: #364f6b; }
 
-._2boVJ:before {
+.__coopeuch-icon__icon-menu-burger__2boVJ:before {
   content: "\E928";
   color: #364f6b; }
 
-._Li-Ov:before {
+.__coopeuch-icon__icon-menu-dots__Li-Ov:before {
   content: "\E929";
   color: #364f6b; }
 
-._1bA0I:before {
+.__coopeuch-icon__icon-microphone-disable__1bA0I:before {
   content: "\E92A";
   color: #364f6b; }
 
-._TfNxZ:before {
+.__coopeuch-icon__icon-microphone__TfNxZ:before {
   content: "\E92B";
   color: #364f6b; }
 
-._2QDQO:before {
+.__coopeuch-icon__icon-minus__2QDQO:before {
   content: "\E92C";
   color: #364f6b; }
 
-._38j6H:before {
+.__coopeuch-icon__icon-note__38j6H:before {
   content: "\E92D";
   color: #364f6b; }
 
-._K1T2z:before {
+.__coopeuch-icon__icon-notification-disable__K1T2z:before {
   content: "\E92E";
   color: #364f6b; }
 
-._2Ra63:before {
+.__coopeuch-icon__icon-notification__2Ra63:before {
   content: "\E92F";
   color: #364f6b; }
 
-._51DLi:before {
+.__coopeuch-icon__icon-paste__51DLi:before {
   content: "\E930";
   color: #364f6b; }
 
-._1HBpS:before {
+.__coopeuch-icon__icon-plus__1HBpS:before {
   content: "\E931";
   color: #364f6b; }
 
-._1mx6V:before {
+.__coopeuch-icon__icon-power-sign__1mx6V:before {
   content: "\E932";
   color: #364f6b; }
 
-._1GulE:before {
+.__coopeuch-icon__icon-print__1GulE:before {
   content: "\E933";
   color: #364f6b; }
 
-._2lbdS:before {
+.__coopeuch-icon__icon-puzzle__2lbdS:before {
   content: "\E934";
   color: #364f6b; }
 
-._Lubaw:before {
+.__coopeuch-icon__icon-refresh__Lubaw:before {
   content: "\E935";
   color: #364f6b; }
 
-._3KEs9:before {
+.__coopeuch-icon__icon-reply-all__3KEs9:before {
   content: "\E936";
   color: #364f6b; }
 
-._8CChY:before {
+.__coopeuch-icon__icon-reply__8CChY:before {
   content: "\E937";
   color: #364f6b; }
 
-._xteAB:before {
+.__coopeuch-icon__icon-right__xteAB:before {
   content: "\E938";
   color: #364f6b; }
 
-._2bqpv:before {
+.__coopeuch-icon__icon-save__2bqpv:before {
   content: "\E939";
   color: #364f6b; }
 
-._3SlDa:before {
+.__coopeuch-icon__icon-screenshot__3SlDa:before {
   content: "\E93A";
   color: #364f6b; }
 
-._1TlAn:before {
+.__coopeuch-icon__icon-search-alt__1TlAn:before {
   content: "\E93B";
   color: #364f6b; }
 
-._2TIsj:before {
+.__coopeuch-icon__icon-search-check__2TIsj:before {
   content: "\E93C";
   color: #364f6b; }
 
-._2NZWr:before {
+.__coopeuch-icon__icon-search-cross__2NZWr:before {
   content: "\E93D";
   color: #364f6b; }
 
-._3c04X:before {
+.__coopeuch-icon__icon-search-minus__3c04X:before {
   content: "\E93E";
   color: #364f6b; }
 
-._3deTb:before {
+.__coopeuch-icon__icon-search-plus__3deTb:before {
   content: "\E93F";
   color: #364f6b; }
 
-._3rHQW:before {
+.__coopeuch-icon__icon-share__3rHQW:before {
   content: "\E940";
   color: #364f6b; }
 
-._2HTIc:before {
+.__coopeuch-icon__icon-shield__2HTIc:before {
   content: "\E941";
   color: #364f6b; }
 
-._1H3-p:before {
+.__coopeuch-icon__icon-snooze__1H3-p:before {
   content: "\E942";
   color: #364f6b; }
 
-._ot_K-:before {
+.__coopeuch-icon__icon-star__ot_K-:before {
   content: "\E943";
   color: #364f6b; }
 
-._3n6WS:before {
+.__coopeuch-icon__icon-stars__3n6WS:before {
   content: "\E944";
   color: #364f6b; }
 
-._g4AKq:before {
+.__coopeuch-icon__icon-sync__g4AKq:before {
   content: "\E945";
   color: #364f6b; }
 
-._2iDpn:before {
+.__coopeuch-icon__icon-task__2iDpn:before {
   content: "\E946";
   color: #364f6b; }
 
-._rVrZO:before {
+.__coopeuch-icon__icon-time__rVrZO:before {
   content: "\E947";
   color: #364f6b; }
 
-._2rUqI:before {
+.__coopeuch-icon__icon-trash-empty__2rUqI:before {
   content: "\E948";
   color: #364f6b; }
 
-._2M4JD:before {
+.__coopeuch-icon__icon-trash-full__2M4JD:before {
   content: "\E949";
   color: #364f6b; }
 
-._H5UfA:before {
+.__coopeuch-icon__icon-trash__H5UfA:before {
   content: "\E94A";
   color: #364f6b; }
 
-._1MSD1:before {
+.__coopeuch-icon__icon-umbrella__1MSD1:before {
   content: "\E94B";
   color: #364f6b; }
 
-._5VZLW:before {
+.__coopeuch-icon__icon-unlock__5VZLW:before {
   content: "\E94C";
   color: #364f6b; }
 
-._1tEMX:before {
+.__coopeuch-icon__icon-up__1tEMX:before {
   content: "\E94D";
   color: #364f6b; }
 
-._2EQnt:before {
+.__coopeuch-icon__icon-upload-queue__2EQnt:before {
   content: "\E94E";
   color: #364f6b; }
 
-._MTrj9:before {
+.__coopeuch-icon__icon-upload__MTrj9:before {
   content: "\E94F";
   color: #364f6b; }
 
-._2cuT3:before {
+.__coopeuch-icon__icon-user__2cuT3:before {
   content: "\E950";
   color: #364f6b; }
 
-._3CYbD:before {
+.__coopeuch-icon__icon-verification-fail__3CYbD:before {
   content: "\E951";
   color: #364f6b; }
 
-._3hYBR:before {
+.__coopeuch-icon__icon-verification__3hYBR:before {
   content: "\E952";
   color: #364f6b; }
 
-._2swwf:before {
+.__coopeuch-icon__icon-wrench__2swwf:before {
   content: "\E953";
   color: #364f6b; }
 
-._2oNry:before {
+.__coopeuch-icon__icon-write__2oNry:before {
   content: "\E954";
   color: #364f6b; }

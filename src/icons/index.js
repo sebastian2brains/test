@@ -1,9 +1,10 @@
 import React from 'react';
 import icons from '../scss/_coopeuch-icon.scss';
 
-const Icon = ({ name = 'alarm' }) => {
+const Icon = ({ name = 'alarm', size = '1', ...props }) => {
   const icon = icons[`icon-${name}`];
-  return <div width="25" className={`coopeuch-icon ${icon}`} />
+  const sizeSelected = icons[`size-${size}`] || '1';
+  return <i {...props} width="25" className={`coopeuch-icon ${icon} ${sizeSelected}`} />
 }
 
 export default Icon;
