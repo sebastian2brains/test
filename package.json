@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "babel src --out-dir lib --source-maps inline --copy-files && microbundle-crl --no-compress --copy-files --format modern,cjs",
+    "build": "babel src/scss/fonts --out-dir dist/fonts --source-maps inline --copy-files && microbundle-crl --no-compress --copy-files --format modern,cjs",
     "start": "babel src/scss/fonts --out-dir dist/fonts --source-maps inline --copy-files && microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "preinstall": "touch test.js",
