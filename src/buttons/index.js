@@ -20,7 +20,6 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  variant: PropTypes.string,
   prefix: PropTypes.string,
   suffix: PropTypes.string,
   color: PropTypes.oneOf(['primary', 'secondary']),
