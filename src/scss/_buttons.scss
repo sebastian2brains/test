@@ -3,6 +3,53 @@
 @import './variables';
 @import './elevation';
 
+$disableColor: $neutral-20;
+
+%condencedDisabled {
+  &:disabled{
+    background-color: $disableColor;
+    color: white;
+  }
+}
+
+@mixin outline($name, $main, $pressed) {
+  &.btn-#{$name}-outline{
+    background-color: white;
+    border: 1px solid $main;
+    color: $main;
+
+    &:hover,&:active{
+      border-color: $pressed;
+      color: $pressed;
+    }
+
+    &:disabled {
+      border: 1px solid $disableColor;
+    }
+  }
+
+  &.btn-#{$name}{
+    background-color: $main;
+    color: white;
+    &:hover,&:active{
+      background-color: $pressed;
+    }
+    @extend %condencedDisabled;
+  }
+
+  &.btn-#{$name}-text{
+    color: $main;
+    box-shadow: none;
+
+    span{text-decoration: underline;}
+
+    &:hover,&:active{
+      border-color: $pressed;
+      color: $pressed;
+    }
+    
+  }
+}
 
 .btn{
   border: none;
@@ -13,7 +60,7 @@
   cursor: pointer;
   font-family: 'Ubuntu';
   font-size: 1rem;
-  $disableColor: $neutral-20;
+  background-color: transparent;
   @extend .elevation-element-2;
 
   i{
@@ -22,117 +69,24 @@
     font-size: 24px !important;
 
     &.prefix{
-      margin-right: 3px;
+      margin-right: 8px;
     }
     &.suffix{
-      margin-left: 3px;
+      margin-left: 8px;
     }
   }
 
-  &:active{
+  &:active, &:disabled{
     box-shadow: none;
   }
 
-  &.btn-primary-outline{
-    background-color: white;
-    border: 1px solid $primary-20;
-    color: $primary-20;
-
-    &:hover,&:active{
-      border-color: $primary-30;
-      color: $primary-30;
-    }
-    
-    &:disabled{
-      border: 1px solid $disableColor;
-      background-color: white;
-      color: $disableColor;
-      box-shadow: none;
-    }
-  }
-
-  &.btn-primary-text{
-    background-color: white;
-    // border: 1px solid $primary-20;
-    color: $primary-20;
-    box-shadow: none;
-
-    span{text-decoration: underline;}
-
-    &:hover,&:active{
-      border-color: $primary-30;
-      color: $primary-30;
-    }
-    
-    &:disabled{
-      border: none;
-      background-color: white;
-      color: $disableColor;
-      box-shadow: none;
-    }
-  }
-
-  &.btn-secondary-text{
-    background-color: white;
-    // border: 1px solid $primary-20;
-    color: $info-40;
-    box-shadow: none;
-
-    span{text-decoration: underline;}
-
-    &:hover,&:active{
-      border-color: $info-40;
-      color: $info-40;
-    }
-    
-    &:disabled{
-      border: none;
-      background-color: white;
-      color: $disableColor;
-      box-shadow: none;
-    }
-  }
-
-  &.btn-primary{
-    background-color: $primary-20;
-    color: white;
-
-    &:hover,&:active{
-      background-color: $primary-30;
-    }
-  }
-
-  &.btn-secondary {
-    color: white;
-    background-color: $info-40;
-    &:hover,&:active{
-      background-color: $info-50;
-    }
-  }
-
-  &.btn-secondary-outline {
-    background-color: white;
-    border: 1px solid $info-40;
-    color: $info-40;
-
-    &:hover,&:active{
-      border-color: $info-50;
-      color: $info-50;
-    }
-
-    &:disabled{
-      border: 1px solid $disableColor;
-      background-color: white;
-      color: $disableColor;
-      box-shadow: none;
-    }
-  }
+  @include outline('primary', $primary-20, $primary-30);
+  @include outline('secondary', $info-40, $info-50);
 
   &:disabled{
-    background-color: $neutral-20;
     pointer-events: none;
     border: none;
     box-shadow: none;
-    color: white;
+    color: $disableColor;
   }
 }
