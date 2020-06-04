@@ -4,15 +4,6 @@ import { ExampleComponent, Button, Icon, Grid } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
 
-const ButtonColumn = ({ arr, variant = '', disabled = false, size = "" }) => {
-  // const 
-  return <>
-    {arr.map((val, i) => <div className={`col`}>
-      <Button key={`val-${i}`} size={size} disabled={disabled} color={val} variant={variant} > label button </Button>
-    </div>)}
-  </>
-}
-
 const App = () => {
   return <> <ExampleComponent text="Create React Library Example 😄" />
     <div className="container">

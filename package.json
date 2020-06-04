@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "babel src/scss/fonts --out-dir dist/fonts --source-maps inline --copy-files && microbundle-crl --no-compress --copy-files --format modern,cjs",
+    "build": "microbundle-crl --no-compress --copy-files --format modern,cjs",
     "prebuild": "gulp",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
@@ -59,8 +59,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "prop-types": "^15.7.2"
-  }
+  ]
 }
