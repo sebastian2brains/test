@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --copy-files --format modern,cjs",
+    "build": "babel src/scss/fonts --out-dir dist/css/fonts --source-maps inline --copy-files && microbundle-crl --no-compress --copy-files --format modern,cjs",
     "prebuild": "gulp",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
