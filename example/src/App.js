@@ -18,7 +18,7 @@ const App = () => {
     <div className="container">
       <Grid container >
         <Grid md="2" variant="span" className="hola mundo">
-          <Button color="primary" prefix="write" > label button </Button>
+          <Button color="primary" prefix="write" onClick={() => alert('hola')}  > label click </Button>
           <Button color="primary" prefix="write" > label button </Button>
         </Grid>
         <Grid md="2" variant="span" className="hola mundo">

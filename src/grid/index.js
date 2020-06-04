@@ -3,7 +3,7 @@ import gridStyles from "../scss/_grid.scss";
 
 // const Grid = ({ variant = 'div', children }) => React.createElement(variant, { className: gridStyles.row }, children);
 const Grid = ({ variant = 'div', container, children, ...props }) => {
-  console.log(gridStyles);
+  // console.log(gridStyles);
 
   let styles = container ? [gridStyles.row] : [gridStyles.col];
 

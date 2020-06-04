@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import Icon from '../icons';
 import styles from '../scss/_buttons.scss';
 
-const Button = ({ children, size, color, variant, disabled, prefix, suffix }) => {
+const Button = ({ children, color, variant, disabled, prefix, suffix, ...props }) => {
   const btnVariant = variant !== '' ? `-${variant}` : '';
-  console.log(btnVariant);
 
-  return <button className={`${styles.btn} ${styles[`btn-${color}${btnVariant}`] || ''}`} disabled={disabled} >
+  return <button {...props} className={`${styles.btn} ${styles[`btn-${color}${btnVariant}`] || ''}`} disabled={disabled} >
     {prefix && <Icon className={styles.prefix} name={prefix} />}
     {variant !== 'text' ? children : <span>{children}</span>}
     {suffix && <Icon className={styles.suffix} name={suffix} />}
@@ -21,7 +20,13 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  variant: PropTypes.string
+  variant: PropTypes.string,
+  prefix: PropTypes.string,
+  suffix: PropTypes.string,
+  color: PropTypes.oneOf(['primary', 'secondary']),
+  variant: PropTypes.oneOf(['', 'outline', 'text']),
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool
 };
 
 export default Button;
