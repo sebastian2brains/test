@@ -1,17 +1,15 @@
 /* Ubuntu Font Family Bower-ready v0.1.13 */
 /* Ubuntu @font-face kit */
 
-$UbuntuFontsPath: "./fonts" !default;
-
 /* BEGIN Ubuntu Light */
 @font-face {
     font-family: 'Ubuntu';
-    src: url('#{$UbuntuFontsPath}/ubuntu-light-webfont.eot');
-    src: url('#{$UbuntuFontsPath}/ubuntu-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('#{$UbuntuFontsPath}/ubuntu-light-webfont.woff2') format('woff2'),
-         url('#{$UbuntuFontsPath}/ubuntu-light-webfont.woff') format('woff'),
-         url('#{$UbuntuFontsPath}/ubuntu-light-webfont.ttf') format('truetype'),
-         url('#{$UbuntuFontsPath}/ubuntu-light-webfont.svg#ubuntulight') format('svg');
+    src: url('#{$fontsPath}/ubuntu-light-webfont.eot');
+    src: url('#{$fontsPath}/ubuntu-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontsPath}/ubuntu-light-webfont.woff2') format('woff2'),
+         url('#{$fontsPath}/ubuntu-light-webfont.woff') format('woff'),
+         url('#{$fontsPath}/ubuntu-light-webfont.ttf') format('truetype'),
+         url('#{$fontsPath}/ubuntu-light-webfont.svg#ubuntulight') format('svg');
     font-weight: 300;
     font-style: normal;
 }
@@ -20,12 +18,12 @@ $UbuntuFontsPath: "./fonts" !default;
 /* BEGIN Ubuntu Regular */
 @font-face {
     font-family: 'Ubuntu';
-    src: url('#{$UbuntuFontsPath}/ubuntu-regular-webfont.eot');
-    src: url('#{$UbuntuFontsPath}/ubuntu-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('#{$UbuntuFontsPath}/ubuntu-regular-webfont.woff2') format('woff2'),
-         url('#{$UbuntuFontsPath}/ubuntu-regular-webfont.woff') format('woff'),
-         url('#{$UbuntuFontsPath}/ubuntu-regular-webfont.ttf') format('truetype'),
-         url('#{$UbuntuFontsPath}/ubuntu-regular-webfont.svg#ubunturegular') format('svg');
+    src: url('#{$fontsPath}/ubuntu-regular-webfont.eot');
+    src: url('#{$fontsPath}/ubuntu-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontsPath}/ubuntu-regular-webfont.woff2') format('woff2'),
+         url('#{$fontsPath}/ubuntu-regular-webfont.woff') format('woff'),
+         url('#{$fontsPath}/ubuntu-regular-webfont.ttf') format('truetype'),
+         url('#{$fontsPath}/ubuntu-regular-webfont.svg#ubunturegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -34,12 +32,12 @@ $UbuntuFontsPath: "./fonts" !default;
 /* BEGIN Ubuntu Medium */
 @font-face {
     font-family: 'Ubuntu';
-    src: url('#{$UbuntuFontsPath}/ubuntu-medium-webfont.eot');
-    src: url('#{$UbuntuFontsPath}/ubuntu-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('#{$UbuntuFontsPath}/ubuntu-medium-webfont.woff2') format('woff2'),
-         url('#{$UbuntuFontsPath}/ubuntu-medium-webfont.woff') format('woff'),
-         url('#{$UbuntuFontsPath}/ubuntu-medium-webfont.ttf') format('truetype'),
-         url('#{$UbuntuFontsPath}/ubuntu-medium-webfont.svg#ubuntumedium') format('svg');
+    src: url('#{$fontsPath}/ubuntu-medium-webfont.eot');
+    src: url('#{$fontsPath}/ubuntu-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontsPath}/ubuntu-medium-webfont.woff2') format('woff2'),
+         url('#{$fontsPath}/ubuntu-medium-webfont.woff') format('woff'),
+         url('#{$fontsPath}/ubuntu-medium-webfont.ttf') format('truetype'),
+         url('#{$fontsPath}/ubuntu-medium-webfont.svg#ubuntumedium') format('svg');
     font-weight: 500;
     font-style: normal;
 }
@@ -48,12 +46,12 @@ $UbuntuFontsPath: "./fonts" !default;
 /* BEGIN Ubuntu Bold */
 @font-face {
     font-family: 'Ubuntu';
-    src: url('#{$UbuntuFontsPath}/ubuntu-bold-webfont.eot');
-    src: url('#{$UbuntuFontsPath}/ubuntu-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('#{$UbuntuFontsPath}/ubuntu-bold-webfont.woff2') format('woff2'),
-         url('#{$UbuntuFontsPath}/ubuntu-bold-webfont.woff') format('woff'),
-         url('#{$UbuntuFontsPath}/ubuntu-bold-webfont.ttf') format('truetype'),
-         url('#{$UbuntuFontsPath}/ubuntu-bold-webfont.svg#ubuntubold') format('svg');
+    src: url('#{$fontsPath}/ubuntu-bold-webfont.eot');
+    src: url('#{$fontsPath}/ubuntu-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontsPath}/ubuntu-bold-webfont.woff2') format('woff2'),
+         url('#{$fontsPath}/ubuntu-bold-webfont.woff') format('woff'),
+         url('#{$fontsPath}/ubuntu-bold-webfont.ttf') format('truetype'),
+         url('#{$fontsPath}/ubuntu-bold-webfont.svg#ubuntubold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
@@ -61,11 +59,11 @@ $UbuntuFontsPath: "./fonts" !default;
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('#{$icommonFontsPath}/icomoon.eot?vup4cb');
-    src:  url('#{$icommonFontsPath}/icomoon.eot?vup4cb#iefix') format('embedded-opentype'),
-      url('#{$icommonFontsPath}/icomoon.ttf?vup4cb') format('truetype'),
-      url('#{$icommonFontsPath}/icomoon.woff?vup4cb') format('woff'),
-      url('#{$icommonFontsPath}/icomoon.svg?vup4cb#icomoon') format('svg');
+    src:  url('#{$fontsPath}/icomoon.eot?vup4cb');
+    src:  url('#{$fontsPath}/icomoon.eot?vup4cb#iefix') format('embedded-opentype'),
+      url('#{$fontsPath}/icomoon.ttf?vup4cb') format('truetype'),
+      url('#{$fontsPath}/icomoon.woff?vup4cb') format('woff'),
+      url('#{$fontsPath}/icomoon.svg?vup4cb#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;

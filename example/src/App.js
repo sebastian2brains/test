@@ -2,6 +2,7 @@ import React from 'react'
 
 import { ExampleComponent, Button, Icon, Grid } from 'library-1';
 import 'library-1/dist/index.css';
+import 'library-1/dist/css/custom.css';
 
 const ButtonColumn = ({ arr, variant = '', disabled = false, size = "" }) => {
   // const 
@@ -14,48 +15,56 @@ const ButtonColumn = ({ arr, variant = '', disabled = false, size = "" }) => {
 
 const App = () => {
   return <> <ExampleComponent text="Create React Library Example 😄" />
+    <div className="container">
+      <Grid container >
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="primary" prefix="write" > label button </Button>
+          <Button color="primary" prefix="write" > label button </Button>
+        </Grid>
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="primary" prefix="write" variant="outline" > label button </Button>
+          <Icon name="alarm" size="5" />
+        </Grid>
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="primary" suffix="write" variant="text" > label button </Button>
+        </Grid>
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="secondary" suffix="alarm" > label button </Button>
+        </Grid>
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="secondary" prefix="write" variant="outline" > label button </Button>
+          <Icon name="alarm" size="5" />
+          <Icon name="alarm" size="5" />
+        </Grid>
+        <Grid md="2" className="mb-5">
+          <Button color="secondary" suffix="alarm" variant="text" > label button </Button>
+        </Grid>
+      </Grid>
 
-    <div className="row mb-1">
-      <ButtonColumn arr={['primary', 'secondary-green', 'secondary-blue', 'secondary-purple']} />
+      <Grid container >
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="primary" prefix="write" disabled > label button </Button>
+        </Grid>
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="primary" prefix="write" variant="outline" disabled> label button </Button>
+          <Icon name="alarm" size="5" />
+        </Grid>
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="primary" suffix="write" variant="text" disabled> label button </Button>
+        </Grid>
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="secondary" suffix="alarm" disabled> label button </Button>
+        </Grid>
+        <Grid md="2" variant="span" className="hola mundo">
+          <Button color="secondary" prefix="write" variant="outline" disabled> label button </Button>
+          <Icon name="alarm" size="5" />
+          <Icon name="alarm" size="5" />
+        </Grid>
+        <Grid md="2" className="mb-5">
+          <Button color="secondary" suffix="alarm" variant="text" disabled> label button </Button>
+        </Grid>
+      </Grid>
     </div>
-    <div className="row mb-1">
-      <ButtonColumn arr={['primary', 'secondary-green', 'secondary-blue', 'secondary-purple']} variant="outline" />
-    </div>
-    <div className="row mb-1">
-      <ButtonColumn arr={['primary', 'secondary-green', 'secondary-blue', 'secondary-purple']} disabled={true} />
-    </div>
-    <div className="row mb-1">
-      <ButtonColumn arr={['primary', 'secondary-green', 'secondary-blue', 'secondary-purple']} variant="outline" disabled={true} />
-    </div>
-
-    <div className="row mb-1">
-      <ButtonColumn size="large" arr={['primary', 'secondary-green', 'secondary-blue', 'secondary-purple']} />
-    </div>
-    <div className="row mb-1">
-      <ButtonColumn size="large" arr={['primary', 'secondary-green', 'secondary-blue', 'secondary-purple']} variant="outline" />
-    </div>
-    <div className="row mb-1">
-      <ButtonColumn size="large" arr={['primary', 'secondary-green', 'secondary-blue', 'secondary-purple']} disabled={true} />
-    </div>
-    <div className="row mb-1">
-      <ButtonColumn size="large" arr={['primary', 'secondary-green', 'secondary-blue', 'secondary-purple']} variant="outline" disabled={true} />
-    </div>
-
-    <Icon name="alarm" />
-    <Icon name="home" size="3" />
-    <Icon name="alarm" size="5" />
-    <Icon name="alarm" size="55" />
-
-    <Grid container >
-      <Grid sm="2" md="8" variant="span" className="hola mundo">col</Grid>
-      <Grid sm="8" md="2">col</Grid>
-      <Grid sm="2" md="2">col</Grid>
-    </Grid>
-
-    <Button color="primary" size="large" > label button </Button>
-    <Button onClick={() => {
-      console.log('hola mundo');
-    }}> hola mundo click me</Button>
   </>
 }
 

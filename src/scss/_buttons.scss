@@ -7,52 +7,33 @@
 .btn{
   border: none;
   border-radius: 4px;
-  padding: 8px 16px;
+  padding: 8px 24px;
+  min-height: 48px;
   font-weight: 300;
   cursor: pointer;
   font-family: 'Ubuntu';
   font-size: 1rem;
+  $disableColor: $neutral-20;
   @extend .elevation-element-2;
+
+  i{
+    vertical-align: bottom;
+    display: inline;
+    font-size: 24px !important;
+
+    &.prefix{
+      margin-right: 3px;
+    }
+    &.suffix{
+      margin-left: 3px;
+    }
+  }
 
   &:active{
     box-shadow: none;
   }
 
-  @each $name, $size in $secondary-colors {
-    $baseColor: nth($size, 3);
-    $activeColor: nth($size, 4);
-    $disableColor: $neutral-20;
-
-    &.btn-secondary-#{$name} {
-      color: white;
-      background-color: $baseColor;
-      &:hover,&:active{
-        background-color: $activeColor;
-      }
-    }
-
-    &.btn-secondary-#{$name}-outline {
-      background-color: white;
-      border: 1px solid $baseColor;
-      color: $baseColor;
-
-      &:hover,&:active{
-        border-color: $activeColor;
-        color: $activeColor;
-      }
-
-      &:disabled{
-        border: 1px solid $disableColor;
-        background-color: white;
-        color: $disableColor;
-        box-shadow: none;
-      }
-    }
-  }
-
   &.btn-primary-outline{
-    $disableColor: $neutral-20;
-    
     background-color: white;
     border: 1px solid $primary-20;
     color: $primary-20;
@@ -70,6 +51,48 @@
     }
   }
 
+  &.btn-primary-text{
+    background-color: white;
+    // border: 1px solid $primary-20;
+    color: $primary-20;
+    box-shadow: none;
+
+    span{text-decoration: underline;}
+
+    &:hover,&:active{
+      border-color: $primary-30;
+      color: $primary-30;
+    }
+    
+    &:disabled{
+      border: none;
+      background-color: white;
+      color: $disableColor;
+      box-shadow: none;
+    }
+  }
+
+  &.btn-secondary-text{
+    background-color: white;
+    // border: 1px solid $primary-20;
+    color: $info-40;
+    box-shadow: none;
+
+    span{text-decoration: underline;}
+
+    &:hover,&:active{
+      border-color: $info-40;
+      color: $info-40;
+    }
+    
+    &:disabled{
+      border: none;
+      background-color: white;
+      color: $disableColor;
+      box-shadow: none;
+    }
+  }
+
   &.btn-primary{
     background-color: $primary-20;
     color: white;
@@ -79,10 +102,30 @@
     }
   }
 
-  &.large{
-    padding: 12px 24px;
-    font-size: 1rem;
-    line-height: 2rem;
+  &.btn-secondary {
+    color: white;
+    background-color: $info-40;
+    &:hover,&:active{
+      background-color: $info-50;
+    }
+  }
+
+  &.btn-secondary-outline {
+    background-color: white;
+    border: 1px solid $info-40;
+    color: $info-40;
+
+    &:hover,&:active{
+      border-color: $info-50;
+      color: $info-50;
+    }
+
+    &:disabled{
+      border: 1px solid $disableColor;
+      background-color: white;
+      color: $disableColor;
+      box-shadow: none;
+    }
   }
 
   &:disabled{
