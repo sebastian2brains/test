@@ -29,6 +29,16 @@ const App = () => {
         <Icon className="p-1" name="flag" size="7" />
         <Icon className="p-1" name="flag" size="8" />
       </div>
+      <div className="d-flex align-items-baseline">
+        <Icon className="p-1" name="line-flag" />
+        <Icon className="p-1" name="line-flag" size="2" />
+        <Icon className="p-1" name="line-flag" size="3" />
+        <Icon className="p-1" name="line-flag" size="4" />
+        <Icon className="p-1" name="line-flag" size="5" />
+        <Icon className="p-1" name="line-flag" size="6" />
+        <Icon className="p-1" name="line-flag" size="7" />
+        <Icon className="p-1" name="line-flag" size="8" />
+      </div>
 
       <h1 className="mt-2">buttons</h1>
 
@@ -59,9 +69,9 @@ const App = () => {
       <Grid row className="align-items-center text-center mb-1">
         <Grid> Primary text </Grid>
         <Grid md={2}> <Button variant="text" color="primary" > lorem </Button> </Grid>
-        <Grid md={2}> <Button variant="text" color="primary" prefix="write" > lorem </Button> </Grid>
-        <Grid md={2}> <Button variant="text" color="primary" suffix="write" > lorem </Button> </Grid>
-        <Grid md={2}> <Button variant="text" color="primary" prefix="write" disabled > lorem </Button> </Grid>
+        <Grid md={2}> <Button variant="text" color="primary" prefix="arrow-left" > lorem </Button> </Grid>
+        <Grid md={2}> <Button variant="text" color="primary" suffix="arrow-right" > lorem </Button> </Grid>
+        <Grid md={2}> <Button variant="text" color="primary" suffix="arrow-right" disabled > lorem </Button> </Grid>
       </Grid>
 
       <Grid row className="align-items-center text-center mb-1">
@@ -90,9 +100,12 @@ const App = () => {
 
       <h1 className="mb-1">card</h1>
 
-      <Card>
-        hola mundo
-      </Card>
+      <div className="d-flex">
+        <Card> hola mundo </Card>
+        <Card onClick={() => alert('clicked')} > click me </Card>
+        <Card border > hola mundo </Card>
+        <Card border onClick={() => alert('clicked con border')} > hola mundo </Card>
+      </div>
 
     </div>
   </>
