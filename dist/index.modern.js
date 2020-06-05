@@ -1140,6 +1140,10 @@ const Grid = ({
 }) => {
   let styles = row ? [gridStyles.row] : [gridStyles.col];
 
+  if (props.col) {
+    styles = styles.concat(gridStyles[`col-${props.col}`]);
+  }
+
   if (props.sm) {
     styles = styles.concat(gridStyles[`col-sm-${props.sm}`]);
   }
