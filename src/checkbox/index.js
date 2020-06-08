@@ -4,10 +4,11 @@ import styles from './_checkbox.scss';
 
 const Checkbox = ({ variant, checked, focus, onChange, disabled }) => {
   console.log(variant);
-  const color = disabled ? "#9C9A9F" : "#007DB7";
+  const color = disabled ? "#9C9A9F" : checked ? "#007DB7" : "#646569";
   const disabledClass = disabled ? styles.disabled : '';
+  const checkedClass = checked ? styles.checked : styles.unchecked;
 
-  return (<label className={[styles.checkbox].concat(disabledClass).join(' ')}>
+  return (<label className={[styles.checkbox].concat(disabledClass).concat(checkedClass).join(' ')}>
     <input disabled={disabled} type="checkbox" checked={checked} onChange={onChange ? ({ target }) => onChange(target.checked) : null} />
     {
       variant ?
@@ -46,7 +47,8 @@ const Checkbox = ({ variant, checked, focus, onChange, disabled }) => {
 }
 
 Checkbox.defaultProps = {
-  disabled: false
+  disabled: false,
+  checked: false,
 };
 
 Checkbox.propTypes = {

@@ -1,9 +1,9 @@
 @import "node_modules/bootstrap/scss/functions";
 @import '../scss/variables';
 
-@mixin alfaColorCreator($alfa){
+@mixin alfaColorCreator($alfa, $color){
   &:after{
-    background-color: rgba($info-30,$alfa/100);
+    background-color: rgba($color,$alfa/100);
   }
 }
 
@@ -13,8 +13,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  color: green;
   margin: 0px;
+  transition: all .4s;
 
   &:after{
     width: 100%;
@@ -29,19 +29,33 @@
   [type=checkbox] {
     display: none;
   }
-  
-  &:hover{
-    @include alfaColorCreator(15);
-  }
-  &:focus{
-    @include alfaColorCreator(25);
-  }
-  &:active{
-    @include alfaColorCreator(35);
+
+  &.checked {
+    &:hover{
+      @include alfaColorCreator(15,$info-30);
+    }
+    &:focus{
+      @include alfaColorCreator(25,$info-30);
+    }
+    &:active{
+      @include alfaColorCreator(35,$info-30);
+    }
   }
 
+  &.unchecked {
+    &:hover{
+      @include alfaColorCreator(15,$neutral-40);
+    }
+    &:focus{
+      @include alfaColorCreator(25,$neutral-40);
+    }
+    &:active{
+      @include alfaColorCreator(35,$neutral-40);
+    }
+  }
+  
   &.disabled {
-    @include alfaColorCreator(0);
+    @include alfaColorCreator(0, $neutral-40);
   }
 
   *{

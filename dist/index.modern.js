@@ -1145,24 +1145,24 @@ const Grid = ({
 }) => {
   let styles = row ? [gridStyles.row] : [gridStyles.col];
 
-  if (props.col) {
-    styles = styles.concat(gridStyles[`col-${props.col}`]);
+  if (col) {
+    styles = styles.concat(gridStyles[`col-${col}`]);
   }
 
-  if (props.sm) {
-    styles = styles.concat(gridStyles[`col-sm-${props.sm}`]);
+  if (sm) {
+    styles = styles.concat(gridStyles[`col-sm-${sm}`]);
   }
 
-  if (props.md) {
-    styles = styles.concat(gridStyles[`col-md-${props.md}`]);
+  if (md) {
+    styles = styles.concat(gridStyles[`col-md-${md}`]);
   }
 
-  if (props.lg) {
-    styles = styles.concat(gridStyles[`col-lg-${props.lg}`]);
+  if (lg) {
+    styles = styles.concat(gridStyles[`col-lg-${lg}`]);
   }
 
-  if (props.xl) {
-    styles = styles.concat(gridStyles[`col-xl-${props.xl}`]);
+  if (xl) {
+    styles = styles.concat(gridStyles[`col-xl-${xl}`]);
   }
 
   return React.createElement(_variant, { ...props,
@@ -1221,7 +1221,7 @@ Card.propTypes = {
   animated: propTypes.bool
 };
 
-var styles$2 = {"checkbox":"__checkbox__checkbox__3Kfmj","disabled":"__checkbox__disabled__32NRg"};
+var styles$2 = {"checkbox":"__checkbox__checkbox__3Kfmj","checked":"__checkbox__checked__2Uw6Z","unchecked":"__checkbox__unchecked__2EaPF","disabled":"__checkbox__disabled__32NRg"};
 
 const Checkbox = ({
   variant,
@@ -1231,10 +1231,11 @@ const Checkbox = ({
   disabled
 }) => {
   console.log(variant);
-  const color = disabled ? "#9C9A9F" : "#007DB7";
+  const color = disabled ? "#9C9A9F" : checked ? "#007DB7" : "#646569";
   const disabledClass = disabled ? styles$2.disabled : '';
+  const checkedClass = checked ? styles$2.checked : styles$2.unchecked;
   return /*#__PURE__*/React.createElement("label", {
-    className: [styles$2.checkbox].concat(disabledClass).join(' ')
+    className: [styles$2.checkbox].concat(disabledClass).concat(checkedClass).join(' ')
   }, /*#__PURE__*/React.createElement("input", {
     disabled: disabled,
     type: "checkbox",
@@ -1306,7 +1307,8 @@ const Checkbox = ({
 };
 
 Checkbox.defaultProps = {
-  disabled: false
+  disabled: false,
+  checked: false
 };
 Checkbox.propTypes = {
   disabled: propTypes.bool,

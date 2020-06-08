@@ -1174,30 +1174,35 @@ var gridStyles = {"container":"__grid__container__14kEn","container-fluid":"__gr
 var Grid = function Grid(_ref) {
   var _ref$variant = _ref.variant,
       variant = _ref$variant === void 0 ? 'div' : _ref$variant,
+      col = _ref.col,
       row = _ref.row,
       children = _ref.children,
+      sm = _ref.sm,
+      md = _ref.md,
+      lg = _ref.lg,
+      xl = _ref.xl,
       props = _objectWithoutPropertiesLoose(_ref, ["variant", "col", "row", "children", "sm", "md", "lg", "xl"]);
 
   var styles = row ? [gridStyles.row] : [gridStyles.col];
 
-  if (props.col) {
-    styles = styles.concat(gridStyles["col-" + props.col]);
+  if (col) {
+    styles = styles.concat(gridStyles["col-" + col]);
   }
 
-  if (props.sm) {
-    styles = styles.concat(gridStyles["col-sm-" + props.sm]);
+  if (sm) {
+    styles = styles.concat(gridStyles["col-sm-" + sm]);
   }
 
-  if (props.md) {
-    styles = styles.concat(gridStyles["col-md-" + props.md]);
+  if (md) {
+    styles = styles.concat(gridStyles["col-md-" + md]);
   }
 
-  if (props.lg) {
-    styles = styles.concat(gridStyles["col-lg-" + props.lg]);
+  if (lg) {
+    styles = styles.concat(gridStyles["col-lg-" + lg]);
   }
 
-  if (props.xl) {
-    styles = styles.concat(gridStyles["col-xl-" + props.xl]);
+  if (xl) {
+    styles = styles.concat(gridStyles["col-xl-" + xl]);
   }
 
   return React.createElement(variant, _extends({}, props, {
@@ -1257,7 +1262,7 @@ Card.propTypes = {
   animated: propTypes.bool
 };
 
-var styles$2 = {"checkbox":"__checkbox__checkbox__3Kfmj","disabled":"__checkbox__disabled__32NRg"};
+var styles$2 = {"checkbox":"__checkbox__checkbox__3Kfmj","checked":"__checkbox__checked__2Uw6Z","unchecked":"__checkbox__unchecked__2EaPF","disabled":"__checkbox__disabled__32NRg"};
 
 var Checkbox = function Checkbox(_ref) {
   var variant = _ref.variant,
@@ -1265,10 +1270,11 @@ var Checkbox = function Checkbox(_ref) {
       onChange = _ref.onChange,
       disabled = _ref.disabled;
   console.log(variant);
-  var color = disabled ? "#9C9A9F" : "#007DB7";
+  var color = disabled ? "#9C9A9F" : checked ? "#007DB7" : "#646569";
   var disabledClass = disabled ? styles$2.disabled : '';
+  var checkedClass = checked ? styles$2.checked : styles$2.unchecked;
   return /*#__PURE__*/React.createElement("label", {
-    className: [styles$2.checkbox].concat(disabledClass).join(' ')
+    className: [styles$2.checkbox].concat(disabledClass).concat(checkedClass).join(' ')
   }, /*#__PURE__*/React.createElement("input", {
     disabled: disabled,
     type: "checkbox",
@@ -1341,7 +1347,8 @@ var Checkbox = function Checkbox(_ref) {
 };
 
 Checkbox.defaultProps = {
-  disabled: false
+  disabled: false,
+  checked: false
 };
 Checkbox.propTypes = {
   disabled: propTypes.bool,
