@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-import { Button, Icon, Grid, Card } from 'library-1';
+import { Button, Icon, Grid, Card, Checkbox } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
 
 const App = () => {
+  const [checked, setCheckbox] = useState(false);
+  const [secondChecked, setSecondCheckbox] = useState(false);
+
+  const handleCheckbox = (value) => {
+    setCheckbox(value)
+  }
+
   return <div className="container p-lg-4">
 
     <h1 className="mb-1">Fonts</h1>
@@ -39,7 +46,7 @@ const App = () => {
       <Icon className="p-1" name="line-flag" size="8" />
     </div>
 
-    <h1 className="mt-2">buttons</h1>
+    <h1 className="mt-2">Buttons</h1>
 
     <Grid row className="align-items-center text-center mb-1 flex-wrap d-none d-sm-flex">
       <Grid col={12} md={1} lg={1} xl={4} />
@@ -97,13 +104,34 @@ const App = () => {
       <Grid className="p-1" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="secondary" prefix="write" disabled > lorem </Button> </Grid>
     </Grid>
 
-    <h1 className="mb-1">card</h1>
+    <h1 className="mb-1">Card</h1>
 
-    <div className="d-flex flex-wrap">
+    <div className="d-flex flex-wrap mb-1">
       <Card> hola mundo </Card>
+      <Card selected> selected </Card>
       <Card onClick={() => alert('clicked')} > click me </Card>
       <Card border > hola mundo </Card>
-      <Card border onClick={() => alert('clicked con border')} > hola mundo </Card>
+    </div>
+
+    <h1 className="mb-1">Checkbox</h1>
+
+    <div className="d-flex">
+      <div className="d-flex p-1 flex-column align-items-center">
+        normal
+        <Checkbox checked={checked} onChange={handleCheckbox} />
+      </div>
+      <div className="d-flex p-1 flex-column align-items-center">
+        variant
+        <Checkbox onChange={(value) => setSecondCheckbox(value)} variant={checked} checked={secondChecked} />
+      </div>
+      <div className="d-flex p-1 flex-column align-items-center">
+        disabled
+        <Checkbox variant disabled={checked} />
+      </div>
+      <div className="d-flex p-1 flex-column align-items-center">
+        disabled full
+        <Checkbox variant={checked} checked={true} disabled />
+      </div>
     </div>
 
   </div>

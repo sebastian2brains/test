@@ -2,8 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import gridStyles from "../scss/_grid.scss";
 
-// const Grid = ({ variant = 'div', children }) => React.createElement(variant, { className: gridStyles.row }, children);
-const Grid = ({ variant = 'div', row, children, ...props }) => {
+const Grid = ({
+  variant = 'div',
+  col,
+  row,
+  children,
+  sm,
+  md,
+  lg,
+  xl,
+  ...props
+}) => {
   let styles = row ? [gridStyles.row] : [gridStyles.col];
 
   if (props.col) {

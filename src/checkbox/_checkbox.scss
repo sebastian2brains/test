@@ -1,0 +1,50 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+
+@mixin alfaColorCreator($alfa){
+  &:after{
+    background-color: rgba($info-30,$alfa/100);
+  }
+}
+
+.checkbox{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: green;
+  margin: 0px;
+
+  &:after{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+  }
+
+  [type=checkbox] {
+    display: none;
+  }
+  
+  &:hover{
+    @include alfaColorCreator(15);
+  }
+  &:focus{
+    @include alfaColorCreator(25);
+  }
+  &:active{
+    @include alfaColorCreator(35);
+  }
+
+  &.disabled {
+    @include alfaColorCreator(0);
+  }
+
+  *{
+    margin: auto;
+  }
+}

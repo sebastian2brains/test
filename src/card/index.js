@@ -9,8 +9,12 @@ const Card = ({ border, animated, children, ...props }) => {
   let cardStules = [styles.card];
   cardStules = border ? cardStules.concat(styles.border) : cardStules.concat(styles['elevation-1']);
 
-  if (props.onClick) {
+  if (props.onClick && !border) {
     cardStules = cardStules.concat(styles.animated);
+  }
+
+  if (props.selected) {
+    cardStules = cardStules.concat(styles.selected);
   }
 
   return <div {...props} className={cardStules.concat(props.className).join(' ')}>
@@ -20,12 +24,14 @@ const Card = ({ border, animated, children, ...props }) => {
 
 Card.defaultProps = {
   border: false,
+  selected: false,
   animated: false,
 };
 
 Card.propTypes = {
   onClick: PropTypes.func,
   border: PropTypes.bool,
+  selected: PropTypes.bool,
   animated: PropTypes.bool
 };
 

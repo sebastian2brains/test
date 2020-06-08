@@ -20,6 +20,10 @@ $base: 2px;
     }
   }
 
+  &.selected {
+    @extend .elevation-5
+  }
+
   &.animated{
     animation: all .4s;
     cursor: pointer;

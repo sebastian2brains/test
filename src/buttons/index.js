@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../icons';
-import styles from '../scss/_buttons.scss';
+import styles from './_buttons.scss';
 
 const Button = ({ children, color, variant, disabled, prefix, suffix, ...props }) => {
   const btnVariant = variant !== '' ? `-${variant}` : '';
