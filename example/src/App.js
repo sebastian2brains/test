@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Icon, Grid, Card, Checkbox, Logo, HeaderItem, HeaderProfileItem, Header } from 'library-1';
+import { Button, Icon, Grid, Card, Checkbox, Logo, HeaderItem, Header } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
 

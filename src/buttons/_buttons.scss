@@ -62,6 +62,8 @@ $disableColor: $neutral-20;
   font-family: 'Ubuntu';
   font-size: 1rem;
   background-color: transparent;
+  align-items: center;
+  display: flex;
   @extend .elevation-element-2;
 
   i{
