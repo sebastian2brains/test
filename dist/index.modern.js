@@ -1110,7 +1110,7 @@ const Button = ({
   }), prefix && /*#__PURE__*/React.createElement(Icon, {
     className: styles.prefix,
     name: prefix
-  }), variant !== 'text' ? children : /*#__PURE__*/React.createElement("span", null, children), suffix && /*#__PURE__*/React.createElement(Icon, {
+  }), variant !== 'text' ? children : !prefix && !suffix ? /*#__PURE__*/React.createElement("span", null, children) : children, suffix && /*#__PURE__*/React.createElement(Icon, {
     className: styles.suffix,
     name: suffix
   }));

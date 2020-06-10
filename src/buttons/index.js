@@ -8,7 +8,7 @@ const Button = ({ children, color, variant, disabled, prefix, suffix, ...props }
 
   return <button {...props} className={`${styles.btn} ${styles[`btn-${color}${btnVariant}`] || ''}`} disabled={disabled} >
     {prefix && <Icon className={styles.prefix} name={prefix} />}
-    {variant !== 'text' ? children : <span>{children}</span>}
+    {variant !== 'text' ? children : (!prefix && !suffix) ? <span>{children}</span> : children}
     {suffix && <Icon className={styles.suffix} name={suffix} />}
   </button>;
 }

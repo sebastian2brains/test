@@ -136,6 +136,23 @@ const App = () => {
 
   </div>
 
+    <div className="container">
+      <Grid row className="pb-6" >
+        {
+          [1, 2, 3, 4, 5].map((val) => <Grid key={val} col>
+            <div className={`elevation-${val}`}>{val}</div>
+          </Grid>)
+        }
+      </Grid>
+      <Grid row className="pb-6" >
+        {
+          [1, 2, 3, 4].map((val) => <Grid key={val} col>
+            <div className={`elevation-element-${val}`}>{val}</div>
+          </Grid>)
+        }
+      </Grid>
+    </div>
+
 
     <div className="bg-primary">
       <div className="container">

@@ -1,29 +1,3 @@
-.__headerProfileItem__profileItemContainer__2BGRy {
-  border: 1px dashed white;
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 12px 8px;
-  align-items: center; }
-  .__headerProfileItem__profileItemContainer__2BGRy:hover {
-    background-color: #B00009; }
-
-.__headerProfileItem__circleAvatar__2qhht {
-  border-radius: 100%;
-  background-color: #780004;
-  width: 40px;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  display: flex; }
-
-.__headerProfileItem__date__3BKrw {
-  line-height: 1; }
-
-.__headerProfileItem__profileBox__1adqZ {
-  display: inline;
-  padding-left: 12px;
-  line-height: 1; }
-
 /* Ubuntu Font Family Bower-ready v0.1.13 */
 /* Ubuntu @font-face kit */
 /* BEGIN Ubuntu Light */
@@ -668,7 +642,7 @@
   border-radius: 4px;
   padding: 8px 24px;
   min-height: 48px;
-  font-weight: 300;
+  font-weight: 500;
   cursor: pointer;
   font-family: 'Ubuntu';
   font-size: 1rem;
@@ -691,7 +665,8 @@
       border-color: #B00009;
       color: #B00009; }
     .__buttons__btn__2p8qe.__buttons__btn-primary-outline__13wED:disabled {
-      border: 1px solid #D5D0D5; }
+      border: 1px solid #D5D0D5;
+      background-color: white; }
   .__buttons__btn__2p8qe.__buttons__btn-primary__2fp8y {
     background-color: #E81E2B;
     color: white; }
@@ -713,7 +688,8 @@
       border-color: #005D8F;
       color: #005D8F; }
     .__buttons__btn__2p8qe.__buttons__btn-secondary-outline__y6P2K:disabled {
-      border: 1px solid #D5D0D5; }
+      border: 1px solid #D5D0D5;
+      background-color: white; }
   .__buttons__btn__2p8qe.__buttons__btn-secondary__3lx5h {
     background-color: #007DB7;
     color: white; }
