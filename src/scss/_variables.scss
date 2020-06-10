@@ -320,17 +320,19 @@ $enable-deprecation-messages:                 true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: 3rem !default;
+$spacer: 2rem !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
   (
     0: 0,
-    1: ($spacer * .25),
-    2: ($spacer * .5),
-    3: $spacer,
-    4: ($spacer * 1.5),
-    5: ($spacer * 3)
+    1: ($spacer * .25 * .5),
+    2: ($spacer * .25),
+    3: ($spacer * .5 * .75),
+    4: ($spacer * .5),
+    5: ($spacer * .75),
+    6: ($spacer),
+    7: ($spacer * 1.25)
   ),
   $spacers
 );

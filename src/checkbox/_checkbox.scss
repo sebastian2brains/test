@@ -40,6 +40,9 @@
     &:active{
       @include alfaColorCreator(35,$info-30);
     }
+    &.disabled {
+      @include alfaColorCreator(0, $neutral-40);
+    }
   }
 
   &.unchecked {
@@ -51,6 +54,9 @@
     }
     &:active{
       @include alfaColorCreator(35,$neutral-40);
+    }
+    &.disabled {
+      @include alfaColorCreator(0, $neutral-40);
     }
   }
   

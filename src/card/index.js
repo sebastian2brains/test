@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './_card.scss';
 
 const Card = ({ border, animated, children, ...props }) => {
-  console.log(props.onClick);
 
 
   let cardStules = [styles.card];

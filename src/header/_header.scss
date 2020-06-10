@@ -1,0 +1,31 @@
+
+
+.header{
+  color: white;
+  justify-content: space-between;
+}
+
+.headerOptionsContainer{
+  display: inline-flex;
+}
+
+.headerLeftArea{
+  width: 100%;
+}
+
+.flex{
+  display: flex;
+}
+
+.profileItemContainer{
+  padding: 0px;
+  justify-content: end;
+
+  @extend .flex;
+}
+
+.headerLogoContainer{
+  @extend .flex;
+  flex-direction: column;
+  justify-content: center;
+}

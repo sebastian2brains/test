@@ -1,0 +1,42 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.profileItemContainer{
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 12px 8px;
+  align-items: center;
+
+  &:hover{
+    background-color: $primary-30;
+  }
+}
+
+.circleAvatar{
+  border-radius: 100%;
+  background-color: $primary-40;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.date{
+  line-height: 16px;
+  font-size: 12px;
+}
+
+.profileBoxUsername{
+  display: block;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+
+.profileBox {
+  display: inline;
+  padding-left: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}

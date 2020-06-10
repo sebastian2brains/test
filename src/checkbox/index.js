@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './_checkbox.scss';
 
-const Checkbox = ({ variant, checked, focus, onChange, disabled }) => {
-  console.log(variant);
+const Checkbox = ({ variant, checked, onChange, disabled }) => {
   const color = disabled ? "#9C9A9F" : checked ? "#007DB7" : "#646569";
   const disabledClass = disabled ? styles.disabled : '';
   const checkedClass = checked ? styles.checked : styles.unchecked;
@@ -15,7 +14,7 @@ const Checkbox = ({ variant, checked, focus, onChange, disabled }) => {
         <svg width="24px" height="24px" viewBox="0 0 24 24">
           {
             checked ?
-              <g id="04.-Checkbox" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="04.-Checkbox" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="04.1-Checkbox" transform="translate(-2031.000000, -2448.000000)" fill={color}>
                   <path d="M2052.33333,2448 L2033.66667,2448 C2032.2,2448 2031,2449.2 2031,2450.66667 L2031,2469.33333 C2031,2470.8 2032.2,2472 2033.66667,2472 L2052.33333,2472 C2053.8,2472 2055,2470.8 2055,2469.33333 L2055,2450.66667 C2055,2449.2 2053.8,2448 2052.33333,2448 Z M2048.14286,2461 L2037.85714,2461 C2037.38571,2461 2037,2460.55 2037,2460 C2037,2459.45 2037.38571,2459 2037.85714,2459 L2048.14286,2459 C2048.61429,2459 2049,2459.45 2049,2460 C2049,2460.55 2048.61429,2461 2048.14286,2461 Z" id="color_checkbox"></path>
                 </g>
@@ -30,7 +29,7 @@ const Checkbox = ({ variant, checked, focus, onChange, disabled }) => {
         <svg width="24px" height="24px" viewBox="0 0 24 24">
           {
             checked ?
-              <g id="04.-Checkbox" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="04.-Checkbox" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="04.1-Checkbox" transform="translate(-1993.000000, -2448.000000)" fill={color}>
                   <path d="M2014.33333,2448 L1995.66667,2448 C1994.2,2448 1993,2449.2 1993,2450.66667 L1993,2469.33333 C1993,2470.8 1994.2,2472 1995.66667,2472 L2014.33333,2472 C2015.8,2472 2017,2470.8 2017,2469.33333 L2017,2450.66667 C2017,2449.2 2015.8,2448 2014.33333,2448 Z M2003.43221,2465.6338 C2002.95822,2466.12207 2002.19256,2466.12207 2001.71857,2465.6338 L1997.35549,2461.13928 C1996.8815,2460.65102 1996.8815,2459.86228 1997.35549,2459.37402 C1997.82947,2458.88576 1998.59514,2458.88576 1999.06912,2459.37402 L2002.56931,2462.97966 L2010.93088,2454.3662 C2011.40486,2453.87793 2012.17053,2453.87793 2012.64451,2454.3662 C2013.1185,2454.85446 2013.1185,2455.64319 2012.64451,2456.13146 L2003.43221,2465.6338 Z" id="color_checkbox"></path>
                 </g>
@@ -49,6 +48,7 @@ const Checkbox = ({ variant, checked, focus, onChange, disabled }) => {
 Checkbox.defaultProps = {
   disabled: false,
   checked: false,
+  onChange: () => null
 };
 
 Checkbox.propTypes = {
