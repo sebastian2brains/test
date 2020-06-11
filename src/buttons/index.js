@@ -24,7 +24,7 @@ Button.propTypes = {
   suffix: PropTypes.string,
   color: PropTypes.oneOf(['primary', 'secondary']),
   variant: PropTypes.oneOf(['', 'outline', 'text']),
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool
 };
 
