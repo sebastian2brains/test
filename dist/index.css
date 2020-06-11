@@ -646,7 +646,9 @@
   cursor: pointer;
   font-family: 'Ubuntu';
   font-size: 1rem;
-  background-color: transparent; }
+  background-color: transparent;
+  align-items: center;
+  display: flex; }
   .__buttons__btn__2p8qe i {
     vertical-align: bottom;
     display: inline;
