@@ -24,14 +24,12 @@ const Card = ({ border, animated, children, ...props }) => {
 Card.defaultProps = {
   border: false,
   selected: false,
-  animated: false,
 };
 
 Card.propTypes = {
   onClick: PropTypes.func,
   border: PropTypes.bool,
   selected: PropTypes.bool,
-  animated: PropTypes.bool
 };
 
 export default Card;

@@ -3,8 +3,8 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { select, text, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
-import { Button } from '../dist';
-import '../dist/index.css';
+import { Button } from '../../dist';
+import '../../dist/index.css';
 
 const propsDescriptions = {
   prefix: {
