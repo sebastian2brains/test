@@ -5,8 +5,9 @@ import styles from './_buttons.scss';
 
 const Button = ({ children, color, variant, disabled, prefix, suffix, ...props }) => {
   const btnVariant = variant !== '' ? `-${variant}` : '';
+  const btnStyles = [styles.btn, styles[`btn-${color}${btnVariant}`] || ''];
 
-  return <button {...props} className={`${styles.btn} ${styles[`btn-${color}${btnVariant}`] || ''}`} disabled={disabled} >
+  return <button {...props} className={btnStyles.join(' ')} disabled={disabled} >
     {prefix && <Icon className={styles.prefix} name={prefix} />}
     {variant !== 'text' ? children : (!prefix && !suffix) ? <span>{children}</span> : children}
     {suffix && <Icon className={styles.suffix} name={suffix} />}
@@ -15,8 +16,9 @@ const Button = ({ children, color, variant, disabled, prefix, suffix, ...props }
 
 Button.defaultProps = {
   variant: '',
+  color: 'primary',
   disabled: false,
-  onClick: () => null
+  onClick: /* istanbul ignore next */ () => null
 };
 
 Button.propTypes = {

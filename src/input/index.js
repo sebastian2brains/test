@@ -85,7 +85,7 @@ const Input = ({
 }
 
 Input.defaultProps = {
-  onChange: () => null,
+  onChange: /* istanbul ignore next */ () => null,
   type: 'text',
   errorText: '',
   successText: ''
