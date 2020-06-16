@@ -1,16 +1,31 @@
 import React, { useState } from 'react';
 
-import { Button, Icon, Grid, Card, Checkbox, Logo, HeaderItem, Header } from 'library-1';
+import {
+  Button,
+  Icon,
+  Grid,
+  Card,
+  Checkbox,
+  Logo,
+  HeaderItem,
+  Header,
+  Input
+} from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
 
 const App = () => {
   const [checked, setCheckbox] = useState(false);
   const [secondChecked, setSecondCheckbox] = useState(false);
+  const [inputText, setInputText] = useState('');
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
   }
+
+  const inputSuffix = <Icon onClick={() => alert('hola')} name="eye-open" />
+  const inputPrefix = <Icon onClick={() => alert('hola')} size={1} name="line-user" />
+  const inputPrefixText = '$';
 
   return <> <div className="container p-lg-4">
 
@@ -167,6 +182,70 @@ const App = () => {
           <HeaderItem icon="home"> label input</HeaderItem>
         </Header>
       </div>
+    </div>
+
+    <div className="container my-4">
+      {inputText}
+      <Input
+        maxLength="105"
+        label="esto es un label"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        value={inputText}
+        suffix={inputSuffix}
+        onChange={({ target: { value } }) => setInputText(value)}
+      />
+
+      <Input
+        maxLength="105"
+        label="esto es un label"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        error
+        value={inputText}
+        prefix={inputPrefix}
+        suffix={inputSuffix}
+        onChange={({ target: { value } }) => setInputText(value)}
+      />
+
+      <Input
+        maxLength="105"
+        label="esto es un label"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        value={inputText}
+        type="password"
+        success
+        prefix={inputPrefixText}
+        suffix={inputSuffix}
+        onChange={({ target: { value } }) => setInputText(value)}
+      />
+
+      <Input
+        maxLength="105"
+        label="esto es un label"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        value={inputText}
+        type="password"
+        disabled
+        onChange={({ target: { value } }) => setInputText(value)}
+      />
+
+      <Input
+        maxLength="105"
+        label="esto es un label de un text area"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        value={inputText}
+        variant='textarea'
+        onChange={({ target: { value } }) => setInputText(value)}
+      />
+
+      <Input
+        maxLength="105"
+        label="esto es un label de un text area"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        value={inputText}
+        disabled
+        variant='textarea'
+        onChange={({ target: { value } }) => setInputText(value)}
+      />
     </div>
 
   </>

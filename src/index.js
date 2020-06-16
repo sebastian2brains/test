@@ -7,6 +7,7 @@ import Logo from './logo';
 import HeaderItem from './header/headerItem';
 import HeaderProfileItem from './header/headerProfileItem';
 import Header from './header';
+import Input from './input';
 
 export {
   Button,
@@ -17,5 +18,6 @@ export {
   Logo,
   HeaderItem,
   HeaderProfileItem,
-  Header
+  Header,
+  Input
 };

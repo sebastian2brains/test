@@ -1360,8 +1360,7 @@ Checkbox.defaultProps = {
 Checkbox.propTypes = {
   disabled: propTypes.bool,
   variant: propTypes.bool,
-  checked: propTypes.bool,
-  focus: propTypes.bool,
+  checked: propTypes.bool.isRequired,
   onChange: propTypes.func
 };
 
@@ -1508,6 +1507,148 @@ Header.propTypes = {
   })
 };
 
+var inputStyles = {"input":"__input__input__1uZsF","suffixContainer":"__input__suffixContainer__2zhrL","prefixContainer":"__input__prefixContainer__1GbCQ","inputContainer":"__input__inputContainer__2lUSM","error":"__input__error__1s8q6","inputHelper":"__input__inputHelper__3IoKh","success":"__input__success__UYGJi","disabled":"__input__disabled__1OvLQ","inputLabel":"__input__inputLabel__q2gh-","hasPrefix":"__input__hasPrefix__3N5pB","hasSuffix":"__input__hasSuffix__1KIfx"};
+
+var Input = function Input(_ref) {
+  var label = _ref.label,
+      assistText = _ref.assistText,
+      error = _ref.error,
+      success = _ref.success,
+      suffix = _ref.suffix,
+      prefix = _ref.prefix,
+      variant = _ref.variant,
+      errorText = _ref.errorText,
+      successText = _ref.successText,
+      props = _objectWithoutPropertiesLoose(_ref, ["label", "assistText", "error", "success", "suffix", "prefix", "variant", "errorText", "successText"]);
+
+  var maxLength = props.maxLength;
+  var inputStyle = [inputStyles.input];
+  var validateStyle = [];
+  var validationIcon;
+
+  if (prefix) {
+    inputStyle = inputStyle.concat(inputStyles.hasPrefix);
+  }
+
+  if (suffix) {
+    inputStyle = inputStyle.concat(inputStyles.hasSuffix);
+  }
+
+  if (error === true) {
+    validateStyle = validateStyle.concat(inputStyles.error);
+    validationIcon = errorText.trim() !== '' ? errorSvg : null;
+  } else if (success === true) {
+    validationIcon = successText.trim() !== '' ? successSvg : null;
+    validateStyle = validateStyle.concat(inputStyles.success);
+  }
+
+  if (props.disabled) {
+    validateStyle = validateStyle.concat(inputStyles.disabled);
+  }
+
+  var getAssistText = function getAssistText() {
+    if (error === true) {
+      return errorText;
+    } else if (success === true) {
+      return successText;
+    } else {
+      return assistText;
+    }
+  };
+
+  console.log('validationIcon ', validationIcon);
+  return /*#__PURE__*/React.createElement("div", {
+    className: [inputStyles.inputContainer, validateStyle].join(' ')
+  }, label && /*#__PURE__*/React.createElement("span", {
+    className: inputStyles.inputLabel
+  }, " ", label, " "), /*#__PURE__*/React.createElement("div", {
+    className: inputStyle.join(' ')
+  }, prefix && /*#__PURE__*/React.createElement("div", {
+    className: inputStyles.prefixContainer
+  }, prefix), variant && variant === 'textarea' ? /*#__PURE__*/React.createElement("textarea", props) : /*#__PURE__*/React.createElement("input", props), suffix && /*#__PURE__*/React.createElement("div", {
+    className: inputStyles.suffixContainer
+  }, suffix)), /*#__PURE__*/React.createElement("div", {
+    className: [inputStyles.inputHelper].join(' ')
+  }, /*#__PURE__*/React.createElement("div", null, validationIcon && /*#__PURE__*/React.createElement("i", null, validationIcon), getAssistText()), maxLength && /*#__PURE__*/React.createElement("div", null, Number(maxLength) - props.value.length, "/", maxLength)));
+};
+
+Input.defaultProps = {
+  onChange: function onChange() {
+    return null;
+  },
+  placeholder: 'Placeholder',
+  label: 'label',
+  assistText: 'texto de assistencia',
+  type: 'text',
+  errorText: '',
+  successText: ''
+};
+Input.propTypes = {
+  placeholder: propTypes.string,
+  label: propTypes.string,
+  errorText: propTypes.string,
+  successText: propTypes.string,
+  assistText: propTypes.string,
+  maxLength: propTypes.string,
+  type: propTypes.oneOf(['text', 'password']),
+  error: propTypes.bool,
+  success: propTypes.bool,
+  suffix: propTypes.oneOfType([propTypes.string, propTypes.element]),
+  prefix: propTypes.oneOfType([propTypes.string, propTypes.element]),
+  variant: propTypes.string,
+  disabled: propTypes.bool
+};
+var errorSvg = /*#__PURE__*/React.createElement("svg", {
+  width: "10px",
+  height: "10px"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "17.-Input-N\xFAmero-telef\xF3nico",
+  stroke: "none",
+  strokeWidth: "1",
+  fill: "none",
+  fillRule: "evenodd"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "17.1-Input-N\xFAmero-telef\xF3nico",
+  transform: "translate(-1186.000000, -1849.000000)",
+  fill: "#1F1E1E"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "02.Molecula/input/telefono/error",
+  transform: "translate(1183.000000, 1754.000000)"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "Group-13"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "00.Token/Icons/Line/16x16/cross",
+  transform: "translate(0.000000, 92.000000)"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M12.2,3.80666667 C11.94,3.54666667 11.52,3.54666667 11.26,3.80666667 L8,7.06 L4.74,3.8 C4.48,3.54 4.06,3.54 3.8,3.8 C3.54,4.06 3.54,4.48 3.8,4.74 L7.06,8 L3.8,11.26 C3.54,11.52 3.54,11.94 3.8,12.2 C4.06,12.46 4.48,12.46 4.74,12.2 L8,8.94 L11.26,12.2 C11.52,12.46 11.94,12.46 12.2,12.2 C12.46,11.94 12.46,11.52 12.2,11.26 L8.94,8 L12.2,4.74 C12.4533333,4.48666667 12.4533333,4.06 12.2,3.80666667 Z",
+  id: "color-icono"
+})))))));
+var successSvg = /*#__PURE__*/React.createElement("svg", {
+  width: "12px",
+  height: "9px"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "17.-Input-N\xFAmero-telef\xF3nico",
+  stroke: "none",
+  strokeWidth: "1",
+  fill: "none",
+  fillRule: "evenodd"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "17.1-Input-N\xFAmero-telef\xF3nico",
+  transform: "translate(-1100.000000, -1816.000000)",
+  fill: "#1F1E1E"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "02.Molecula/input/telefono/exito",
+  transform: "translate(1098.000000, 1720.000000)"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "Group-12"
+}, /*#__PURE__*/React.createElement("g", {
+  id: "00.Token/Icons/Line/16x16/check",
+  transform: "translate(0.000000, 92.000000)"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M6,10.8 L3.66666667,8.46666667 C3.40666667,8.20666667 2.99333333,8.20666667 2.73333333,8.46666667 C2.47333333,8.72666667 2.47333333,9.14 2.73333333,9.4 L5.52666667,12.1933333 C5.78666667,12.4533333 6.20666667,12.4533333 6.46666667,12.1933333 L13.5333333,5.13333333 C13.7933333,4.87333333 13.7933333,4.46 13.5333333,4.2 C13.2733333,3.94 12.86,3.94 12.6,4.2 L6,10.8 Z",
+  id: "color-icono"
+})))))));
+
 exports.Button = Button;
 exports.Card = Card;
 exports.Checkbox = Checkbox;
@@ -1516,5 +1657,6 @@ exports.Header = Header;
 exports.HeaderItem = HeaderItem;
 exports.HeaderProfileItem = HeaderProfileItem;
 exports.Icon = Icon;
+exports.Input = Input;
 exports.Logo = Logo;
 //# sourceMappingURL=index.js.map

@@ -1,0 +1,117 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+@import '../scss/mixins/elevation';
+
+$disableColor: $neutral-20;
+
+@mixin statusCreator($color) {
+  input, textarea { border-color: $color; }
+  .inputHelper{ color: $color; }
+}
+
+%containerIconFix{
+  position: absolute;
+  top: 1px;
+  display: flex;
+  height: calc(100% - 2px);
+  background: white;
+  align-items: center;
+}
+
+.inputContainer{
+  
+  &.error{
+    @include statusCreator($danger-40);
+  }
+  
+  &.success{
+    @include statusCreator($success-40);
+  }
+
+  &.disabled{
+    @include statusCreator($disableColor);
+    pointer-events: none;
+    .inputLabel{
+      color: $disableColor;
+    }
+  }
+}
+
+.input{
+  width: 100%;
+  position: relative;
+
+  &.disabled{
+    color: $disableColor;
+  }
+
+  .suffixContainer{
+    @extend %containerIconFix;
+    right: nth(nth($spacers, 5), 2);
+    max-width: 20px;
+    color: $info-40;
+  }
+
+  .prefixContainer{
+    @extend %containerIconFix;
+    left: nth(nth($spacers, 5), 2);
+    width: 16px;
+    justify-content: center;
+  }
+
+  &.hasPrefix{
+    input,textarea{
+      padding-left: nth(nth($spacers, 5), 2) + nth(nth($spacers, 5), 2) + nth(nth($spacers, 4), 2);
+    }
+  }
+
+  &.hasSuffix{
+    input,textarea{
+      padding-right: nth(nth($spacers, 5), 2) + 1.25rem;
+    }
+  }
+
+  input{
+    height: 48px;
+  }
+
+  input,textarea{
+    border-radius: 2px;
+    width: 100%;
+    border: 1px solid $neutral-40;
+    padding: nth(nth($spacers, 3), 2) nth(nth($spacers, 5), 2);
+
+    &:focus{
+      border-color: $info-40;
+    }
+  
+    &:hover{
+      @include elevationElementCreator(1);
+    }
+
+    &:disabled{
+      border-color: $disableColor;
+      background-color: white;
+    }
+  }
+}
+
+.inputLabel{
+  font-weight: bold;
+  font-size: 16px;
+  font-family: inherit;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.inputHelper{
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  color: $neutral-40;
+  align-items: center;
+
+  i{
+    margin-right: nth(nth($spacers, 3), 2);
+  }
+}
