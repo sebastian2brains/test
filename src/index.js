@@ -9,6 +9,7 @@ import HeaderProfileItem from './header/headerProfileItem';
 import Header from './header';
 import Input from './input';
 import Radio from './radio';
+import Separator from './separator';
 
 export {
   Button,
@@ -21,5 +22,6 @@ export {
   HeaderProfileItem,
   Header,
   Input,
-  Radio
+  Radio,
+  Separator
 };

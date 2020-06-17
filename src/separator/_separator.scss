@@ -1,0 +1,22 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+
+.separator{
+  $padding: nth(nth($spacers, 2), 2);
+  $length: $padding * 2;
+  border: none;
+  margin: $padding;
+  border-color: $neutral-30;
+
+  &.horizontal{
+    border-top: 1px solid;
+    width: calc(100% - #{$length});
+  }
+
+  &.vertical{
+    border-left: 1px solid;
+    height: calc(100% - #{$length});
+    width: 1px;
+  }
+}
+

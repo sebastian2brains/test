@@ -10,7 +10,8 @@ import {
   HeaderItem,
   Header,
   Input,
-  Radio
+  Radio,
+  Separator
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -151,6 +152,16 @@ const App = () => {
     </div>
 
     <h1 className="mb-4">Radio</h1>
+
+    <div className="d-flex row">
+      <div className="d-inline-flex col justify-content-center" style={{ height: '200px' }}>
+        <Separator vertical />
+      </div>
+      <div className="d-inline-flex col align-items-center">
+        <Separator />
+      </div>
+    </div>
+
 
     <div className="d-flex">
       <div className="d-flex p-4 flex-column align-items-center">
