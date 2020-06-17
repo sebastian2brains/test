@@ -173,13 +173,13 @@ const App = () => {
       <div className="container">
         <Header
           logo={<Logo className="w-100" />}
-          logOut={<HeaderItem icon="line-logout"> label input </HeaderItem>}
+          logOut={<HeaderItem icon="line-logout"> label </HeaderItem>}
         >
-          <HeaderItem icon="home"> label input</HeaderItem>
-          <HeaderItem icon="line-cloud"> label input</HeaderItem>
-          <HeaderItem icon="home"> label input</HeaderItem>
-          <HeaderItem icon="home"> label input</HeaderItem>
-          <HeaderItem icon="home"> label input</HeaderItem>
+          <HeaderItem icon="home"> label</HeaderItem>
+          <HeaderItem icon="line-cloud"> label</HeaderItem>
+          <HeaderItem icon="home"> label</HeaderItem>
+          <HeaderItem icon="home"> label</HeaderItem>
+          <HeaderItem icon="home"> label</HeaderItem>
         </Header>
       </div>
     </div>

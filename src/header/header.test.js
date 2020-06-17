@@ -32,8 +32,6 @@ describe('Header behavior', () => {
     expect(component).toBeTruthy();
     const reg = new RegExp(userData.name)
     expect(component.getByText(reg)).toBeTruthy();
-    component.debug();
-
   });
 
 });

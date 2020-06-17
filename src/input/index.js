@@ -92,7 +92,6 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
-  placeholder: PropTypes.string,
   label: PropTypes.string,
   errorText: PropTypes.string,
   successText: PropTypes.string,
