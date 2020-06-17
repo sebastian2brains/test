@@ -8,6 +8,7 @@ import HeaderItem from './header/headerItem';
 import HeaderProfileItem from './header/headerProfileItem';
 import Header from './header';
 import Input from './input';
+import Radio from './radio';
 
 export {
   Button,
@@ -19,5 +20,6 @@ export {
   HeaderItem,
   HeaderProfileItem,
   Header,
-  Input
+  Input,
+  Radio
 };

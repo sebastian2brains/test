@@ -9,7 +9,8 @@ import {
   Logo,
   HeaderItem,
   Header,
-  Input
+  Input,
+  Radio
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -146,6 +147,27 @@ const App = () => {
       <div className="d-flex p-4 flex-column align-items-center">
         disabled full
         <Checkbox variant={checked} checked={true} disabled />
+      </div>
+    </div>
+
+    <h1 className="mb-4">Radio</h1>
+
+    <div className="d-flex">
+      <div className="d-flex p-4 flex-column align-items-center">
+        normal
+        <Radio checked={checked} onChange={handleCheckbox} />
+      </div>
+      <div className="d-flex p-4 flex-column align-items-center">
+        variant
+        <Radio onChange={(value) => setSecondCheckbox(value)} checked={secondChecked} />
+      </div>
+      <div className="d-flex p-4 flex-column align-items-center">
+        disabled
+        <Radio checked={false} disabled onChange={handleCheckbox} />
+      </div>
+      <div className="d-flex p-4 flex-column align-items-center">
+        disabled full
+        <Radio checked={true} disabled={true} />
       </div>
     </div>
 
