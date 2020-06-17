@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import Icon from '.'
 
 
@@ -16,6 +16,16 @@ describe('Icon behavior', () => {
     expect(component.container.querySelector('[data-size="8"')).toBeTruthy();
     fireEvent.click(component.container.querySelector('i'));
     expect(onClick).toBeCalled();
+  });
+
+  it('should be rendered 2', () => {
+    const component = render(<Icon
+      name="line-cloud"
+      size={12}
+    />);
+    expect(component).toBeTruthy();
+
+    expect(component.container.querySelector('[data-size="1"')).toBeTruthy();
   });
 
 });
