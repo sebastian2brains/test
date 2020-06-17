@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Checkbox from '.'
 
 
-describe('Icon behavior', () => {
+describe('Checkbox behavior', () => {
 
   it('should be rendered inactive', () => {
     const onClick = jest.fn();

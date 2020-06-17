@@ -5,7 +5,9 @@ import Styles from './_header.scss';
 import { Grid, HeaderProfileItem } from '../';
 
 const Header = ({ children, logo, logOut, userData, ...props }) => {
-  return <Grid row className={[Styles.header].concat(props.className).join(' ')}>
+  const headerStyleContainer = [Styles.header].concat(props.className).join(' ');
+
+  return <Grid row className={headerStyleContainer}>
     <Grid col={7} xl={8} className={Styles.headerOptionsContainer}>
       <Grid row className={Styles.headerLeftArea}>
         {

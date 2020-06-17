@@ -1,15 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Icon } from '../../';
 
 import headerItemStyles from './_headerItem.scss';
 
-const HeaderItem = ({ icon }) => {
-  return <div className={headerItemStyles.headerItem}>
-    <Icon name={icon} />
-  label
-</div>
+const HeaderItem = ({ icon, children, ...props }) => {
+  return <div className={headerItemStyles.headerItem} {...props}>
+    {
+      icon && <Icon name={icon} />
+    }
+    {children}
+  </div>
 }
 
-// d-inline-flex flex-column text-center align-items-center p-1 
+HeaderItem.defaultProps = {
+  children: '',
+};
+
+HeaderItem.propTypes = {
+  icon: PropTypes.string,
+  children: PropTypes.string,
+};
 
 export default HeaderItem;
