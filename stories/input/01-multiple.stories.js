@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs/react';
-import { select, boolean, text } from '@storybook/addon-knobs';
+import { select, boolean, text, object, array } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { Input } from '../../dist';
 import '../codeStyles.css';
@@ -12,7 +12,7 @@ const propsDescriptions = {
     description: 'This will show this value above the field'
   },
   assistText: {
-    propType: 'string',
+    propType: 'string / array',
     description: 'This will show this value below the field'
   },
   maxLength: {
@@ -60,6 +60,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
+      console.log(defaultValue);
 
       return (
         <tr key={property}>
@@ -91,20 +92,37 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   );
 };
 
-export const Simple = () => <Input
-  maxLength={text('maxLength', '2', 'optional')}
-  prefix={text('prefix', '', 'optional')}
-  suffix={text('suffix', '', 'optional')}
-  assistText={text('assistText', '', 'optional')}
-  type={select('type', ['text', 'password'], 'text')}
-  variant={select('variant', ['text', 'textarea'], 'text')}
-  success={boolean('success', false, 'status')}
-  error={boolean('error', false, 'status')}
-  disabled={boolean('disabled', false, 'status')}
-  value={text('value', '', 'text')}
-  placeholder={text('placeholder', '', 'text')}
-  label={text('label', '', 'text')}
-/>;
+export const Multiple = () => {
+
+  return <Input
+    type={select('type', ['text', 'password'], 'text')}
+    variant={select('variant', ['text', 'textarea'], 'text')}
+    assistText={[
+      object('message-1', {
+        type: 'error',
+        text: 'example error text'
+      }, 'assistText'),
+      object('message-2', {
+        type: 'success',
+        text: 'example success text'
+      }, 'assistText'),
+      object('message-3', {
+        type: 'success',
+        text: 'example success text'
+      }, 'assistText')
+    ]}
+    error={boolean('error', false, 'status')}
+    success={boolean('success', false, 'status')}
+    disabled={boolean('disabled', false, 'status')}
+    value={text('value', '', 'text')}
+    placeholder={text('placeholder', '', 'text')}
+    label={text('label', '', 'text')}
+  />
+};
+
+Multiple.story = {
+  name: 'Multiple validations example',
+};
 
 export default {
   title: 'Input',
@@ -120,18 +138,9 @@ export default {
         }
       },
       text: `
-        include into your project to be able to use the component styles
-        ~~~js
-        import 'library/dist/index.css';
-        ~~~
+      This is just and example about how to use the multiple validations.
 
-        the basicest component form is: 
-
-        ~~~js
-        <Input value={someValue} onChange={()=>null} />
-        ~~~
-
-        change the knobs properties and you'll be able to watch its component structure below at Story Source
+      All configuration required by an input is required
       `,
     },
 

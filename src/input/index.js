@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import inputStyles from './_input.scss';
-import './_input.scss';
 
 const Input = ({
   label,
@@ -11,15 +10,12 @@ const Input = ({
   suffix,
   prefix,
   variant,
-  errorText,
-  successText,
   ...props }) => {
 
   const { maxLength } = props;
 
   let inputStyle = [inputStyles.input];
   let validateStyle = [];
-  let validationIcon;
 
   if (prefix) {
     inputStyle = inputStyle.concat(inputStyles.hasPrefix);
@@ -31,9 +27,7 @@ const Input = ({
 
   if (error === true) {
     validateStyle = validateStyle.concat(inputStyles.error);
-    validationIcon = errorText.trim() !== '' ? errorSvg : null;
   } else if (success === true) {
-    validationIcon = successText.trim() !== '' ? successSvg : null;;
     validateStyle = validateStyle.concat(inputStyles.success);
   }
 
@@ -41,20 +35,25 @@ const Input = ({
     validateStyle = validateStyle.concat(inputStyles.disabled)
   }
 
-  const getAssistText = () => {
-    if (error === true) {
-      return errorText;
-    } else if (success === true) {
-      return successText;
-    } else {
-      return assistText;
+  const getHelperText = (element) => {
+    switch (element.type) {
+      case 'success':
+        return <div>{successSvg} <span className={inputStyles.successText}>{element.text}</span></div>
+      case 'error':
+        return <div>{errorSvg} <span className={inputStyles.errorText}>{element.text}</span></div>
+      default:
+        return <div> {element.text}</div>
     }
   }
+
+  console.log(assistText);
+
 
   return <div className={[inputStyles.inputContainer, validateStyle].join(' ')}>
     {
       label && <span className={inputStyles.inputLabel}> {label} </span>
     }
+
     <div className={inputStyle.join(' ')}>
       {
         prefix && <div className={inputStyles.prefixContainer}>{prefix}</div>
@@ -70,32 +69,37 @@ const Input = ({
         suffix && <div className={inputStyles.suffixContainer}>{suffix}</div>
       }
     </div>
+
     <div className={[inputStyles.inputHelper].join(' ')}>
       <div>
         {
-          validationIcon && <i>{validationIcon}</i>
+          Array.isArray(assistText) && assistText.length > 0 ? assistText.map((el, i) => <div key={`${el.text}-${i}`}>
+            {getHelperText(el)}
+          </div>) : assistText
         }
-        {getAssistText()}
       </div>
       {
         maxLength && <div>{`${Number(maxLength) - props.value.length}/${maxLength}`}</div>
       }
     </div>
+
   </div>
 }
 
 Input.defaultProps = {
   onChange: /* istanbul ignore next */ () => null,
   type: 'text',
-  errorText: '',
-  successText: ''
 };
 
 Input.propTypes = {
   label: PropTypes.string,
-  errorText: PropTypes.string,
-  successText: PropTypes.string,
-  assistText: PropTypes.string,
+  assistText: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string,
+      type: PropTypes.oneOf(['success', 'assist', 'error'])
+    })),
+    PropTypes.string
+  ]),
   maxLength: PropTypes.string,
   type: PropTypes.oneOf(['text', 'password']),
   error: PropTypes.bool,

@@ -47,7 +47,12 @@ describe('Input behavior', () => {
   it('should have success state', () => {
     const component = render(<Input value="some text"
       success={true}
-      successText="success text" />);
+      assistText={[
+        {
+          type: 'success',
+          text: 'success text'
+        }
+      ]} />);
 
     expect(component.getByTestId('successIcon')).toBeTruthy();
     expect(component.getByText(/success text/)).toBeTruthy();
@@ -57,7 +62,12 @@ describe('Input behavior', () => {
     const component = render(<Input value="some text"
       error={true}
       success={true} // in this case error has priority
-      errorText="error text" />);
+      assistText={[
+        {
+          type: 'error',
+          text: 'error text'
+        }
+      ]} />);
 
     expect(component.getByTestId('errorIcon')).toBeTruthy();
     expect(component.getByText(/error text/)).toBeTruthy();
@@ -68,5 +78,36 @@ describe('Input behavior', () => {
     const element = component.getByDisplayValue(/some text/i);
     expect(element.closest('textarea')).toBeTruthy();
   });
+
+  it('should have multiple assistTexts', () => {
+    const component = render(<Input value="some text"
+      error={true}
+      success={true} // in this case error has priority
+      assistText={[
+        {
+          type: 'error',
+          text: 'error text'
+        },
+        {
+          type: 'error',
+          text: 'error text'
+        },
+        {
+          type: 'success',
+          text: 'success text'
+        },
+        {
+          type: '',
+          text: 'defaul text'
+        }
+      ]} />);
+
+    expect(component.getAllByTestId('errorIcon').length).toEqual(2);
+    expect(component.getAllByText(/error text/).length).toEqual(2);
+    expect(component.getByTestId('successIcon')).toBeTruthy();
+    expect(component.getByText(/success text/)).toBeTruthy();
+    expect(component.getByText(/defaul text/)).toBeTruthy();
+  });
+
 
 })

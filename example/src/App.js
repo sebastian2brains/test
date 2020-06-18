@@ -153,16 +153,6 @@ const App = () => {
 
     <h1 className="mb-4">Radio</h1>
 
-    <div className="d-flex row">
-      <div className="d-inline-flex col justify-content-center" style={{ height: '200px' }}>
-        <Separator vertical />
-      </div>
-      <div className="d-inline-flex col align-items-center">
-        <Separator />
-      </div>
-    </div>
-
-
     <div className="d-flex">
       <div className="d-flex p-4 flex-column align-items-center">
         normal
@@ -179,6 +169,17 @@ const App = () => {
       <div className="d-flex p-4 flex-column align-items-center">
         disabled full
         <Radio checked={true} disabled={true} />
+      </div>
+    </div>
+
+    <h1 className="mb-4">separator</h1>
+
+    <div className="d-flex row">
+      <div className="d-inline-flex col justify-content-center" style={{ height: '200px' }}>
+        <Separator vertical />
+      </div>
+      <div className="d-inline-flex col align-items-center">
+        <Separator />
       </div>
     </div>
 
@@ -221,10 +222,23 @@ const App = () => {
       {inputText}
       <Input
         maxLength="105"
-        label="esto es un label"
-        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        label="esto es un label multi validations"
         value={inputText}
         suffix={inputSuffix}
+        assistText={[
+          {
+            text: 'error mesaje',
+            type: 'error'
+          },
+          {
+            text: 'assist mesaje',
+            type: 'assist'
+          },
+          {
+            text: 'success mesaje',
+            type: 'success'
+          }
+        ]}
         onChange={({ target: { value } }) => setInputText(value)}
       />
 

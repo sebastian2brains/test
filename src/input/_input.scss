@@ -6,7 +6,6 @@ $disableColor: $neutral-20;
 
 @mixin statusCreator($color) {
   input, textarea { border-color: $color; }
-  .inputHelper{ color: $color; }
 }
 
 %containerIconFix{
@@ -59,6 +58,11 @@ $disableColor: $neutral-20;
     justify-content: center;
   }
 
+  textarea{
+    display: flex;
+  
+  }
+
   &.hasPrefix{
     input,textarea{
       padding-left: nth(nth($spacers, 5), 2) + nth(nth($spacers, 5), 2) + nth(nth($spacers, 4), 2);
@@ -109,7 +113,13 @@ $disableColor: $neutral-20;
   display: flex;
   justify-content: space-between;
   color: $neutral-40;
-  align-items: center;
+
+  .successText{
+    color: $success-40;
+  }
+  .errorText{
+    color: $danger-40;
+  }
 
   i{
     margin-right: nth(nth($spacers, 3), 2);
