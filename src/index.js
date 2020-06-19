@@ -10,6 +10,7 @@ import Header from './header';
 import Input from './input';
 import Radio from './radio';
 import Separator from './separator';
+import Sidebar from './sidebar';
 
 export {
   Button,
@@ -23,5 +24,6 @@ export {
   Header,
   Input,
   Radio,
-  Separator
+  Separator,
+  Sidebar
 };

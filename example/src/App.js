@@ -11,7 +11,8 @@ import {
   Header,
   Input,
   Radio,
-  Separator
+  Separator,
+  Sidebar
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -40,10 +41,23 @@ const App = () => {
     <h5> Sed ut perspiciatis unde omnis iste natus error </h5>
     <h6> Sed ut perspiciatis unde omnis iste natus error </h6>
 
+    <h1 className="mb-4">Margins</h1>
+
+    <div className="d-flex mb-4">
+      <div className="d-inline border p-3 ml-0"> </div>
+      <div className="d-inline border p-3 ml-1"> </div>
+      <div className="d-inline border p-3 ml-2"> </div>
+      <div className="d-inline border p-3 ml-3"> </div>
+      <div className="d-inline border p-3 ml-4"> </div>
+      <div className="d-inline border p-3 ml-5"> </div>
+      <div className="d-inline border p-3 ml-6"> </div>
+      <div className="d-inline border p-3 ml-7"> </div>
+    </div>
+
     <h1 className="mb-4">Icons</h1>
 
     <div className="d-flex align-items-baseline flex-wrap">
-      <Icon className="p-4" name="home" />
+      <Icon className="p-4" name="flag" />
       <Icon className="p-4" name="flag" size="2" />
       <Icon className="p-4" name="flag" size="3" />
       <Icon className="p-4" name="flag" size="4" />
@@ -293,6 +307,42 @@ const App = () => {
         variant='textarea'
         onChange={({ target: { value } }) => setInputText(value)}
       />
+    </div>
+
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-3 col-md-4">
+          <Sidebar items={[
+            {
+              icon: <Icon name="flag" size="1" />,
+              text: 'label first level A',
+              notification: true,
+              open: true,
+              children: [
+                {
+                  text: 'label second level',
+                  children: [
+                    {
+                      active: true,
+                      text: 'label third level',
+                      children: [],
+                    }
+                  ],
+                },
+                {
+                  text: 'label second level 2',
+                  children: [],
+                  notification: true
+                }
+              ]
+            },
+            {
+              text: 'label first level B',
+              children: [],
+            }
+          ]} />
+        </div>
+      </div>
     </div>
 
   </>
