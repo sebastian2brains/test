@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import Separator from '.'
 
 
-describe('Icon behavior', () => {
+describe('Separator behavior', () => {
 
   it('should be rendered', () => {
     const component = render(<Separator />);

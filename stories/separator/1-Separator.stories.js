@@ -1,7 +1,7 @@
 import React from 'react';
 // import { linkTo } from '@storybook/addon-links';
 import { withInfo } from '@storybook/addon-info';
-import { select, boolean } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs';
 import { Separator } from '../../dist';
 import '../../dist/index.css';
 
