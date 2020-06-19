@@ -1086,9 +1086,25 @@ const Icon = ({
   ...props
 }) => {
   const icon = icons[`icon-${name}`];
-  const sizeSelected = icons[`size-${size}`] || '1';
+  const sizeWith = size > 0 && size <= 8 ? size : '1';
+  const sizeSelected = icons[`size-${size}`] || icons[`size-1`];
+  let renderStyles = ['coopeuch-icon'];
+
+  if (className) {
+    renderStyles = [...renderStyles].concat(className);
+  }
+
+  if (icon) {
+    renderStyles = [...renderStyles].concat(icon);
+  }
+
+  if (sizeSelected) {
+    renderStyles = [...renderStyles].concat(sizeSelected);
+  }
+
   return /*#__PURE__*/React.createElement("i", Object.assign({}, props, {
-    className: `coopeuch-icon ${icon} ${sizeSelected} ${className || ''}`
+    className: renderStyles.join(' '),
+    "data-size": sizeWith
   }));
 };
 
@@ -1114,8 +1130,9 @@ const Button = ({
   ...props
 }) => {
   const btnVariant = variant !== '' ? `-${variant}` : '';
+  const btnStyles = [styles.btn, styles[`btn-${color}${btnVariant}`] || ''];
   return /*#__PURE__*/React.createElement("button", Object.assign({}, props, {
-    className: `${styles.btn} ${styles[`btn-${color}${btnVariant}`] || ''}`,
+    className: btnStyles.join(' '),
     disabled: disabled
   }), prefix && /*#__PURE__*/React.createElement(Icon, {
     className: styles.prefix,
@@ -1128,6 +1145,7 @@ const Button = ({
 
 Button.defaultProps = {
   variant: '',
+  color: 'primary',
   disabled: false,
   onClick: () => null
 };
@@ -1234,45 +1252,45 @@ const Checkbox = ({
   variant,
   checked,
   onChange,
-  disabled
+  disabled,
+  ...props
 }) => {
   const color = disabled ? "#9C9A9F" : checked ? "#007DB7" : "#646569";
   const disabledClass = disabled ? styles$2.disabled : '';
   const checkedClass = checked ? styles$2.checked : styles$2.unchecked;
   return /*#__PURE__*/React.createElement("label", {
     className: [styles$2.checkbox].concat(disabledClass).concat(checkedClass).join(' ')
-  }, /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("input", Object.assign({
+    "data-testid": "checkbox",
     disabled: disabled,
     type: "checkbox",
     checked: checked,
     onChange: onChange ? ({
       target
     }) => onChange(target.checked) : null
-  }), variant ? /*#__PURE__*/React.createElement("svg", {
+  }, props)), variant ? /*#__PURE__*/React.createElement("svg", {
     width: "24px",
     height: "24px",
     viewBox: "0 0 24 24"
   }, checked ? /*#__PURE__*/React.createElement("g", {
-    id: "04.-Checkbox",
+    "data-testid": "checked-variant-active",
     stroke: "none",
     strokeWidth: "1",
     fill: "none",
     fillRule: "evenodd"
   }, /*#__PURE__*/React.createElement("g", {
-    id: "04.1-Checkbox",
     transform: "translate(-2031.000000, -2448.000000)",
     fill: color
   }, /*#__PURE__*/React.createElement("path", {
     d: "M2052.33333,2448 L2033.66667,2448 C2032.2,2448 2031,2449.2 2031,2450.66667 L2031,2469.33333 C2031,2470.8 2032.2,2472 2033.66667,2472 L2052.33333,2472 C2053.8,2472 2055,2470.8 2055,2469.33333 L2055,2450.66667 C2055,2449.2 2053.8,2448 2052.33333,2448 Z M2048.14286,2461 L2037.85714,2461 C2037.38571,2461 2037,2460.55 2037,2460 C2037,2459.45 2037.38571,2459 2037.85714,2459 L2048.14286,2459 C2048.61429,2459 2049,2459.45 2049,2460 C2049,2460.55 2048.61429,2461 2048.14286,2461 Z",
     id: "color_checkbox"
   }))) : /*#__PURE__*/React.createElement("g", {
-    id: "04.-Checkbox",
+    "data-testid": "checked-variant-inactive",
     stroke: "none",
     strokeWidth: "1",
     fill: "none",
     fillRule: "evenodd"
   }, /*#__PURE__*/React.createElement("g", {
-    id: "04.1-Checkbox",
     transform: "translate(-2079.000000, -2448.000000)",
     fill: color
   }, /*#__PURE__*/React.createElement("path", {
@@ -1283,26 +1301,24 @@ const Checkbox = ({
     height: "24px",
     viewBox: "0 0 24 24"
   }, checked ? /*#__PURE__*/React.createElement("g", {
-    id: "04.-Checkbox",
+    "data-testid": "checked-active",
     stroke: "none",
     strokeWidth: "1",
     fill: "none",
     fillRule: "evenodd"
   }, /*#__PURE__*/React.createElement("g", {
-    id: "04.1-Checkbox",
     transform: "translate(-1993.000000, -2448.000000)",
     fill: color
   }, /*#__PURE__*/React.createElement("path", {
     d: "M2014.33333,2448 L1995.66667,2448 C1994.2,2448 1993,2449.2 1993,2450.66667 L1993,2469.33333 C1993,2470.8 1994.2,2472 1995.66667,2472 L2014.33333,2472 C2015.8,2472 2017,2470.8 2017,2469.33333 L2017,2450.66667 C2017,2449.2 2015.8,2448 2014.33333,2448 Z M2003.43221,2465.6338 C2002.95822,2466.12207 2002.19256,2466.12207 2001.71857,2465.6338 L1997.35549,2461.13928 C1996.8815,2460.65102 1996.8815,2459.86228 1997.35549,2459.37402 C1997.82947,2458.88576 1998.59514,2458.88576 1999.06912,2459.37402 L2002.56931,2462.97966 L2010.93088,2454.3662 C2011.40486,2453.87793 2012.17053,2453.87793 2012.64451,2454.3662 C2013.1185,2454.85446 2013.1185,2455.64319 2012.64451,2456.13146 L2003.43221,2465.6338 Z",
     id: "color_checkbox"
   }))) : /*#__PURE__*/React.createElement("g", {
-    id: "04.-Checkbox",
+    "data-testid": "checked-inactive",
     stroke: "none",
     strokeWidth: "1",
     fill: "none",
     fillRule: "evenodd"
   }, /*#__PURE__*/React.createElement("g", {
-    id: "04.1-Checkbox",
     transform: "translate(-2079.000000, -2448.000000)",
     fill: color
   }, /*#__PURE__*/React.createElement("path", {
@@ -1377,40 +1393,59 @@ const Logo = props => /*#__PURE__*/React.createElement("svg", Object.assign({}, 
 var headerItemStyles = {"headerItem":"__headerItem__headerItem__1UvJ-"};
 
 const HeaderItem = ({
-  icon
+  icon,
+  children,
+  ...props
 }) => {
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", Object.assign({
     className: headerItemStyles.headerItem
-  }, /*#__PURE__*/React.createElement(Icon, {
+  }, props), icon && /*#__PURE__*/React.createElement(Icon, {
     name: icon
-  }), "label");
+  }), children);
+};
+
+HeaderItem.defaultProps = {
+  children: ''
+};
+HeaderItem.propTypes = {
+  icon: propTypes.string,
+  children: propTypes.string
 };
 
 var headerStyle = {"profileItemContainer":"__headerProfileItem__profileItemContainer__1DOtA","circleAvatar":"__headerProfileItem__circleAvatar__37wn_","date":"__headerProfileItem__date__jX4xS","profileBoxUsername":"__headerProfileItem__profileBoxUsername__qpvql","profileBox":"__headerProfileItem__profileBox__2h4-x"};
 
 const HeaderProfileItem = ({
   name,
-  date: _date = new Date()
+  date,
+  ...props
 }) => {
   const options = {
     day: 'numeric',
     year: 'numeric',
     month: 'short'
   };
-  return /*#__PURE__*/React.createElement("div", {
+  const circlerContent = name.split(' ').reduce((acc, text) => acc.concat(text[0]), []).join('').toUpperCase();
+  return /*#__PURE__*/React.createElement("div", Object.assign({
     className: `${headerStyle.profileItemContainer}`
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, props), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: headerStyle.circleAvatar
-  }, "XR")), /*#__PURE__*/React.createElement("div", {
+  }, circlerContent)), /*#__PURE__*/React.createElement("div", {
     className: headerStyle.profileBox
   }, /*#__PURE__*/React.createElement("span", {
     className: headerStyle.profileBoxUsername
   }, name), /*#__PURE__*/React.createElement("p", {
     className: headerStyle.date
-  }, /*#__PURE__*/React.createElement("small", null, "\xDAltimo acceso ", _date.toLocaleDateString('es-ES', options), " - ", `${_date.getHours()}:${_date.getMinutes()}`, " hrs "))), /*#__PURE__*/React.createElement(Icon, {
+  }, /*#__PURE__*/React.createElement("small", null, "\xDAltimo acceso ", date.toLocaleDateString('es-ES', options), " - ", `${date.getHours()}:${date.getMinutes()}`, " hrs "))), /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-right",
     className: "px-1"
   }));
+};
+HeaderProfileItem.defaultProps = {
+  date: new Date()
+};
+HeaderProfileItem.propTypes = {
+  name: propTypes.string.isRequired,
+  date: propTypes.instanceOf(Date)
 };
 
 var Styles = {"header":"__header__header__3MNoG","headerOptionsContainer":"__header__headerOptionsContainer__1zBVI","headerLeftArea":"__header__headerLeftArea__YJliS","flex":"__header__flex__1N4JG","profileItemContainer":"__header__profileItemContainer__1Q2Mz","headerLogoContainer":"__header__headerLogoContainer__MYTjX"};
@@ -1422,9 +1457,10 @@ const Header = ({
   userData,
   ...props
 }) => {
+  const headerStyleContainer = [Styles.header].concat(props.className).join(' ');
   return /*#__PURE__*/React.createElement(Grid, {
     row: true,
-    className: [Styles.header].concat(props.className).join(' ')
+    className: headerStyleContainer
   }, /*#__PURE__*/React.createElement(Grid, {
     col: 7,
     xl: 8,
@@ -1465,7 +1501,7 @@ Header.propTypes = {
   })
 };
 
-var inputStyles = {"input":"__input__input__1uZsF","suffixContainer":"__input__suffixContainer__2zhrL","prefixContainer":"__input__prefixContainer__1GbCQ","inputContainer":"__input__inputContainer__2lUSM","error":"__input__error__1s8q6","inputHelper":"__input__inputHelper__3IoKh","success":"__input__success__UYGJi","disabled":"__input__disabled__1OvLQ","inputLabel":"__input__inputLabel__q2gh-","hasPrefix":"__input__hasPrefix__3N5pB","hasSuffix":"__input__hasSuffix__1KIfx"};
+var inputStyles = {"input":"__input__input__1uZsF","suffixContainer":"__input__suffixContainer__2zhrL","prefixContainer":"__input__prefixContainer__1GbCQ","inputContainer":"__input__inputContainer__2lUSM","error":"__input__error__1s8q6","success":"__input__success__UYGJi","disabled":"__input__disabled__1OvLQ","inputLabel":"__input__inputLabel__q2gh-","hasPrefix":"__input__hasPrefix__3N5pB","hasSuffix":"__input__hasSuffix__1KIfx","inputHelper":"__input__inputHelper__3IoKh","successText":"__input__successText__1FylX","errorText":"__input__errorText__1-t8w"};
 
 const Input = ({
   label,
@@ -1475,8 +1511,6 @@ const Input = ({
   suffix,
   prefix,
   variant,
-  errorText,
-  successText,
   ...props
 }) => {
   const {
@@ -1484,7 +1518,6 @@ const Input = ({
   } = props;
   let inputStyle = [inputStyles.input];
   let validateStyle = [];
-  let validationIcon;
 
   if (prefix) {
     inputStyle = inputStyle.concat(inputStyles.hasPrefix);
@@ -1496,9 +1529,7 @@ const Input = ({
 
   if (error === true) {
     validateStyle = validateStyle.concat(inputStyles.error);
-    validationIcon = errorText.trim() !== '' ? errorSvg : null;
   } else if (success === true) {
-    validationIcon = successText.trim() !== '' ? successSvg : null;
     validateStyle = validateStyle.concat(inputStyles.success);
   }
 
@@ -1506,17 +1537,24 @@ const Input = ({
     validateStyle = validateStyle.concat(inputStyles.disabled);
   }
 
-  const getAssistText = () => {
-    if (error === true) {
-      return errorText;
-    } else if (success === true) {
-      return successText;
-    } else {
-      return assistText;
+  const getHelperText = element => {
+    switch (element.type) {
+      case 'success':
+        return /*#__PURE__*/React.createElement("div", null, successSvg, " ", /*#__PURE__*/React.createElement("span", {
+          className: inputStyles.successText
+        }, element.text));
+
+      case 'error':
+        return /*#__PURE__*/React.createElement("div", null, errorSvg, " ", /*#__PURE__*/React.createElement("span", {
+          className: inputStyles.errorText
+        }, element.text));
+
+      default:
+        return /*#__PURE__*/React.createElement("div", null, " ", element.text);
     }
   };
 
-  console.log('validationIcon ', validationIcon);
+  console.log(assistText);
   return /*#__PURE__*/React.createElement("div", {
     className: [inputStyles.inputContainer, validateStyle].join(' ')
   }, label && /*#__PURE__*/React.createElement("span", {
@@ -1529,24 +1567,21 @@ const Input = ({
     className: inputStyles.suffixContainer
   }, suffix)), /*#__PURE__*/React.createElement("div", {
     className: [inputStyles.inputHelper].join(' ')
-  }, /*#__PURE__*/React.createElement("div", null, validationIcon && /*#__PURE__*/React.createElement("i", null, validationIcon), getAssistText()), maxLength && /*#__PURE__*/React.createElement("div", null, Number(maxLength) - props.value.length, "/", maxLength)));
+  }, /*#__PURE__*/React.createElement("div", null, Array.isArray(assistText) && assistText.length > 0 ? assistText.map((el, i) => /*#__PURE__*/React.createElement("div", {
+    key: `${el.text}-${i}`
+  }, getHelperText(el))) : assistText), maxLength && /*#__PURE__*/React.createElement("div", null, `${Number(maxLength) - props.value.length}/${maxLength}`)));
 };
 
 Input.defaultProps = {
   onChange: () => null,
-  placeholder: 'Placeholder',
-  label: 'label',
-  assistText: 'texto de assistencia',
-  type: 'text',
-  errorText: '',
-  successText: ''
+  type: 'text'
 };
 Input.propTypes = {
-  placeholder: propTypes.string,
   label: propTypes.string,
-  errorText: propTypes.string,
-  successText: propTypes.string,
-  assistText: propTypes.string,
+  assistText: propTypes.oneOfType([propTypes.arrayOf(propTypes.shape({
+    text: propTypes.string,
+    type: propTypes.oneOf(['success', 'assist', 'error'])
+  })), propTypes.string]),
   maxLength: propTypes.string,
   type: propTypes.oneOf(['text', 'password']),
   error: propTypes.bool,
@@ -1558,54 +1593,176 @@ Input.propTypes = {
 };
 const errorSvg = /*#__PURE__*/React.createElement("svg", {
   width: "10px",
-  height: "10px"
+  height: "10px",
+  "data-testid": "errorIcon"
 }, /*#__PURE__*/React.createElement("g", {
-  id: "17.-Input-N\xFAmero-telef\xF3nico",
   stroke: "none",
   strokeWidth: "1",
   fill: "none",
   fillRule: "evenodd"
 }, /*#__PURE__*/React.createElement("g", {
-  id: "17.1-Input-N\xFAmero-telef\xF3nico",
   transform: "translate(-1186.000000, -1849.000000)",
   fill: "#1F1E1E"
 }, /*#__PURE__*/React.createElement("g", {
-  id: "02.Molecula/input/telefono/error",
   transform: "translate(1183.000000, 1754.000000)"
 }, /*#__PURE__*/React.createElement("g", {
-  id: "Group-13"
-}, /*#__PURE__*/React.createElement("g", {
-  id: "00.Token/Icons/Line/16x16/cross",
   transform: "translate(0.000000, 92.000000)"
 }, /*#__PURE__*/React.createElement("path", {
   d: "M12.2,3.80666667 C11.94,3.54666667 11.52,3.54666667 11.26,3.80666667 L8,7.06 L4.74,3.8 C4.48,3.54 4.06,3.54 3.8,3.8 C3.54,4.06 3.54,4.48 3.8,4.74 L7.06,8 L3.8,11.26 C3.54,11.52 3.54,11.94 3.8,12.2 C4.06,12.46 4.48,12.46 4.74,12.2 L8,8.94 L11.26,12.2 C11.52,12.46 11.94,12.46 12.2,12.2 C12.46,11.94 12.46,11.52 12.2,11.26 L8.94,8 L12.2,4.74 C12.4533333,4.48666667 12.4533333,4.06 12.2,3.80666667 Z",
   id: "color-icono"
-})))))));
+}))))));
 const successSvg = /*#__PURE__*/React.createElement("svg", {
   width: "12px",
-  height: "9px"
+  height: "9px",
+  "data-testid": "successIcon"
 }, /*#__PURE__*/React.createElement("g", {
-  id: "17.-Input-N\xFAmero-telef\xF3nico",
   stroke: "none",
   strokeWidth: "1",
   fill: "none",
   fillRule: "evenodd"
 }, /*#__PURE__*/React.createElement("g", {
-  id: "17.1-Input-N\xFAmero-telef\xF3nico",
   transform: "translate(-1100.000000, -1816.000000)",
   fill: "#1F1E1E"
 }, /*#__PURE__*/React.createElement("g", {
-  id: "02.Molecula/input/telefono/exito",
   transform: "translate(1098.000000, 1720.000000)"
 }, /*#__PURE__*/React.createElement("g", {
-  id: "Group-12"
-}, /*#__PURE__*/React.createElement("g", {
-  id: "00.Token/Icons/Line/16x16/check",
   transform: "translate(0.000000, 92.000000)"
 }, /*#__PURE__*/React.createElement("path", {
   d: "M6,10.8 L3.66666667,8.46666667 C3.40666667,8.20666667 2.99333333,8.20666667 2.73333333,8.46666667 C2.47333333,8.72666667 2.47333333,9.14 2.73333333,9.4 L5.52666667,12.1933333 C5.78666667,12.4533333 6.20666667,12.4533333 6.46666667,12.1933333 L13.5333333,5.13333333 C13.7933333,4.87333333 13.7933333,4.46 13.5333333,4.2 C13.2733333,3.94 12.86,3.94 12.6,4.2 L6,10.8 Z",
   id: "color-icono"
-})))))));
+}))))));
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, Logo };
+var styles$3 = {"radioContainer":"__radio__radioContainer__1oqQj","radio":"__radio__radio__2rl6s","checked":"__radio__checked__9EBtf","disabled":"__radio__disabled__3FKAc","unchecked":"__radio__unchecked__uejIh"};
+
+const Radio = ({
+  checked,
+  onChange,
+  disabled,
+  ...props
+}) => {
+  const disabledClass = disabled ? styles$3.disabled : '';
+  const checkedClass = checked ? styles$3.checked : styles$3.unchecked;
+  return /*#__PURE__*/React.createElement("label", {
+    className: [styles$3.radioContainer, disabledClass].concat(checkedClass).join(' ')
+  }, /*#__PURE__*/React.createElement("input", Object.assign({
+    "data-testid": "radio",
+    disabled: disabled,
+    type: "radio",
+    checked: checked,
+    onChange: onChange ? ({
+      target
+    }) => onChange(target.checked) : null
+  }, props)), /*#__PURE__*/React.createElement("div", {
+    className: [styles$3.radio, checkedClass, disabledClass].join(' ')
+  }));
+};
+
+Radio.defaultProps = {
+  disabled: false,
+  checked: false,
+  onChange: () => null
+};
+Radio.propTypes = {
+  disabled: propTypes.bool,
+  checked: propTypes.bool.isRequired,
+  onChange: propTypes.func
+};
+
+var styles$4 = {"separator":"__separator__separator__dCaRR","horizontal":"__separator__horizontal__217mF","vertical":"__separator__vertical__VlP6p"};
+
+const Separator = ({
+  vertical
+}) => {
+  const direction = vertical ? 'vertical' : 'horizontal';
+  let separatorClases = [styles$4.separator];
+  separatorClases = separatorClases.concat(styles$4[direction]);
+  return /*#__PURE__*/React.createElement("hr", {
+    className: separatorClases.join(' '),
+    "data-direction": direction
+  });
+};
+
+Separator.defaultProps = {
+  vertical: false
+};
+Separator.propTypes = {
+  vertical: propTypes.bool
+};
+
+var styles$5 = {"sidebarElement":"__sidebarElement__sidebarElement__o3XYO","level-2":"__sidebarElement__level-2__1XnUh","level-3":"__sidebarElement__level-3__1OBQU","level-1":"__sidebarElement__level-1__1tyJP","notification":"__sidebarElement__notification__1p9bf","textContainer":"__sidebarElement__textContainer__2HP3_","active":"__sidebarElement__active__3v36b"};
+
+const SidebarElement = ({
+  text,
+  icon,
+  children,
+  level,
+  notification,
+  active,
+  open,
+  ...props
+}) => {
+  const defaultIcon = !icon && level === 3 ? /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-right",
+    size: "1"
+  }) : icon;
+  let containerClasses = [styles$5.sidebarElement, styles$5['level-' + level]];
+
+  if (active === true) {
+    containerClasses = containerClasses.concat(styles$5.active);
+  }
+
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", Object.assign({
+    role: "component",
+    "data-status": active ? 'active' : '',
+    className: containerClasses.join(' ')
+  }, props), /*#__PURE__*/React.createElement("div", {
+    className: [styles$5.textContainer].join(' ')
+  }, defaultIcon, text), notification === true && /*#__PURE__*/React.createElement("span", {
+    role: "notification",
+    className: [styles$5.notification].join(' ')
+  })), open && children.map((child, index) => /*#__PURE__*/React.createElement(SidebarElement, Object.assign({
+    key: index,
+    level: level + 1
+  }, child))));
+};
+
+SidebarElement.defaultProps = {
+  level: 1,
+  open: false,
+  children: []
+};
+SidebarElement.propTypes = {
+  text: propTypes.string.isRequired,
+  open: propTypes.bool,
+  icon: propTypes.element,
+  children: propTypes.arrayOf(propTypes.shape({
+    text: propTypes.string,
+    icon: propTypes.element,
+    level: propTypes.number,
+    children: propTypes.array,
+    notification: propTypes.bool,
+    active: propTypes.bool
+  })),
+  level: propTypes.number,
+  notification: propTypes.bool,
+  active: propTypes.bool
+};
+
+var styles$6 = {"sidebar":"__sidebar__sidebar__cwV8q"};
+
+const Sidebar = ({
+  items
+}) => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: [styles$6.sidebar].join(' ')
+  }, items.map((element, index) => /*#__PURE__*/React.createElement(SidebarElement, Object.assign({
+    key: index
+  }, element))));
+};
+
+Sidebar.propTypes = {
+  items: propTypes.array.isRequired
+};
+
+export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, Logo, Radio, Separator, Sidebar };
 //# sourceMappingURL=index.modern.js.map
