@@ -38,7 +38,7 @@ describe('SidebarElement behavior', () => {
     const props = {
       text: 'label A',
       open: true,
-      children: [
+      sublevel: [
         {
           text: 'label B',
         },
@@ -56,7 +56,7 @@ describe('SidebarElement behavior', () => {
     const props = {
       text: 'label A',
       open: false,
-      children: [
+      sublevel: [
         {
           text: 'label B',
 
@@ -72,11 +72,11 @@ describe('SidebarElement behavior', () => {
     const props = {
       text: 'label A',
       open: true,
-      children: [
+      sublevel: [
         {
           text: 'label B',
           open: true,
-          children: [
+          sublevel: [
             {
               text: 'label C',
             }

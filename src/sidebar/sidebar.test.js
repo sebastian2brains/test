@@ -10,11 +10,11 @@ describe('Sidebar behavior', () => {
       {
         text: 'label A',
         open: true,
-        children: [
+        sublevel: [
           {
             text: 'label B',
             open: true,
-            children: [
+            sublevel: [
               {
                 text: 'label C',
               }
@@ -25,11 +25,11 @@ describe('Sidebar behavior', () => {
       {
         text: 'label A',
         open: true,
-        children: [
+        sublevel: [
           {
             text: 'label B',
             open: true,
-            children: [
+            sublevel: [
               {
                 text: 'label C',
               }

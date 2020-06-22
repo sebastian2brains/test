@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './_sidebarElement.scss';
 import { Icon } from '../../';
 
-const SidebarElement = ({ text, icon, children, level, notification, active, open, ...props }) => {
+const SidebarElement = ({ text, icon, sublevel, level, notification, active, open, ...props }) => {
   const defaultIcon = (!icon && level === 3) ? <Icon name="arrow-right" size="1" /> : icon;
   let containerClasses = [styles.sidebarElement, styles['level-' + level]];
 
@@ -22,7 +22,7 @@ const SidebarElement = ({ text, icon, children, level, notification, active, ope
       }
     </div>
     {
-      open && children.map((child, index) => <SidebarElement key={index} level={level + 1} {...child} />)
+      open && sublevel.map((child, index) => <SidebarElement key={index} level={level + 1} {...child} />)
     }
   </React.Fragment>
 }
@@ -30,18 +30,18 @@ const SidebarElement = ({ text, icon, children, level, notification, active, ope
 SidebarElement.defaultProps = {
   level: 1,
   open: false,
-  children: []
+  sublevel: []
 }
 
 SidebarElement.propTypes = {
   text: PropTypes.string.isRequired,
   open: PropTypes.bool,
   icon: PropTypes.element,
-  children: PropTypes.arrayOf(PropTypes.shape({
+  sublevel: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string,
     icon: PropTypes.element,
     level: PropTypes.number,
-    children: PropTypes.array,
+    sublevel: PropTypes.array,
     notification: PropTypes.bool,
     active: PropTypes.bool
   })),

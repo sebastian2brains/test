@@ -12,7 +12,8 @@ import {
   Input,
   Radio,
   Separator,
-  Sidebar
+  Sidebar,
+  SidebarElement
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -342,6 +343,7 @@ const App = () => {
             }
           ]} />
         </div>
+        <SidebarElement text="hola" />
       </div>
     </div>
 
