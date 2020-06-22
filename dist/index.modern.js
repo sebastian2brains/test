@@ -1554,7 +1554,6 @@ const Input = ({
     }
   };
 
-  console.log(assistText);
   return /*#__PURE__*/React.createElement("div", {
     className: [inputStyles.inputContainer, validateStyle].join(' ')
   }, label && /*#__PURE__*/React.createElement("span", {
@@ -1694,7 +1693,7 @@ var styles$5 = {"sidebarElement":"__sidebarElement__sidebarElement__o3XYO","leve
 const SidebarElement = ({
   text,
   icon,
-  children,
+  sublevel,
   level,
   notification,
   active,
@@ -1720,7 +1719,7 @@ const SidebarElement = ({
   }, defaultIcon, text), notification === true && /*#__PURE__*/React.createElement("span", {
     role: "notification",
     className: [styles$5.notification].join(' ')
-  })), open && children.map((child, index) => /*#__PURE__*/React.createElement(SidebarElement, Object.assign({
+  })), open && sublevel.map((child, index) => /*#__PURE__*/React.createElement(SidebarElement, Object.assign({
     key: index,
     level: level + 1
   }, child))));
@@ -1729,17 +1728,17 @@ const SidebarElement = ({
 SidebarElement.defaultProps = {
   level: 1,
   open: false,
-  children: []
+  sublevel: []
 };
 SidebarElement.propTypes = {
   text: propTypes.string.isRequired,
   open: propTypes.bool,
   icon: propTypes.element,
-  children: propTypes.arrayOf(propTypes.shape({
+  sublevel: propTypes.arrayOf(propTypes.shape({
     text: propTypes.string,
     icon: propTypes.element,
     level: propTypes.number,
-    children: propTypes.array,
+    sublevel: propTypes.array,
     notification: propTypes.bool,
     active: propTypes.bool
   })),
@@ -1764,5 +1763,28 @@ Sidebar.propTypes = {
   items: propTypes.array.isRequired
 };
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, Logo, Radio, Separator, Sidebar };
+var styles$7 = {"switchContainer":"__switch__switchContainer__1eRWQ","switchBar":"__switch__switchBar__2eAt1","active":"__switch__active__2ZPJd","circle":"__switch__circle__3-WI0"};
+
+const Switch = ({
+  status,
+  ...props
+}) => {
+  let switchClass = [styles$7.switchBar];
+
+  if (status) {
+    switchClass = switchClass.concat(styles$7.active);
+  }
+
+  console.log(switchClass);
+  return /*#__PURE__*/React.createElement("div", Object.assign({
+    "data-status": status ? 'on' : 'off',
+    className: styles$7.switchContainer
+  }, props), /*#__PURE__*/React.createElement("div", {
+    className: switchClass.join(' ')
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$7.circle
+  })));
+};
+
+export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, Logo, Radio, Separator, Sidebar, SidebarElement, Switch };
 //# sourceMappingURL=index.modern.js.map

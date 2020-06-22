@@ -1729,3 +1729,62 @@
   display: flex;
   flex-direction: column;
   width: 100%; }
+
+.__switch__switchContainer__1eRWQ {
+  padding: 0.5rem; }
+
+.__switch__switchBar__2eAt1 {
+  height: 24px;
+  background-color: #646569;
+  border-radius: 24px;
+  width: 48px;
+  position: relative;
+  transition: all .4s;
+  cursor: pointer; }
+  .__switch__switchBar__2eAt1.__switch__active__2ZPJd {
+    background-color: #007DB7; }
+    .__switch__switchBar__2eAt1.__switch__active__2ZPJd .__switch__circle__3-WI0 {
+      left: calc(100% - 20px); }
+      .__switch__switchBar__2eAt1.__switch__active__2ZPJd .__switch__circle__3-WI0:hover:before {
+        background-color: rgba(0, 161, 223, 0.15); }
+      .__switch__switchBar__2eAt1.__switch__active__2ZPJd .__switch__circle__3-WI0:focus:before {
+        background-color: rgba(0, 161, 223, 0.25); }
+      .__switch__switchBar__2eAt1.__switch__active__2ZPJd .__switch__circle__3-WI0:active:before {
+        background-color: rgba(0, 161, 223, 0.35); }
+  .__switch__switchBar__2eAt1 .__switch__circle__3-WI0 {
+    height: 16px;
+    width: 16px;
+    border-radius: 100%;
+    left: 4px;
+    top: 4px;
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+    box-shadow: 0 1px 2px 0 rgba(31, 30, 30, 0.35);
+    transition: all 0.4s cubic-bezier(0.77, 0, 0.18, 1); }
+    .__switch__switchBar__2eAt1 .__switch__circle__3-WI0:before {
+      content: "";
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 100%;
+      position: absolute;
+      top: -0.75rem;
+      left: -0.75rem; }
+    .__switch__switchBar__2eAt1 .__switch__circle__3-WI0:hover:before {
+      background-color: rgba(31, 30, 30, 0.15); }
+    .__switch__switchBar__2eAt1 .__switch__circle__3-WI0:focus:before {
+      background-color: rgba(31, 30, 30, 0.25); }
+    .__switch__switchBar__2eAt1 .__switch__circle__3-WI0:active:before {
+      background-color: rgba(31, 30, 30, 0.35); }
+  @media screen and (max-width: 768px) {
+    .__switch__switchBar__2eAt1 {
+      height: 32px;
+      width: 72px; }
+      .__switch__switchBar__2eAt1 .__switch__circle__3-WI0 {
+        height: 24px;
+        width: 24px; }
+        .__switch__switchBar__2eAt1 .__switch__circle__3-WI0:before {
+          top: -0.5rem;
+          left: -0.5rem; }
+      .__switch__switchBar__2eAt1.__switch__active__2ZPJd .__switch__circle__3-WI0 {
+        left: calc(100% - 28px); } }

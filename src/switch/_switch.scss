@@ -1,0 +1,89 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+@import '../scss/mixins/elevation';
+
+.switchContainer{
+  padding: nth(nth($spacers, 3), 2);
+}
+
+@mixin alfaColorMaker($hover, $focus, $active) {
+  &:hover{
+    &:before{ background-color: $hover; }
+  }
+
+  &:focus{
+    &:before{ background-color: $focus; }
+  }
+
+  &:active{
+    &:before{ background-color: $active; }
+  }
+}
+
+.switchBar{
+  height: 24px;
+  background-color: $neutral-40;
+  border-radius: 24px;
+  width: 48px;
+  position: relative;
+  transition: all .4s;
+  cursor: pointer;
+
+  &.active{
+    background-color: $info-40;
+    .circle{
+      left: calc(100% - 20px);
+      @include alfaColorMaker(rgba($info-30,.15),rgba($info-30,.25),rgba($info-30,.35));
+    }
+  }
+
+  .circle{
+    height: 16px;
+    width: 16px;
+    border-radius: 100%;
+    left: 4px;
+    top: 4px;
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+    @include elevationElementCreator1();
+    transition: all .4s cubic-bezier(.77,0,.18,1);
+
+    &:before{
+      content: "";
+      height: nth(nth($spacers, 8), 2);
+      width: nth(nth($spacers, 8), 2);
+      border-radius: 100%;
+      position: absolute;
+      top: -#{nth(nth($spacers, 4), 2)};
+      left: -#{nth(nth($spacers, 4), 2)};
+    }
+
+    @include alfaColorMaker($neutral-alfa-15,$neutral-alfa-25,$neutral-alfa-35);
+  }
+
+  @media screen and (max-width: nth(nth($grid-breakpoints,3),2)){
+    height: 32px;
+    width: 72px;
+    $circleSize: 24px;
+
+    .circle{
+      height: $circleSize;
+      width: $circleSize;
+      &:before{
+        top: -#{nth(nth($spacers, 3), 2)};
+        left: -#{nth(nth($spacers, 3), 2)};
+      }
+    }
+
+    &.active{
+      .circle{
+        left: calc(100% - 28px);
+      }
+    }
+  }
+
+}
+// 48
+// 24
+// 16

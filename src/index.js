@@ -12,6 +12,7 @@ import Radio from './radio';
 import Separator from './separator';
 import Sidebar from './sidebar';
 import SidebarElement from './sidebar/sidebarElement';
+import Switch from './switch';
 
 export {
   Button,
@@ -27,5 +28,6 @@ export {
   Radio,
   Separator,
   Sidebar,
-  SidebarElement
+  SidebarElement,
+  Switch
 };

@@ -13,7 +13,8 @@ import {
   Radio,
   Separator,
   Sidebar,
-  SidebarElement
+  SidebarElement,
+  Switch
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -21,6 +22,7 @@ import 'library-1/dist/css/custom.css';
 const App = () => {
   const [checked, setCheckbox] = useState(false);
   const [secondChecked, setSecondCheckbox] = useState(false);
+  const [switchStatus, setSwitchStatus] = useState(false);
   const [inputText, setInputText] = useState('');
 
   const handleCheckbox = (value) => {
@@ -346,6 +348,16 @@ const App = () => {
         <SidebarElement text="hola" />
       </div>
     </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">Switch</h1>
+
+      <div className="d-flex">
+        <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)} />
+        <Switch status={false} onClick={() => null} />
+      </div>
+    </div>
+
 
   </>
 }

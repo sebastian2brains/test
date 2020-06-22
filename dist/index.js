@@ -1598,7 +1598,6 @@ var Input = function Input(_ref) {
     }
   };
 
-  console.log(assistText);
   return /*#__PURE__*/React.createElement("div", {
     className: [inputStyles.inputContainer, validateStyle].join(' ')
   }, label && /*#__PURE__*/React.createElement("span", {
@@ -1744,12 +1743,12 @@ var styles$5 = {"sidebarElement":"__sidebarElement__sidebarElement__o3XYO","leve
 var SidebarElement = function SidebarElement(_ref) {
   var text = _ref.text,
       icon = _ref.icon,
-      children = _ref.children,
+      sublevel = _ref.sublevel,
       level = _ref.level,
       notification = _ref.notification,
       active = _ref.active,
       open = _ref.open,
-      props = _objectWithoutPropertiesLoose(_ref, ["text", "icon", "children", "level", "notification", "active", "open"]);
+      props = _objectWithoutPropertiesLoose(_ref, ["text", "icon", "sublevel", "level", "notification", "active", "open"]);
 
   var defaultIcon = !icon && level === 3 ? /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-right",
@@ -1770,7 +1769,7 @@ var SidebarElement = function SidebarElement(_ref) {
   }, defaultIcon, text), notification === true && /*#__PURE__*/React.createElement("span", {
     role: "notification",
     className: [styles$5.notification].join(' ')
-  })), open && children.map(function (child, index) {
+  })), open && sublevel.map(function (child, index) {
     return /*#__PURE__*/React.createElement(SidebarElement, _extends({
       key: index,
       level: level + 1
@@ -1781,17 +1780,17 @@ var SidebarElement = function SidebarElement(_ref) {
 SidebarElement.defaultProps = {
   level: 1,
   open: false,
-  children: []
+  sublevel: []
 };
 SidebarElement.propTypes = {
   text: propTypes.string.isRequired,
   open: propTypes.bool,
   icon: propTypes.element,
-  children: propTypes.arrayOf(propTypes.shape({
+  sublevel: propTypes.arrayOf(propTypes.shape({
     text: propTypes.string,
     icon: propTypes.element,
     level: propTypes.number,
-    children: propTypes.array,
+    sublevel: propTypes.array,
     notification: propTypes.bool,
     active: propTypes.bool
   })),
@@ -1817,6 +1816,29 @@ Sidebar.propTypes = {
   items: propTypes.array.isRequired
 };
 
+var styles$7 = {"switchContainer":"__switch__switchContainer__1eRWQ","switchBar":"__switch__switchBar__2eAt1","active":"__switch__active__2ZPJd","circle":"__switch__circle__3-WI0"};
+
+var Switch = function Switch(_ref) {
+  var status = _ref.status,
+      props = _objectWithoutPropertiesLoose(_ref, ["status"]);
+
+  var switchClass = [styles$7.switchBar];
+
+  if (status) {
+    switchClass = switchClass.concat(styles$7.active);
+  }
+
+  console.log(switchClass);
+  return /*#__PURE__*/React.createElement("div", _extends({
+    "data-status": status ? 'on' : 'off',
+    className: styles$7.switchContainer
+  }, props), /*#__PURE__*/React.createElement("div", {
+    className: switchClass.join(' ')
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$7.circle
+  })));
+};
+
 exports.Button = Button;
 exports.Card = Card;
 exports.Checkbox = Checkbox;
@@ -1830,4 +1852,6 @@ exports.Logo = Logo;
 exports.Radio = Radio;
 exports.Separator = Separator;
 exports.Sidebar = Sidebar;
+exports.SidebarElement = SidebarElement;
+exports.Switch = Switch;
 //# sourceMappingURL=index.js.map
