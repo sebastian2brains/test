@@ -1763,27 +1763,38 @@ Sidebar.propTypes = {
   items: propTypes.array.isRequired
 };
 
-var styles$7 = {"switchContainer":"__switch__switchContainer__1eRWQ","switchBar":"__switch__switchBar__2eAt1","active":"__switch__active__2ZPJd","circle":"__switch__circle__3-WI0"};
+var styles$7 = {"switchContainer":"__switch__switchContainer__1eRWQ","disabled":"__switch__disabled__n5mqJ","circle":"__switch__circle__3-WI0","switchBar":"__switch__switchBar__2eAt1","active":"__switch__active__2ZPJd"};
 
 const Switch = ({
   status,
+  disabled,
   ...props
 }) => {
   let switchClass = [styles$7.switchBar];
+  const containerClass = [styles$7.switchContainer, disabled ? styles$7.disabled : null];
 
   if (status) {
     switchClass = switchClass.concat(styles$7.active);
   }
 
-  console.log(switchClass);
   return /*#__PURE__*/React.createElement("div", Object.assign({
     "data-status": status ? 'on' : 'off',
-    className: styles$7.switchContainer
+    className: containerClass.join(' ')
   }, props), /*#__PURE__*/React.createElement("div", {
     className: switchClass.join(' ')
   }, /*#__PURE__*/React.createElement("div", {
     className: styles$7.circle
   })));
+};
+
+Switch.defaultProps = {
+  status: false,
+  disabled: false
+};
+Switch.propTypes = {
+  status: propTypes.bool,
+  onClick: propTypes.func,
+  disabled: propTypes.bool
 };
 
 export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, Logo, Radio, Separator, Sidebar, SidebarElement, Switch };

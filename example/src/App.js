@@ -354,7 +354,7 @@ const App = () => {
 
       <div className="d-flex">
         <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)} />
-        <Switch status={true} disabled onClick={() => setSwitchStatus(!switchStatus)} />
+        <Switch />
         <Switch status={false} disabled onClick={() => setSwitchStatus(!switchStatus)} />
       </div>
     </div>

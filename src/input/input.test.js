@@ -97,7 +97,7 @@ describe('Input behavior', () => {
           text: 'success text'
         },
         {
-          type: '',
+          type: 'assist',
           text: 'defaul text'
         }
       ]} />);

@@ -1732,6 +1732,18 @@
 
 .__switch__switchContainer__1eRWQ {
   padding: 0.5rem; }
+  .__switch__switchContainer__1eRWQ.__switch__disabled__n5mqJ {
+    pointer-events: none !important; }
+    .__switch__switchContainer__1eRWQ.__switch__disabled__n5mqJ * {
+      pointer-events: none !important; }
+    .__switch__switchContainer__1eRWQ.__switch__disabled__n5mqJ .__switch__circle__3-WI0 {
+      background-color: #F6F3F5; }
+      .__switch__switchContainer__1eRWQ.__switch__disabled__n5mqJ .__switch__circle__3-WI0 .__switch__circle__3-WI0:before {
+        background-color: transparent; }
+    .__switch__switchContainer__1eRWQ.__switch__disabled__n5mqJ .__switch__switchBar__2eAt1 {
+      background-color: #9C9A9F; }
+      .__switch__switchContainer__1eRWQ.__switch__disabled__n5mqJ .__switch__switchBar__2eAt1.__switch__active__2ZPJd {
+        background-color: #8FDAFA; }
 
 .__switch__switchBar__2eAt1 {
   height: 24px;

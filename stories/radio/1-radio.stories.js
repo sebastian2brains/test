@@ -87,12 +87,13 @@ export default {
         include into your project to be able to use the component styles
         ~~~js
         import 'library/dist/index.css';
+        import { Radio } from 'library';
         ~~~
 
         the basicest component form is: 
 
         ~~~js
-        <Checkbox checked={false} onChange={()=>null} />
+        <Radio checked={false} onChange={()=>null} />
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source

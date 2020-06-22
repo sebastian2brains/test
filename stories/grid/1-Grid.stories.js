@@ -106,6 +106,7 @@ export default {
         include into your project to be able to use the component styles
         ~~~js
         import 'library/dist/index.css';
+        import { Grid } from 'library';
         ~~~
 
         the basicest component form is: 

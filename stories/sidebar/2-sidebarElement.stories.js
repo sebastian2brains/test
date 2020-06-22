@@ -1,6 +1,5 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs/react';
-import { linkTo } from '@storybook/addon-links'
 import { select, boolean, text } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { Icon, SidebarElement } from '../../dist';
@@ -103,6 +102,7 @@ export default {
         include into your project to be able to use the component styles
         ~~~js
         import 'library/dist/index.css';
+        import { SidebarElement } from 'library';
         ~~~
 
         the basicest component form is: 
