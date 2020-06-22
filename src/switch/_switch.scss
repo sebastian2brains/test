@@ -4,6 +4,27 @@
 
 .switchContainer{
   padding: nth(nth($spacers, 3), 2);
+
+  &.disabled{
+    pointer-events: none !important;
+
+    *{
+      pointer-events: none !important;
+    }
+
+    .circle{
+      background-color: $neutral-10;
+      .circle:before{ background-color: transparent;}
+    }
+
+    .switchBar{
+      background-color: $neutral-30;
+
+      &.active{
+        background-color: $info-10;
+      }
+    }
+  }
 }
 
 @mixin alfaColorMaker($hover, $focus, $active) {
@@ -84,6 +105,3 @@
   }
 
 }
-// 48
-// 24
-// 16
