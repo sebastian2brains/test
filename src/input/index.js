@@ -46,9 +46,6 @@ const Input = ({
     }
   }
 
-  console.log(assistText);
-
-
   return <div className={[inputStyles.inputContainer, validateStyle].join(' ')}>
     {
       label && <span className={inputStyles.inputLabel}> {label} </span>
