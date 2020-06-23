@@ -57,6 +57,19 @@ const App = () => {
       <div className="d-inline border p-3 ml-7"> </div>
     </div>
 
+    <h1 className="mb-4">Paddings</h1>
+
+    <div className="d-flex flex-column mb-4">
+      <div className="d-block border pl-0">text</div>
+      <div className="d-block border pl-1">text</div>
+      <div className="d-block border pl-2">text</div>
+      <div className="d-block border pl-3">text</div>
+      <div className="d-block border pl-4">text</div>
+      <div className="d-block border pl-5">text</div>
+      <div className="d-block border pl-6">text</div>
+      <div className="d-block border pl-7">text</div>
+    </div>
+
     <h1 className="mb-4">Icons</h1>
 
     <div className="d-flex align-items-baseline flex-wrap">
@@ -321,20 +334,21 @@ const App = () => {
               text: 'label first level A',
               notification: true,
               open: true,
-              children: [
+              sublevel: [
                 {
                   text: 'label second level',
-                  children: [
+                  open: true,
+                  sublevel: [
                     {
                       active: true,
                       text: 'label third level',
-                      children: [],
+                      sublevel: [],
                     }
                   ],
                 },
                 {
                   text: 'label second level 2',
-                  children: [],
+                  sublevel: [],
                   notification: true
                 }
               ]
@@ -345,7 +359,6 @@ const App = () => {
             }
           ]} />
         </div>
-        <SidebarElement text="hola" />
       </div>
     </div>
 
@@ -354,7 +367,7 @@ const App = () => {
 
       <div className="d-flex">
         <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)} />
-        <Switch />
+        <Switch status={true} disabled onClick={() => setSwitchStatus(!switchStatus)} />
         <Switch status={false} disabled onClick={() => setSwitchStatus(!switchStatus)} />
       </div>
     </div>
