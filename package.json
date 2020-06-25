@@ -8,6 +8,11 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|scss|less)$": "identity-obj-proxy"
+    }
+  },
   "engines": {
     "node": ">=10"
   },
@@ -39,6 +44,7 @@
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "@storybook/theming": "^5.3.19",
     "@testing-library/react": "^10.3.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.3",
@@ -74,6 +80,8 @@
   ],
   "dependencies": {
     "@storybook/addon-knobs": "^5.3.19",
-    "babel-plugin-react-docgen": "^4.1.0"
+    "babel-plugin-react-docgen": "^4.1.0",
+    "lodash": "^4.17.15",
+    "react-test-renderer": "^16.13.1"
   }
 }
