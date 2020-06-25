@@ -2328,3 +2328,14 @@
               animation-iteration-count: infinite;
       -webkit-animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
               animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1); }
+
+.__title__titleContainer__Yw0He {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #F6F3F5;
+  font-family: "Ubuntu", sans-serif;
+  box-shadow: 0 1px 2px 0 rgba(31, 30, 30, 0.35); }
+
+.__title__suffix__3FgDb {
+  padding-right: 0.75rem; }
