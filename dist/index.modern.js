@@ -1797,7 +1797,34 @@ Switch.propTypes = {
   disabled: propTypes.bool
 };
 
-var styles$8 = {"titleContainer":"__title__titleContainer__Yw0He","suffix":"__title__suffix__3FgDb"};
+var styles$8 = {"loadingContainer":"__loading__loadingContainer__xbslP","circle_1":"__loading__circle_1__1yHlS","circle_2":"__loading__circle_2__12Wvj","dark":"__loading__dark__l3QX7","circle":"__loading__circle__2KYdR","circleMain":"__loading__circleMain__2RXOO","circlesContainer":"__loading__circlesContainer__gReE6","container":"__loading__container__2BLen","beforeCircle1":"__loading__beforeCircle1__3d9vo","beforeCircle2":"__loading__beforeCircle2__1fVOr","circleMainBorder":"__loading__circleMainBorder__UHFy2"};
+
+const Loading = ({
+  dark
+}) => {
+  const styleArr = [styles$8.loadingContainer, dark ? styles$8.dark : null];
+  const theme = dark ? 'dark' : 'light';
+  return /*#__PURE__*/React.createElement("div", {
+    className: styleArr.join(' '),
+    "data-theme": theme
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$8.circleMain
+  }), /*#__PURE__*/React.createElement("div", {
+    className: styles$8.circlesContainer
+  }, [styles$8.circle_1, styles$8.circle_2].map((el, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: [styles$8.circle, el].join(' ')
+  }))));
+};
+
+Loading.defaultProps = {
+  dark: false
+};
+Loading.propTypes = {
+  dark: propTypes.bool
+};
+
+var styles$9 = {"titleContainer":"__title__titleContainer__Yw0He","suffix":"__title__suffix__3FgDb"};
 
 class IconListModel {}
 IconListModel.iconList = ['line-alarm', 'line-alert', 'line-app-notification', 'line-block', 'line-bookmark', 'line-bug', 'line-check-double', 'line-check', 'line-cloud-disable', 'line-cloud-download', 'line-cloud-upload', 'line-cloud', 'line-cogwheel', 'line-copy', 'line-cross', 'line-cut', 'line-dashboard', 'line-down', 'line-download-queue', 'line-download', 'line-draft', 'line-exit-fullscreen', 'line-eye-close', 'line-eye-open', 'line-female-user', 'line-file', 'line-filter', 'line-flag', 'line-fullscreen', 'line-heart', 'line-help', 'line-home', 'line-information', 'line-left', 'line-lifebuoy', 'line-list', 'line-loading', 'line-lock', 'line-login', 'line-logout', 'line-menu-burger', 'line-menu-dots', 'line-microphone-disable', 'line-microphone', 'line-minus', 'line-note', 'line-notification-disable', 'line-notification', 'line-paste', 'line-plus', 'line-power-sign', 'line-print', 'line-puzzle', 'line-refresh', 'line-reply-all', 'line-reply', 'line-right', 'line-save', 'line-screenshot', 'line-search-check', 'line-search-cross', 'line-search-minus', 'line-search-plus', 'line-search', 'line-share', 'line-shield', 'line-snooze', 'line-star', 'line-stars', 'line-sync', 'line-task', 'line-time', 'line-trash-empty', 'line-trash-full', 'line-trash', 'line-umbrella', 'line-unlock', 'line-up', 'line-upload-queue', 'line-upload', 'line-user', 'line-verification-fail', 'line-verification', 'line-wrench', 'line-write', 'arrow-down', 'arrow-left', 'arrow-right', 'arrow-up', 'alarm1', 'alert1', 'app-notification1', 'block', 'bookmark', 'bug', 'check-double', 'check', 'cloud-disable', 'cloud-download', 'cloud-upload', 'cloud', 'cogwheel', 'copy', 'cross', 'cut', 'dashboard', 'down', 'download-queue', 'download', 'draft', 'exit-fullscreen', 'eye-close', 'eye-open', 'female-user', 'file', 'filter', 'flag', 'fullscreen', 'heart', 'help', 'home', 'information', 'left', 'lifebuoy', 'list', 'loading', 'lock', 'login', 'logout', 'menu-burger', 'menu-dots', 'microphone-disable', 'microphone', 'minus', 'note', 'notification-disable', 'notification', 'paste', 'plus', 'power-sign', 'print', 'puzzle', 'refresh', 'reply-all', 'reply', 'right', 'save', 'screenshot', 'search-alt', 'search-check', 'search-cross', 'search-minus', 'search-plus', 'share', 'shield', 'snooze', 'star', 'stars', 'sync', 'task', 'time', 'trash-empty', 'trash-full', 'trash', 'umbrella', 'unlock', 'up', 'upload-queue', 'upload', 'user', 'verification-fail', 'verification', 'wrench', 'write'];
@@ -1807,11 +1834,11 @@ const TitleSection = ({
   prefix,
   ...props
 }) => {
-  const containerClass = [styles$8.titleContainer];
+  const containerClass = [styles$9.titleContainer];
   return /*#__PURE__*/React.createElement("div", Object.assign({}, props, {
     className: containerClass.join(' ')
   }), prefix && /*#__PURE__*/React.createElement(Icon, {
-    className: styles$8.suffix,
+    className: styles$9.suffix,
     name: prefix
   }, " "), " ", /*#__PURE__*/React.createElement("div", {
     "data-testid": "title-section-label"
@@ -1826,7 +1853,7 @@ TitleSection.propTypes = {
   label: propTypes.string.isRequired
 };
 
-var styles$9 = {"chip":"__chips__chip__UA-fa","pressed":"__chips__pressed__Qi9F4","disabled":"__chips__disabled__1agHb","variant":"__chips__variant__32Cyg"};
+var styles$a = {"chip":"__chips__chip__UA-fa","pressed":"__chips__pressed__Qi9F4","disabled":"__chips__disabled__1agHb","variant":"__chips__variant__32Cyg"};
 
 const InputChip = ({
   value,
@@ -1838,14 +1865,14 @@ const InputChip = ({
   const mainRef = React.createRef(null);
 
   const onPress = () => {
-    mainRef.current.className = classesComponent.concat(styles$9.pressed).join(' ');
+    mainRef.current.className = classesComponent.concat(styles$a.pressed).join(' ');
   };
 
   const mouseUp = () => {
     mainRef.current.className = classesComponent.join(' ');
   };
 
-  const classesComponent = [styles$9.chip, disabled ? styles$9.disabled : null, variant ? styles$9.variant : null];
+  const classesComponent = [styles$a.chip, disabled ? styles$a.disabled : null, variant ? styles$a.variant : null];
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", Object.assign({
     ref: mainRef
   }, props, {
@@ -1871,5 +1898,5 @@ InputChip.propTypes = {
   onClose: propTypes.func.isRequired
 };
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Logo, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
+export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
 //# sourceMappingURL=index.modern.js.map

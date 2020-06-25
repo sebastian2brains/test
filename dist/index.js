@@ -1850,7 +1850,35 @@ Switch.propTypes = {
   disabled: propTypes.bool
 };
 
-var styles$8 = {"titleContainer":"__title__titleContainer__Yw0He","suffix":"__title__suffix__3FgDb"};
+var styles$8 = {"loadingContainer":"__loading__loadingContainer__xbslP","circle_1":"__loading__circle_1__1yHlS","circle_2":"__loading__circle_2__12Wvj","dark":"__loading__dark__l3QX7","circle":"__loading__circle__2KYdR","circleMain":"__loading__circleMain__2RXOO","circlesContainer":"__loading__circlesContainer__gReE6","container":"__loading__container__2BLen","beforeCircle1":"__loading__beforeCircle1__3d9vo","beforeCircle2":"__loading__beforeCircle2__1fVOr","circleMainBorder":"__loading__circleMainBorder__UHFy2"};
+
+var Loading = function Loading(_ref) {
+  var dark = _ref.dark;
+  var styleArr = [styles$8.loadingContainer, dark ? styles$8.dark : null];
+  var theme = dark ? 'dark' : 'light';
+  return /*#__PURE__*/React.createElement("div", {
+    className: styleArr.join(' '),
+    "data-theme": theme
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$8.circleMain
+  }), /*#__PURE__*/React.createElement("div", {
+    className: styles$8.circlesContainer
+  }, [styles$8.circle_1, styles$8.circle_2].map(function (el, i) {
+    return /*#__PURE__*/React.createElement("div", {
+      key: i,
+      className: [styles$8.circle, el].join(' ')
+    });
+  })));
+};
+
+Loading.defaultProps = {
+  dark: false
+};
+Loading.propTypes = {
+  dark: propTypes.bool
+};
+
+var styles$9 = {"titleContainer":"__title__titleContainer__Yw0He","suffix":"__title__suffix__3FgDb"};
 
 var IconListModel = function IconListModel() {};
 
@@ -1861,11 +1889,11 @@ var TitleSection = function TitleSection(_ref) {
       prefix = _ref.prefix,
       props = _objectWithoutPropertiesLoose(_ref, ["label", "prefix"]);
 
-  var containerClass = [styles$8.titleContainer];
+  var containerClass = [styles$9.titleContainer];
   return /*#__PURE__*/React.createElement("div", _extends({}, props, {
     className: containerClass.join(' ')
   }), prefix && /*#__PURE__*/React.createElement(Icon, {
-    className: styles$8.suffix,
+    className: styles$9.suffix,
     name: prefix
   }, " "), " ", /*#__PURE__*/React.createElement("div", {
     "data-testid": "title-section-label"
@@ -1880,7 +1908,7 @@ TitleSection.propTypes = {
   label: propTypes.string.isRequired
 };
 
-var styles$9 = {"chip":"__chips__chip__UA-fa","pressed":"__chips__pressed__Qi9F4","disabled":"__chips__disabled__1agHb","variant":"__chips__variant__32Cyg"};
+var styles$a = {"chip":"__chips__chip__UA-fa","pressed":"__chips__pressed__Qi9F4","disabled":"__chips__disabled__1agHb","variant":"__chips__variant__32Cyg"};
 
 var InputChip = function InputChip(_ref) {
   var value = _ref.value,
@@ -1892,14 +1920,14 @@ var InputChip = function InputChip(_ref) {
   var mainRef = React.createRef(null);
 
   var onPress = function onPress() {
-    mainRef.current.className = classesComponent.concat(styles$9.pressed).join(' ');
+    mainRef.current.className = classesComponent.concat(styles$a.pressed).join(' ');
   };
 
   var mouseUp = function mouseUp() {
     mainRef.current.className = classesComponent.join(' ');
   };
 
-  var classesComponent = [styles$9.chip, disabled ? styles$9.disabled : null, variant ? styles$9.variant : null];
+  var classesComponent = [styles$a.chip, disabled ? styles$a.disabled : null, variant ? styles$a.variant : null];
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", _extends({
     ref: mainRef
   }, props, {
@@ -1935,6 +1963,7 @@ exports.HeaderProfileItem = HeaderProfileItem;
 exports.Icon = Icon;
 exports.Input = Input;
 exports.InputChip = InputChip;
+exports.Loading = Loading;
 exports.Logo = Logo;
 exports.Radio = Radio;
 exports.Separator = Separator;
