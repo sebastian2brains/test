@@ -8,9 +8,8 @@ import IconListModel from "../icons/models/icon-list.model";
 
 describe('Title tests', () => {
 
-  test( 'should be rendered', () => {
+  test('should be rendered', () => {
     const component = render(<TitleSection label="Text" prefix="write" />);
-    console.log(component.queryByTestId('title-section-label'));
     expect(component).toBeTruthy();
   });
 
@@ -27,7 +26,7 @@ describe('Title tests', () => {
 
   test('should component contain default props prefix and label', () => {
 
-    const testRenderer = TestRenderer.create(<TitleSection/>);
+    const testRenderer = TestRenderer.create(<TitleSection />);
     const testInstance = testRenderer.root;
 
     expect(testInstance.props.prefix).toBeTruthy();
@@ -63,7 +62,7 @@ describe('Title tests', () => {
 
     const iconName = testInstance.props.prefix;
 
-    const findValue = IconListModel.iconList.find( data=> iconName == data);
+    const findValue = IconListModel.iconList.find(data => iconName == data);
 
     expect(testInstance.props.prefix).toBe(findValue);
 

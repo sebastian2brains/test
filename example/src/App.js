@@ -13,9 +13,9 @@ import {
   Radio,
   Separator,
   Sidebar,
-  SidebarElement,
   Switch,
-  TitleSection
+  TitleSection,
+  InputChip
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -326,6 +326,17 @@ const App = () => {
       />
     </div>
 
+    <div className="container my-4">
+      <h1 className="mb-4">input chip</h1>
+
+      <div className="d-flex">
+        <InputChip value="action" onClose={() => alert('clicked')} />
+        <InputChip value="action" onClose={() => alert('clicked')} disabled />
+        <InputChip value="action" variant onClose={() => alert('clicked')} />
+        <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
+      </div>
+    </div>
+
     <div className="container">
       <div className="row">
         <div className="col-lg-3 col-md-4">
@@ -376,12 +387,12 @@ const App = () => {
     <div className="container">
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12">
-          <TitleSection label="Title Section" prefix="write"/>
+          <TitleSection label="Title Section" prefix="write" />
         </div>
       </div>
     </div>
 
-    <br/>
+    <br />
 
   </>
 }
