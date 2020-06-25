@@ -1853,5 +1853,50 @@ TitleSection.propTypes = {
   label: propTypes.string.isRequired
 };
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, Loading, Logo, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
+var styles$a = {"chip":"__chips__chip__UA-fa","pressed":"__chips__pressed__Qi9F4","disabled":"__chips__disabled__1agHb","variant":"__chips__variant__32Cyg"};
+
+const InputChip = ({
+  value,
+  onClose,
+  variant,
+  disabled,
+  ...props
+}) => {
+  const mainRef = React.createRef(null);
+
+  const onPress = () => {
+    mainRef.current.className = classesComponent.concat(styles$a.pressed).join(' ');
+  };
+
+  const mouseUp = () => {
+    mainRef.current.className = classesComponent.join(' ');
+  };
+
+  const classesComponent = [styles$a.chip, disabled ? styles$a.disabled : null, variant ? styles$a.variant : null];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", Object.assign({
+    ref: mainRef
+  }, props, {
+    className: classesComponent.join(' ')
+  }), value, /*#__PURE__*/React.createElement(Icon, {
+    onMouseDown: onPress,
+    onClick: onClose,
+    onMouseUp: mouseUp,
+    name: "plus",
+    size: "2",
+    role: "closer"
+  })));
+};
+
+InputChip.defaultProps = {
+  variant: false,
+  disabled: false
+};
+InputChip.propTypes = {
+  value: propTypes.string.isRequired,
+  disabled: propTypes.bool,
+  variant: propTypes.bool,
+  onClose: propTypes.func.isRequired
+};
+
+export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
 //# sourceMappingURL=index.modern.js.map

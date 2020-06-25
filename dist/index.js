@@ -1908,6 +1908,51 @@ TitleSection.propTypes = {
   label: propTypes.string.isRequired
 };
 
+var styles$a = {"chip":"__chips__chip__UA-fa","pressed":"__chips__pressed__Qi9F4","disabled":"__chips__disabled__1agHb","variant":"__chips__variant__32Cyg"};
+
+var InputChip = function InputChip(_ref) {
+  var value = _ref.value,
+      onClose = _ref.onClose,
+      variant = _ref.variant,
+      disabled = _ref.disabled,
+      props = _objectWithoutPropertiesLoose(_ref, ["value", "onClose", "variant", "disabled"]);
+
+  var mainRef = React.createRef(null);
+
+  var onPress = function onPress() {
+    mainRef.current.className = classesComponent.concat(styles$a.pressed).join(' ');
+  };
+
+  var mouseUp = function mouseUp() {
+    mainRef.current.className = classesComponent.join(' ');
+  };
+
+  var classesComponent = [styles$a.chip, disabled ? styles$a.disabled : null, variant ? styles$a.variant : null];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", _extends({
+    ref: mainRef
+  }, props, {
+    className: classesComponent.join(' ')
+  }), value, /*#__PURE__*/React.createElement(Icon, {
+    onMouseDown: onPress,
+    onClick: onClose,
+    onMouseUp: mouseUp,
+    name: "plus",
+    size: "2",
+    role: "closer"
+  })));
+};
+
+InputChip.defaultProps = {
+  variant: false,
+  disabled: false
+};
+InputChip.propTypes = {
+  value: propTypes.string.isRequired,
+  disabled: propTypes.bool,
+  variant: propTypes.bool,
+  onClose: propTypes.func.isRequired
+};
+
 exports.Button = Button;
 exports.Card = Card;
 exports.Checkbox = Checkbox;
@@ -1917,6 +1962,7 @@ exports.HeaderItem = HeaderItem;
 exports.HeaderProfileItem = HeaderProfileItem;
 exports.Icon = Icon;
 exports.Input = Input;
+exports.InputChip = InputChip;
 exports.Loading = Loading;
 exports.Logo = Logo;
 exports.Radio = Radio;

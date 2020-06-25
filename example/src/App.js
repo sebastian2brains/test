@@ -14,8 +14,9 @@ import {
   Separator,
   Sidebar,
   Switch,
-  Loading,
-  TitleSection
+  TitleSection,
+  InputChip,
+  Loading
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -324,6 +325,17 @@ const App = () => {
         variant='textarea'
         onChange={({ target: { value } }) => setInputText(value)}
       />
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">input chip</h1>
+
+      <div className="d-flex">
+        <InputChip value="action" onClose={() => alert('clicked')} />
+        <InputChip value="action" onClose={() => alert('clicked')} disabled />
+        <InputChip value="action" variant onClose={() => alert('clicked')} />
+        <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
+      </div>
     </div>
 
     <div className="container">

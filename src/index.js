@@ -15,6 +15,7 @@ import SidebarElement from './sidebar/sidebarElement';
 import Switch from './switch';
 import Loading from './loading';
 import TitleSection from './title';
+import InputChip from './input/chips';
 
 export {
   Button,
@@ -32,6 +33,7 @@ export {
   Sidebar,
   SidebarElement,
   Switch,
-  Loading,
-  TitleSection
+  TitleSection,
+  InputChip,
+  Loading
 };
