@@ -60,8 +60,9 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
-          textAlign: 'center'
+          margin: '0px 40px 0px',
+          textAlign: 'center',
+          backgroundColor: '#e8e8e8'
         }
       },
       text: `
@@ -84,7 +85,7 @@ export default {
   },
 };
 
-export const element = () => <div style={{ backgroundColor: '#e8e8e8' }}><Loading dark={boolean('dark', false)} /></div>;
+export const element = () => <Loading dark={boolean('dark', false)} />;
 
 element.story = {
   name: 'Loading component',

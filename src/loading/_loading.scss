@@ -26,7 +26,7 @@ $circleContainerHalf: $circleContainerWith/2;
   width: 140px;
   height: 78px;
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   $duration: 3s;
