@@ -6,7 +6,7 @@ import { InputChip } from '../../dist';
 import '../../dist/index.css';
 
 const propsDescriptions = {
-  onClose: {
+  value: {
     propType: 'string',
     description: 'text will be shown'
   },
