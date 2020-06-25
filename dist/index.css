@@ -1,3 +1,44 @@
+.__chips__chip__UA-fa {
+  background-color: #007DB7;
+  box-shadow: 0 2px 4px 0 rgba(31, 30, 30, 0.35);
+  color: white;
+  cursor: default;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 0.25rem;
+  padding-left: 0.75rem;
+  display: inline-flex;
+  align-items: center; }
+  .__chips__chip__UA-fa.__chips__pressed__Qi9F4 {
+    background-color: #005D8F;
+    box-shadow: none; }
+  .__chips__chip__UA-fa.__chips__disabled__1agHb {
+    background-color: #D5D0D5;
+    color: white;
+    pointer-events: none;
+    box-shadow: none; }
+    .__chips__chip__UA-fa.__chips__disabled__1agHb:hover, .__chips__chip__UA-fa.__chips__disabled__1agHb:active {
+      background-color: #D5D0D5; }
+    .__chips__chip__UA-fa.__chips__disabled__1agHb.__chips__variant__32Cyg {
+      border-color: #D5D0D5;
+      color: #D5D0D5; }
+      .__chips__chip__UA-fa.__chips__disabled__1agHb.__chips__variant__32Cyg:hover, .__chips__chip__UA-fa.__chips__disabled__1agHb.__chips__variant__32Cyg:active {
+        border-color: #D5D0D5;
+        color: #D5D0D5; }
+  .__chips__chip__UA-fa.__chips__variant__32Cyg {
+    background-color: white;
+    border: 1px solid #007DB7;
+    color: #007DB7; }
+    .__chips__chip__UA-fa.__chips__variant__32Cyg.__chips__pressed__Qi9F4 {
+      border-color: #005D8F;
+      background-color: white;
+      box-shadow: none; }
+  .__chips__chip__UA-fa i {
+    padding-left: 0.5rem;
+    cursor: pointer; }
+    .__chips__chip__UA-fa i:before {
+      transform: rotate(45deg); }
+
 /* Ubuntu Font Family Bower-ready v0.1.13 */
 /* Ubuntu @font-face kit */
 /* BEGIN Ubuntu Light */
@@ -2257,7 +2298,7 @@
   width: 140px;
   height: 78px;
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center; }
   .__loading__loadingContainer__xbslP.__loading__dark__l3QX7 .__loading__circle__2KYdR, .__loading__loadingContainer__xbslP.__loading__dark__l3QX7 .__loading__circleMain__2RXOO {
     background-color: white; }
