@@ -14,7 +14,8 @@ import {
   Separator,
   Sidebar,
   SidebarElement,
-  Switch
+  Switch,
+  TitleSection
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -372,6 +373,15 @@ const App = () => {
       </div>
     </div>
 
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-12">
+          <TitleSection label="Title Section" prefix="write"/>
+        </div>
+      </div>
+    </div>
+
+    <br/>
 
   </>
 }
