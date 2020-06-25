@@ -13,8 +13,8 @@ import {
   Radio,
   Separator,
   Sidebar,
-  SidebarElement,
-  Switch
+  Switch,
+  Loading
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -371,6 +371,15 @@ const App = () => {
         <Switch status={false} disabled onClick={() => setSwitchStatus(!switchStatus)} />
       </div>
     </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">Loading</h1>
+
+      <div className="d-flex">
+        <Loading />
+      </div>
+    </div>
+
 
 
   </>

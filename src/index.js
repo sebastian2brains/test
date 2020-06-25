@@ -13,6 +13,7 @@ import Separator from './separator';
 import Sidebar from './sidebar';
 import SidebarElement from './sidebar/sidebarElement';
 import Switch from './switch';
+import Loading from './loading';
 
 export {
   Button,
@@ -29,5 +30,6 @@ export {
   Separator,
   Sidebar,
   SidebarElement,
-  Switch
+  Switch,
+  Loading
 };

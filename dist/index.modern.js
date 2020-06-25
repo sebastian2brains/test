@@ -1797,5 +1797,32 @@ Switch.propTypes = {
   disabled: propTypes.bool
 };
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, Logo, Radio, Separator, Sidebar, SidebarElement, Switch };
+var styles$8 = {"loadingContainer":"__loading__loadingContainer__xbslP","circle_1":"__loading__circle_1__1yHlS","circle_2":"__loading__circle_2__12Wvj","dark":"__loading__dark__l3QX7","circle":"__loading__circle__2KYdR","circleMain":"__loading__circleMain__2RXOO","circlesContainer":"__loading__circlesContainer__gReE6","container":"__loading__container__2BLen","beforeCircle1":"__loading__beforeCircle1__3d9vo","beforeCircle2":"__loading__beforeCircle2__1fVOr","circleMainBorder":"__loading__circleMainBorder__UHFy2"};
+
+const Loading = ({
+  dark
+}) => {
+  const styleArr = [styles$8.loadingContainer, dark ? styles$8.dark : null];
+  const theme = dark ? 'dark' : 'light';
+  return /*#__PURE__*/React.createElement("div", {
+    className: styleArr.join(' '),
+    "data-theme": theme
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$8.circleMain
+  }), /*#__PURE__*/React.createElement("div", {
+    className: styles$8.circlesContainer
+  }, [styles$8.circle_1, styles$8.circle_2].map((el, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: [styles$8.circle, el].join(' ')
+  }))));
+};
+
+Loading.defaultProps = {
+  dark: false
+};
+Loading.propTypes = {
+  dark: propTypes.bool
+};
+
+export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, Loading, Logo, Radio, Separator, Sidebar, SidebarElement, Switch };
 //# sourceMappingURL=index.modern.js.map
