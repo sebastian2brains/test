@@ -24,5 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 
 #Idea files
+/.idea
 .DS_Store
 .idea
