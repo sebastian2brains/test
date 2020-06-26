@@ -2380,3 +2380,45 @@
     cursor: pointer; }
     .__chips__chip__UA-fa i:before {
       transform: rotate(45deg); }
+
+.__progressbar__progressBar__R0HpQ {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left; }
+  .__progressbar__progressBar__R0HpQ .__progressbar__simpleLabel__1Jsh1 {
+    font-weight: 700; }
+  .__progressbar__progressBar__R0HpQ .__progressbar__multiHeader__9q7I_ {
+    display: flex;
+    justify-content: space-between; }
+    .__progressbar__progressBar__R0HpQ .__progressbar__multiHeader__9q7I_ > div:last-child {
+      text-align: right; }
+    .__progressbar__progressBar__R0HpQ .__progressbar__multiHeader__9q7I_ > div:first-child {
+      text-align: left; }
+    .__progressbar__progressBar__R0HpQ .__progressbar__multiHeader__9q7I_ .__progressbar__multiHeaderLabel__2mYPG {
+      margin: 0px;
+      font-size: 14px;
+      color: #646569; }
+  .__progressbar__progressBar__R0HpQ .__progressbar__barContainer__3LHm2 {
+    position: relative;
+    height: 8px;
+    border-radius: 8px;
+    background-color: #F6F3F5;
+    overflow: hidden; }
+    .__progressbar__progressBar__R0HpQ .__progressbar__barContainer__3LHm2 .__progressbar__bar__2T33C {
+      background-color: #007DB7;
+      border-radius: 8px;
+      min-width: 8px;
+      height: 100%; }
+  .__progressbar__progressBar__R0HpQ .__progressbar__bellowContent__1lqZ7 {
+    display: flex;
+    font-size: 14px;
+    color: #646569; }
+    .__progressbar__progressBar__R0HpQ .__progressbar__bellowContent__1lqZ7.__progressbar__between__3muIL {
+      justify-content: space-between; }
+    .__progressbar__progressBar__R0HpQ .__progressbar__bellowContent__1lqZ7.__progressbar__end__1xSRa {
+      justify-content: flex-end; }
+    .__progressbar__progressBar__R0HpQ .__progressbar__bellowContent__1lqZ7.__progressbar__reverse__kTBcR {
+      flex-direction: row-reverse; }
+    .__progressbar__progressBar__R0HpQ .__progressbar__bellowContent__1lqZ7 .__progressbar__full__1WMCD {
+      color: #007DB7; }
