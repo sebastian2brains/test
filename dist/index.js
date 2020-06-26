@@ -1953,6 +1953,66 @@ InputChip.propTypes = {
   onClose: propTypes.func.isRequired
 };
 
+var styles$b = {"progressBar":"__progressbar__progressBar__R0HpQ","simpleLabel":"__progressbar__simpleLabel__1Jsh1","multiHeader":"__progressbar__multiHeader__9q7I_","multiHeaderLabel":"__progressbar__multiHeaderLabel__2mYPG","barContainer":"__progressbar__barContainer__3LHm2","bar":"__progressbar__bar__2T33C","bellowContent":"__progressbar__bellowContent__1lqZ7","between":"__progressbar__between__3muIL","end":"__progressbar__end__1xSRa","reverse":"__progressbar__reverse__kTBcR","full":"__progressbar__full__1WMCD"};
+
+var ProgressBar = function ProgressBar(_ref) {
+  var label = _ref.label,
+      progress = _ref.progress,
+      assistText = _ref.assistText,
+      percent = _ref.percent,
+      helperAlign = _ref.helperAlign,
+      reverse = _ref.reverse;
+  var alignment = assistText && percent ? styles$b.between : styles$b[helperAlign];
+  var direction = reverse ? styles$b.reverse : null;
+  var bellowClasses = [styles$b.bellowContent, alignment, direction];
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$b.progressBar
+  }, !Array.isArray(label) ? /*#__PURE__*/React.createElement("div", {
+    className: styles$b.simpleLabel
+  }, label) : /*#__PURE__*/React.createElement("div", {
+    className: styles$b.multiHeader
+  }, label.map(function (el, i) {
+    return /*#__PURE__*/React.createElement("div", {
+      key: i
+    }, /*#__PURE__*/React.createElement("label", {
+      className: styles$b.multiHeaderLabel
+    }, el.label), /*#__PURE__*/React.createElement("div", null, el.text));
+  })), /*#__PURE__*/React.createElement("div", {
+    className: styles$b.barContainer
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$b.bar,
+    "data-progress": progress,
+    style: {
+      width: progress + "%"
+    }
+  })), assistText || percent ? /*#__PURE__*/React.createElement("div", {
+    className: bellowClasses.join(' ').trim(),
+    role: "helper"
+  }, assistText, percent && /*#__PURE__*/React.createElement("div", {
+    className: Number(progress) === 100 ? styles$b.full : null
+  }, progress + "%")) : null);
+};
+
+ProgressBar.defaultProps = {
+  label: '',
+  assistText: '',
+  progress: 0,
+  percent: false,
+  helperAlign: 'start',
+  reverse: false
+};
+ProgressBar.propTypes = {
+  label: propTypes.oneOfType([propTypes.string, propTypes.arrayOf(propTypes.shape({
+    label: propTypes.string,
+    text: propTypes.string
+  }))]),
+  assistText: propTypes.string,
+  progress: propTypes.number,
+  percent: propTypes.bool,
+  reverse: propTypes.bool,
+  helperAlign: propTypes.oneOf(['start', 'between', 'end'])
+};
+
 exports.Button = Button;
 exports.Card = Card;
 exports.Checkbox = Checkbox;
@@ -1965,6 +2025,7 @@ exports.Input = Input;
 exports.InputChip = InputChip;
 exports.Loading = Loading;
 exports.Logo = Logo;
+exports.ProgressBar = ProgressBar;
 exports.Radio = Radio;
 exports.Separator = Separator;
 exports.Sidebar = Sidebar;

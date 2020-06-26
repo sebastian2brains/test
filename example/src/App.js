@@ -16,7 +16,8 @@ import {
   Switch,
   TitleSection,
   InputChip,
-  Loading
+  Loading,
+  ProgressBar
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -397,6 +398,42 @@ const App = () => {
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12">
           <TitleSection label="Title Section" prefix="write" />
+        </div>
+      </div>
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">Progress bar</h1>
+
+      <div className="d-flex">
+        <div className="container">
+          <ProgressBar assistText="un texto de asistencia" progress={25} />
+          <ProgressBar assistText="un texto de asistencia" progress={25} percent />
+          <ProgressBar progress={50} percent helperAlign="end" />
+          <ProgressBar assistText="un texto de asistencia" helperAlign="start" progress={75} />
+        </div>
+        <div className="container">
+          <ProgressBar assistText="un texto de asistencia" label={
+            [
+              {
+                label: "label",
+                text: "$2.000.000"
+              },
+              {
+                label: "label",
+                text: "$10.000.000"
+              }
+            ]
+          } progress={75} />
+          <ProgressBar assistText="un texto de asistencia" label={
+            [
+              {
+                label: "label",
+                text: "$2.000.000"
+              }
+            ]
+          } progress={75} />
+          <ProgressBar assistText="un texto de asistencia" percent progress={100} />
         </div>
       </div>
     </div>
