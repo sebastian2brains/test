@@ -6,9 +6,29 @@ import { ProgressBar } from '../../dist';
 import '../../dist/index.css';
 
 const propsDescriptions = {
-  dark: {
+  label: {
+    propType: 'string',
+    description: 'This will show this value above the progress bar'
+  },
+  assistText: {
+    propType: 'string',
+    description: 'This will show this value below the progress bar'
+  },
+  progress: {
+    propType: 'string',
+    description: 'This will set the percentage of the progress bar'
+  },
+  percent: {
     propType: 'bool',
-    description: 'define the loading theme'
+    description: 'This will show the actual percentage below the progress bar'
+  },
+  reverse: {
+    propType: 'bool',
+    description: 'This will switch the position of the percentage and assistText'
+  },
+  helperAlign: {
+    propType: 'bool',
+    description: 'Define the loading theme'
   }
 }
 
@@ -72,7 +92,7 @@ export default {
         import { ProgressBar } from 'library';
         ~~~
 
-        the basicest component form is: 
+        the basicest component form is:
 
         ~~~js
         <ProgressBar progress={25} />

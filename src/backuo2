@@ -1,0 +1,24 @@
+import React from 'react'
+import styles from './_bullet.scss'
+import Icon from '../icons'
+
+
+const BulletList = ({ value, prefix,variant, ...props }) => {
+
+  const containerClass = [styles.bulletContainer]
+  const iconContainerClass = [styles.iconContainer]
+
+  return <div {...props} className={containerClass.join(' ')}>
+    { variant == 'icon' ?
+      <div className={iconContainerClass.join(' ')}>
+        <Icon size={1} name="line-file"> </Icon>
+      </div>
+      <p className={styles.bulletSuffix}>Alternativa</p>
+      : variant == 'oder-list'
+    }
+
+  </div>
+}
+
+export default BulletList
+
