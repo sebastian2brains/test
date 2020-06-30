@@ -17,7 +17,8 @@ import {
   TitleSection,
   InputChip,
   Loading,
-  ProgressBar
+  ProgressBar,
+  Message
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -394,6 +395,7 @@ const App = () => {
       </div>
     </div>
 
+
     <div className="container">
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12">
@@ -435,6 +437,18 @@ const App = () => {
           } progress={75} />
           <ProgressBar assistText="un texto de asistencia" percent progress={100} />
         </div>
+      </div>
+    </div>
+
+
+    <div className="container my-4">
+      <h1 className="mb-4">Messages</h1>
+
+      <div className="d-flex flex-column">
+        <Message type="success" title="this is a success message" action={<Button variant="text" suffix="arrow-right" > ir a action </Button>} />
+        <Message type="error" title="this is an error message" description="bajada" />
+        <Message type="warning" title="this is a warning message" />
+        <Message type="info" title="this is an info message" action={<Button variant="text" > ir a action </Button>} />
       </div>
     </div>
 
