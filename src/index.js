@@ -16,7 +16,8 @@ import Switch from './switch';
 import Loading from './loading';
 import TitleSection from './title';
 import InputChip from './input/chips';
-import ProgressBar from './progressbar'
+import ProgressBar from './progressbar';
+import Message from './message';
 
 export {
   Button,
@@ -37,5 +38,6 @@ export {
   TitleSection,
   InputChip,
   Loading,
-  ProgressBar
+  ProgressBar,
+  Message
 };
