@@ -1,7 +1,5 @@
-
 import React, { createRef, useState } from 'react';
 import Tippy from '@tippyjs/react';
-import React, { useState } from 'react';
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -2221,7 +2219,6 @@ Message.propTypes = {
   action: propTypes.element
 };
 
-export { Bullets, Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection, Tooltip };
 var inputStyles$1 = {"input":"__select__input__3SDeG","suffixContainer":"__select__suffixContainer__1RIWf","inputContainer":"__select__inputContainer__3ZeLa","disabled":"__select__disabled__tQrqh","inputLabel":"__select__inputLabel__30ukr","optionRow":"__select__optionRow__3k3jO","optionContainer":"__select__optionContainer__Do9PN","bellowContainer":"__select__bellowContainer__2-1yB","prefixContainer":"__select__prefixContainer__15505","currentElement":"__select__currentElement__1ZRzS","inputHelper":"__select__inputHelper__1F3qg"};
 
 const InputSelect = ({
@@ -2319,5 +2316,5 @@ InputSelect.propTypes = {
   })).isRequired
 };
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, InputSelect, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
+export { Bullets, Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, InputSelect, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection, Tooltip };
 //# sourceMappingURL=index.modern.js.map
