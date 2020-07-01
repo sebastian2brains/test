@@ -1,3 +1,6 @@
+
+import React, { createRef, useState } from 'react';
+import Tippy from '@tippyjs/react';
 import React, { useState } from 'react';
 
 function createCommonjsModule(fn, module) {
@@ -1957,7 +1960,218 @@ ProgressBar.propTypes = {
   helperAlign: propTypes.oneOf(['start', 'between', 'end'])
 };
 
-var styles$c = {"message":"__message__message__3g_Jc","prefix":"__message__prefix__3hi6e","textContainer":"__message__textContainer__10WAf","actionContainer":"__message__actionContainer__3_FT8","error":"__message__error__hllCz","success":"__message__success__2_19H","info":"__message__info__2aIvC","warning":"__message__warning__2x3Y6"};
+var styles$c = {"error":"__bullet__error__17A9A","warning":"__bullet__warning__1o0c4","success":"__bullet__success__8m-fm","info":"__bullet__info__1CoXU","boxCircle":"__bullet__boxCircle__2C1_e","bulletElement":"__bullet__bulletElement__1OQ67","disabled":"__bullet__disabled__2hJYv","prefixContainer":"__bullet__prefixContainer__2vm2y","prefixItem":"__bullet__prefixItem__3BrA8","textContainer":"__bullet__textContainer__3DxYi","active":"__bullet__active__1eHUK"};
+
+const BulletElement = ({
+  count,
+  disabled,
+  text,
+  typeList,
+  prefixType,
+  contentType,
+  icon,
+  type,
+  index,
+  ...props
+}) => {
+  const numberList = count + 1;
+  let styleContainer = [styles$c.bulletElement];
+  let stylePrefixContainer = [styles$c.prefixContainer];
+  let styleBoxCircle = [styles$c.boxCircle];
+  let styleTextContainer = [styles$c.textContainer];
+
+  const setStyles = (typeParam, typeListParam, prefixParam, contentParam) => {
+    if (disabled !== undefined && disabled === true) {
+      styleContainer = styleContainer.concat(styles$c.disabled);
+      return;
+    }
+
+    const styleTypeContainer = [styles$c[`${typeParam}`]];
+
+    if (type !== undefined && type !== '') {
+      styleContainer = styleContainer.concat(styleTypeContainer);
+
+      if (typeList !== undefined) {
+        styleBoxCircle = styleBoxCircle.concat(styleTypeContainer);
+        return;
+      }
+    } else if (prefixType !== undefined || contentType !== undefined) {
+      const stylePrefix = [styles$c[`${prefixParam}`]];
+      const styleContent = [styles$c[`${contentParam}`]];
+      styleBoxCircle = [styles$c.boxCircle, styles$c[`${prefixParam}`]];
+
+      if (prefixType !== undefined) {
+        if (typeListParam !== 'unorder') {
+          stylePrefixContainer = stylePrefixContainer.concat(stylePrefix);
+        }
+      }
+
+      if (contentType !== undefined) {
+        styleTextContainer = styleTextContainer.concat(styleContent);
+      }
+    }
+  };
+
+  setStyles(type, typeList, prefixType, contentType);
+  const defaultPrefix = typeList === 'order' ? /*#__PURE__*/React.createElement("div", {
+    "data-testid": "test-prefix-bullet-order",
+    className: stylePrefixContainer.join(' ')
+  }, numberList, ".") : typeList === 'unorder' ? /*#__PURE__*/React.createElement("div", {
+    "data-testid": "test-prefix-bullet-unorder",
+    className: stylePrefixContainer.join(' ')
+  }, /*#__PURE__*/React.createElement("div", {
+    "data-testid": "test-prefix-bullet",
+    className: styleBoxCircle.join(' ')
+  }, " ")) : typeList === 'icons' ? /*#__PURE__*/React.createElement("div", {
+    "data-testid": "test-prefix-bullet-icons",
+    className: stylePrefixContainer.join(' ')
+  }, /*#__PURE__*/React.createElement(Icon, {
+    size: "1",
+    name: icon
+  })) : '';
+  return /*#__PURE__*/React.createElement("div", {
+    "data-testid": `test-bullet-${typeList}`,
+    className: styleContainer.join(' ')
+  }, defaultPrefix, /*#__PURE__*/React.createElement("p", {
+    "data-testid": "test-bullet-content",
+    className: styleTextContainer.join(' ')
+  }, text));
+};
+BulletElement.defaultProps = {
+  icon: 'check'
+};
+BulletElement.propTypes = {
+  disable: propTypes.bool,
+  text: propTypes.string.isRequired,
+  prefixType: function (props) {
+    if (props['type'] !== undefined && props['prefixType'] !== undefined) {
+      return new Error('If prefixType prop it is defined not define type');
+    }
+  },
+  type: function (props) {
+    if (props['prefixType'] !== undefined && props['type'] !== undefined) {
+      return new Error('If prefixType2 prop it is defined not define type');
+    }
+
+    if (props['contentType'] !== undefined && props['type'] !== undefined) {
+      return new Error('If contentType prop it is defined not define type');
+    }
+  }
+};
+
+const Bullets = ({
+  items,
+  typeList
+}) => {
+  const typeOfBullet = typeList ? typeList : '';
+  const itemsBullets = items ? items : [];
+  return /*#__PURE__*/React.createElement("div", null, typeOfBullet === 'order' ? itemsBullets.map((element, index) => /*#__PURE__*/React.createElement(BulletElement, Object.assign({
+    key: index,
+    count: index,
+    typeList: typeOfBullet
+  }, element))) : typeOfBullet === 'unorder' ? itemsBullets.map((element, index) => /*#__PURE__*/React.createElement(BulletElement, Object.assign({
+    key: index
+  }, element, {
+    typeList: typeOfBullet
+  }))) : typeOfBullet === 'icons' ? itemsBullets.map((element, index) => /*#__PURE__*/React.createElement(BulletElement, Object.assign({
+    key: index
+  }, element, {
+    typeList: typeOfBullet
+  }))) : '');
+};
+
+Bullets.defaults = {
+  typeList: 'order',
+  items: [{}]
+};
+Bullets.propTypes = {
+  typeList: propTypes.string.isRequired,
+  items: propTypes.array.isRequired
+};
+
+var styles$d = {"fadeInFromNone":"__tooltip__fadeInFromNone__QneFP","containerTooltip":"__tooltip__containerTooltip__2kFow","box":"__tooltip__box__3hy_8","arrow":"__tooltip__arrow__T5dKc","content":"__tooltip__content__2N_0M"};
+
+const Tooltip = ({
+  children,
+  content,
+  placement,
+  eventListener,
+  ...props
+}) => {
+  const refBoxTooltip = createRef();
+  const refContainerTooltip = createRef();
+  const refContainerTippy = createRef();
+  const [visible, setVisible] = useState(false);
+
+  const setOpacity = event => {
+    if (eventListener === 'hover') {
+      if (event === 'leave') {
+        setVisible(false);
+        refBoxTooltip.current.style.opacity = 0;
+      }
+
+      if (event === 'enter') {
+        setVisible(true);
+        refBoxTooltip.current.style.opacity = 1;
+      }
+    }
+
+    if (eventListener === 'mouseClick') {
+      console.log('click');
+
+      if (visible) {
+        refBoxTooltip.current.style.opacity = 0;
+        setVisible(false);
+      } else {
+        refBoxTooltip.current.style.opacity = 1;
+        setVisible(true);
+      }
+    }
+  };
+
+  return /*#__PURE__*/React.createElement("div", Object.assign({}, props, {
+    "data-testid": "test-container",
+    visible: visible.toString(),
+    className: styles$d.containerTooltip,
+    ref: refContainerTooltip,
+    onClick: () => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false,
+    onMouseEnter: e => eventListener === 'hover' ? setOpacity('enter') : false,
+    onMouseLeave: () => eventListener === 'hover' ? setOpacity('leave') : false
+  }), /*#__PURE__*/React.createElement(Tippy, {
+    offset: [0, 20],
+    arrow: true,
+    appendTo: "parent",
+    placement: placement,
+    visible: true,
+    animation: false,
+    render: attrs => /*#__PURE__*/React.createElement("div", Object.assign({
+      "data-testid": "test-box",
+      ref: refBoxTooltip,
+      className: styles$d.box,
+      tabIndex: "-1"
+    }, attrs), /*#__PURE__*/React.createElement("div", {
+      "data-testid": "test-box-content",
+      ref: refContainerTippy,
+      className: styles$d.content
+    }, /*#__PURE__*/React.createElement("p", null, " ", content)), /*#__PURE__*/React.createElement("div", {
+      "data-testid": "test-box-arrow",
+      id: "arrow",
+      className: styles$d.arrow
+    }, " "))
+  }, /*#__PURE__*/React.createElement("span", null, children)));
+};
+Tooltip.defaultProps = {
+  content: 'Text for tooltip',
+  placement: 'top',
+  eventListener: 'hover'
+};
+Tooltip.propTypes = {
+  placement: propTypes.oneOf(['top', 'bottom', 'right', 'right-end', 'left']),
+  eventListener: propTypes.oneOf(['mouseClick', 'hover']),
+  content: propTypes.string.isRequired
+};
+
+var styles$e = {"message":"__message__message__3g_Jc","prefix":"__message__prefix__3hi6e","textContainer":"__message__textContainer__10WAf","actionContainer":"__message__actionContainer__3_FT8","error":"__message__error__hllCz","success":"__message__success__2_19H","info":"__message__info__2aIvC","warning":"__message__warning__2x3Y6"};
 
 const Message = ({
   title,
@@ -1966,7 +2180,7 @@ const Message = ({
   className,
   description
 }) => {
-  const messageClasses = [styles$c.message, styles$c[type], className];
+  const messageClasses = [styles$e.message, styles$e[type], className];
 
   const getIcon = () => {
     switch (type) {
@@ -1989,11 +2203,11 @@ const Message = ({
     role: "message"
   }, /*#__PURE__*/React.createElement(Icon, {
     name: getIcon(),
-    className: styles$c.prefix
+    className: styles$e.prefix
   }), /*#__PURE__*/React.createElement("div", {
-    className: styles$c.textContainer
+    className: styles$e.textContainer
   }, title && /*#__PURE__*/React.createElement("div", null, " ", title, " "), description && /*#__PURE__*/React.createElement("p", null, " ", description, " ")), /*#__PURE__*/React.createElement("div", {
-    className: styles$c.actionContainer
+    className: styles$e.actionContainer
   }, action));
 };
 
@@ -2007,6 +2221,7 @@ Message.propTypes = {
   action: propTypes.element
 };
 
+export { Bullets, Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection, Tooltip };
 var inputStyles$1 = {"input":"__select__input__3SDeG","suffixContainer":"__select__suffixContainer__1RIWf","inputContainer":"__select__inputContainer__3ZeLa","disabled":"__select__disabled__tQrqh","inputLabel":"__select__inputLabel__30ukr","optionRow":"__select__optionRow__3k3jO","optionContainer":"__select__optionContainer__Do9PN","bellowContainer":"__select__bellowContainer__2-1yB","prefixContainer":"__select__prefixContainer__15505","currentElement":"__select__currentElement__1ZRzS","inputHelper":"__select__inputHelper__1F3qg"};
 
 const InputSelect = ({
